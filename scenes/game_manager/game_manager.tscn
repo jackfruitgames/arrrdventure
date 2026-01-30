@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ddpuqfk2tt65v"]
+
+[ext_resource type="Script" uid="uid://redpndl5oosr" path="res://scenes/game_manager/game_manager.gd" id="1_0drbn"]
+[ext_resource type="PackedScene" uid="uid://b00x8lukl183a" path="res://scenes/ui/main_menu/main_menu_ui.tscn" id="1_lycnq"]
+[ext_resource type="PackedScene" uid="uid://dy85tdar21rcw" path="res://scenes/game/game.tscn" id="2_kc0kb"]
+[ext_resource type="Script" uid="uid://c18vvkpi7jb7f" path="res://scenes/game_manager/audio_manager.gd" id="4_qetoq"]
+[ext_resource type="AudioStream" uid="uid://dqrt786gd8cgw" path="res://assets/audio/switch_006.ogg" id="5_jnlof"]
+
+[node name="GameManager" type="Node" unique_id=771510695 node_paths=PackedStringArray("game_container")]
+script = ExtResource("1_0drbn")
+game_scene = ExtResource("2_kc0kb")
+game_container = NodePath("GameContainer")
+
+[node name="MainMenu" parent="." unique_id=251449327 instance=ExtResource("1_lycnq")]
+
+[node name="Audio" type="Node" parent="." unique_id=1367153972]
+script = ExtResource("4_qetoq")
+ui_click = ExtResource("5_jnlof")
+
+[node name="MusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=1059267520]
+bus = &"Music"
+
+[node name="SfxAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=1077027622]
+bus = &"Sfx"
+
+[node name="UiAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=158443362]
+bus = &"UI"
+
+[node name="GameContainer" type="Node" parent="." unique_id=788876351]
+editor_description = "The game node will be added as a child of this scene."

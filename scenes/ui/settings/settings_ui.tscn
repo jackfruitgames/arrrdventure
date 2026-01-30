@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://qvp7whamhqgi"]
+
+[ext_resource type="Theme" uid="uid://ivbyi03tfmnl" path="res://resources/ui_theme.tres" id="1_6xy4m"]
+[ext_resource type="Script" uid="uid://d0cgfkrxmvy0j" path="res://scenes/ui/settings/settings_ui.gd" id="1_v461p"]
+[ext_resource type="PackedScene" uid="uid://dowc4ya2p2mh4" path="res://scenes/ui/settings/bus_volume_slider_control/bus_volume_slider_control.tscn" id="3_dmrhn"]
+
+[node name="Settings" type="Control" unique_id=1990099940]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6xy4m")
+script = ExtResource("1_v461p")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=999482819]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1545925616]
+layout_mode = 2
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 400
+theme_override_constants/margin_bottom = 150
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=563368579]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1548978352]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=431155948]
+layout_mode = 2
+text = "Audio settings"
+horizontal_alignment = 1
+
+[node name="MasterVolumeSlider" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1993745931 instance=ExtResource("3_dmrhn")]
+layout_mode = 2
+
+[node name="MusicVolumeSlider" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=251328918 instance=ExtResource("3_dmrhn")]
+layout_mode = 2
+audio_bus = 1
+
+[node name="SfxVolumeSlider" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=131591341 instance=ExtResource("3_dmrhn")]
+layout_mode = 2
+audio_bus = 2
+
+[node name="UiVolumeSlider" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2013443392 instance=ExtResource("3_dmrhn")]
+layout_mode = 2
+audio_bus = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=351623321]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CloseButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=274217260]
+layout_mode = 2
+text = "Close"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dpbd8pay2xnu5"]
+
+[ext_resource type="Theme" uid="uid://ivbyi03tfmnl" path="res://resources/ui_theme.tres" id="1_20nbd"]
+[ext_resource type="Script" uid="uid://ppt35vuvwc7o" path="res://scenes/ui/credits/credits_ui.gd" id="1_u42mp"]
+
+[node name="Credits" type="Control" unique_id=2059783861]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_20nbd")
+script = ExtResource("1_u42mp")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=611163314]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=70232718]
+layout_mode = 2
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 400
+theme_override_constants/margin_bottom = 150
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=262281707]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=246259565]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=253190157]
+layout_mode = 2
+text = "Godot Template by eddex"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1631584285]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1086100030]
+layout_mode = 2
+text = "Click anywhere to close"
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=709268021]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

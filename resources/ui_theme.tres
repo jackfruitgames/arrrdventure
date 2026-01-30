@@ -1,0 +1,9 @@
+[gd_resource type="Theme" format=3 uid="uid://ivbyi03tfmnl"]
+
+[ext_resource type="FontFile" uid="uid://b0ifjhs2wy6rv" path="res://assets/fonts/AnnotationMono/AnnotationMono_v0.2_Bold.otf" id="1_cviax"]
+
+[resource]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_cviax")
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("1_cviax")

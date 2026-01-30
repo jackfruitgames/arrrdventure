@@ -1,0 +1,57 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
+[application]
+
+config/name="GGJ 2026"
+config/description="A game made for Global game Jam 2026"
+run/main_scene="uid://ddpuqfk2tt65v"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://cvjnf1rlko886"
+
+[autoload]
+
+GlobalSettings="*uid://v1oodgesckn2"
+GlobalState="*uid://d4gsmldutml6u"
+SaveFile="*uid://ctydeudog87ly"
+GlobalSignals="*uid://bg7ft8ms7re1v"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "gray",
+"res://assets/": "pink",
+"res://resources/": "orange",
+"res://scenes/": "blue",
+"res://scripts/": "purple"
+}
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
