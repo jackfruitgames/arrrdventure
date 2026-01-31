@@ -1,9 +1,35 @@
 [gd_scene format=3 uid="uid://djode3ea5luim"]
 
+[ext_resource type="PackedScene" uid="uid://bl4j3luccea8d" path="res://scenes/player/player.tscn" id="1_kj8hc"]
+
 [sub_resource type="QuadMesh" id="QuadMesh_mxgwe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
+size = Vector3(40, 0.1, 40)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kj8hc"]
+
+[sub_resource type="Sky" id="Sky_ncy57"]
+sky_material = SubResource("ProceduralSkyMaterial_kj8hc")
+
+[sub_resource type="Environment" id="Environment_kj8hc"]
+background_mode = 2
+sky = SubResource("Sky_ncy57")
 
 [node name="gym" type="Node3D" unique_id=2114548578]
 
-[node name="plane" type="MeshInstance3D" parent="." unique_id=1132751788]
+[node name="Player" parent="." unique_id=640528251 instance=ExtResource("1_kj8hc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0272238, 0)
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=283288777]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=991042750]
 transform = Transform3D(20, 0, 0, 0, -8.742278e-07, 20, 0, -20, -8.742278e-07, 0, 0, 0)
 mesh = SubResource("QuadMesh_mxgwe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1509017960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+shape = SubResource("BoxShape3D_floor")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1826125420]
+environment = SubResource("Environment_kj8hc")
