@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://dt6pw1siob5hb" path="res://scripts/utils/falldown_death.gd" id="9_ws7gi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ix6c7"]
+sky_top_color = Color(0.23, 0.23, 0.23, 1)
 
 [sub_resource type="Sky" id="Sky_nfwes"]
 sky_material = SubResource("ProceduralSkyMaterial_ix6c7")
@@ -47,7 +48,7 @@ shadow_enabled = true
 environment = SubResource("Environment_w2rca")
 
 [node name="Player" parent="." unique_id=640528251 instance=ExtResource("1_5fsi0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.90593, -2.8426437, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.90593, -2.7203124, 38.843536)
 
 [node name="Level3Mask" parent="." unique_id=1653359943 instance=ExtResource("2_5fsi0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.942566, -2.3533487, -15.782799)
@@ -121,9 +122,10 @@ mesh = SubResource("BoxMesh_wnlg8")
 
 [node name="DeathFloor" type="Area3D" parent="." unique_id=338165860]
 script = ExtResource("9_ws7gi")
+currentLevel = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathFloor" unique_id=51678451]
-transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, -2.2892017, 0)
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, -15.840725, 0)
 shape = SubResource("HeightMapShape3D_15elc")
 
 [connection signal="body_entered" from="DeathFloor" to="DeathFloor" method="_on_body_entered"]

@@ -12,12 +12,12 @@
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gblnm"]
 
-[sub_resource type="Sky" id="Sky_3xb12"]
+[sub_resource type="Sky" id="Sky_0ybc4"]
 sky_material = SubResource("ProceduralSkyMaterial_gblnm")
 
 [sub_resource type="Environment" id="Environment_iq8gt"]
 background_mode = 2
-sky = SubResource("Sky_3xb12")
+sky = SubResource("Sky_0ybc4")
 glow_enabled = true
 glow_intensity = 5.65
 glow_bloom = 0.07
@@ -121,9 +121,10 @@ mesh = SubResource("BoxMesh_x0tvk")
 
 [node name="DeathFloor" type="Area3D" parent="." unique_id=890910627]
 script = ExtResource("7_0ybc4")
+currentLevel = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathFloor" unique_id=15424125]
-transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, -2.2892017, 0)
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, -15.175756, 0)
 shape = SubResource("HeightMapShape3D_bwnqv")
 
 [connection signal="body_entered" from="DeathFloor" to="DeathFloor" method="_on_body_entered"]
