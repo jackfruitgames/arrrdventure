@@ -1,19 +1,143 @@
-[gd_scene load_steps=4 format=3 uid="uid://22rlxph3daq5"]
+[gd_scene format=3 uid="uid://22rlxph3daq5"]
 
 [ext_resource type="Script" uid="uid://dlgk0t11psru7" path="res://scenes/abilities/fireball/fireball.gd" id="1_xlw38"]
+[ext_resource type="Shader" uid="uid://7uvtgwlghgxk" path="res://scenes/abilities/fireball/fireball.gdshader" id="2_shader"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_fireball"]
-radius = 0.2
-height = 0.4
+[sub_resource type="SphereMesh" id="SphereMesh_mm52q"]
+
+[sub_resource type="Gradient" id="Gradient_alpha"]
+offsets = PackedFloat32Array(0, 0.3, 0.7, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.6, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_alpha"]
+gradient = SubResource("Gradient_alpha")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_fire"]
+offsets = PackedFloat32Array(0, 0.4, 0.7, 1)
+colors = PackedColorArray(1, 1, 0.6, 1, 1, 0.5, 0.1, 1, 0.8, 0.2, 0, 1, 0.4, 0.1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_color"]
+gradient = SubResource("Gradient_fire")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_noise"]
+noise_type = 3
+frequency = 0.05
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_noise"]
+noise = SubResource("FastNoiseLite_noise")
+seamless = true
+
+[sub_resource type="Gradient" id="Gradient_vertex_power"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vertex_power"]
+gradient = SubResource("Gradient_vertex_power")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vertex"]
+frequency = 0.08
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vertex"]
+noise = SubResource("FastNoiseLite_vertex")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_random"]
+noise_type = 0
+frequency = 0.1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_random"]
+noise = SubResource("FastNoiseLite_random")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fireball"]
+render_priority = 0
+shader = ExtResource("2_shader")
+shader_parameter/Noise_Texture = SubResource("NoiseTexture2D_noise")
+shader_parameter/Coloring_Texture = SubResource("GradientTexture2D_color")
+shader_parameter/UV_Random = SubResource("NoiseTexture2D_random")
+shader_parameter/Alpha_Texture = SubResource("GradientTexture2D_alpha")
+shader_parameter/Speed = Vector2(0.3, 0.5)
+shader_parameter/Emmision_Power = 3.0
+shader_parameter/Twist_Power = 0.5
+shader_parameter/Vertex_Noise_Texture = SubResource("NoiseTexture2D_vertex")
+shader_parameter/Vertex_Noise_Power_Texture = SubResource("GradientTexture2D_vertex_power")
+shader_parameter/Displace_Power = 0.1
+shader_parameter/Fresnel_Power = 2.0
+shader_parameter/Random_Power = 0.3
+shader_parameter/Fresnel_Color = Color(1, 0.8, 0.4, 1)
+shader_parameter/Tail_Vertex_Noise_Texture = SubResource("NoiseTexture2D_vertex")
+shader_parameter/Tail_Vertex_Noise_Power_Texture = SubResource("GradientTexture2D_vertex_power")
+shader_parameter/Tail_Displace_Power = 0.1
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fireball"]
 radius = 0.2
 
+[sub_resource type="Gradient" id="Gradient_fire_color"]
+offsets = PackedFloat32Array(0, 0.3, 0.7, 1)
+colors = PackedColorArray(1, 1, 0.8, 1, 1, 0.6, 0.1, 1, 0.8, 0.2, 0.05, 0.8, 0.3, 0.1, 0.05, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fire"]
+gradient = SubResource("Gradient_fire_color")
+
+[sub_resource type="Curve" id="Curve_scale"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 1.5), 0.0, 0.0, 0, 0, Vector2(0.4, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_scale"]
+curve = SubResource("Curve_scale")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fire"]
+emission_shape = 1
+emission_sphere_radius = 0.08
+direction = Vector3(0, 1, 0)
+spread = 30.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 2, 0)
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_scale")
+color = Color(1, 0.5, 0.1, 1)
+color_ramp = SubResource("GradientTexture1D_fire")
+turbulence_enabled = true
+turbulence_noise_scale = 2.0
+turbulence_noise_speed = Vector3(0.5, 1, 0.5)
+turbulence_influence_max = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_particle"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_particle"]
+material = SubResource("StandardMaterial3D_particle")
+size = Vector2(0.15, 0.15)
+
 [node name="Fireball" type="Area3D" unique_id=259110871]
 script = ExtResource("1_xlw38")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_fireball")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=378227142]
+mesh = SubResource("SphereMesh_mm52q")
+surface_material_override/0 = SubResource("ShaderMaterial_fireball")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=94004782]
 shape = SubResource("SphereShape3D_fireball")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=980594237]
+amount = 50
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_fire")
+draw_pass_1 = SubResource("QuadMesh_particle")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=589242813]
+light_color = Color(1, 0.5, 0.2, 1)
+light_energy = 2.0
+omni_range = 3.0
+omni_attenuation = 1.5
