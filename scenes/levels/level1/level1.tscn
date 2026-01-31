@@ -29,12 +29,12 @@ environment = SubResource("Environment_bvf2d")
 [node name="Player" parent="." unique_id=640528251 instance=ExtResource("2_4l2q5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.98785377, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1493944436]
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1493944436]
 
-[node name="plane" type="MeshInstance3D" parent="StaticBody3D" unique_id=58746315]
+[node name="plane" type="MeshInstance3D" parent="Floor" unique_id=58746315]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
 mesh = SubResource("PlaneMesh_dvtaw")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1182348623]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1182348623]
 shape = SubResource("WorldBoundaryShape3D_4l2q5")

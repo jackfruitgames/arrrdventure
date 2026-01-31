@@ -4,13 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://b00x8lukl183a" path="res://scenes/ui/main_menu/main_menu_ui.tscn" id="1_lycnq"]
 [ext_resource type="PackedScene" uid="uid://bkhygb2wbfkl0" path="res://scenes/map/map.tscn" id="2_jnlof"]
 [ext_resource type="PackedScene" uid="uid://ciy2jgeati5o2" path="res://scenes/levels/level1/level1.tscn" id="3_w6g1p"]
+[ext_resource type="PackedScene" uid="uid://cshwqunmgcjp1" path="res://scenes/levels/level2/level2.tscn" id="4_80y8o"]
 [ext_resource type="Script" uid="uid://c18vvkpi7jb7f" path="res://scenes/game_manager/audio_manager.gd" id="4_qetoq"]
 [ext_resource type="AudioStream" uid="uid://dqrt786gd8cgw" path="res://assets/audio/switch_006.ogg" id="5_jnlof"]
 
 [node name="GameManager" type="Node" unique_id=771510695 node_paths=PackedStringArray("game_container")]
 script = ExtResource("1_0drbn")
 map_scene = ExtResource("2_jnlof")
-level_scenes = Array[PackedScene]([ExtResource("3_w6g1p")])
+level_scenes = Array[PackedScene]([ExtResource("3_w6g1p"), ExtResource("4_80y8o")])
 game_container = NodePath("GameContainer")
 
 [node name="MainMenu" parent="." unique_id=251449327 instance=ExtResource("1_lycnq")]
