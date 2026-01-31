@@ -4,10 +4,10 @@
 [ext_resource type="Material" uid="uid://bxl3p7t1havur" path="res://assets/textures/ground1/Ground071_2K-JPG.tres" id="1_jedq5"]
 [ext_resource type="PackedScene" uid="uid://bl4j3luccea8d" path="res://scenes/player/player.tscn" id="2_4l2q5"]
 [ext_resource type="PackedScene" uid="uid://bd258ryicnedv" path="res://scenes/enemies/mini_enemy/mini_enemy.tscn" id="2_o5tsl"]
-[ext_resource type="Texture2D" uid="uid://2pagqy2q1vdr" path="res://assets/img/landscape/Palme.png" id="3_dvtaw"]
-[ext_resource type="Texture2D" uid="uid://cg22uem4ia4b2" path="res://assets/img/landscape/Gras .png" id="4_1nwpw"]
+[ext_resource type="PackedScene" uid="uid://ce0lv4amceve" path="res://scenes/levels/assets/palm.tscn" id="3_kdi0p"]
 [ext_resource type="PackedScene" uid="uid://tw7xu0agfxm4" path="res://assets/meshes/island1/island.glb" id="4_bvf2d"]
-[ext_resource type="Texture2D" uid="uid://d1ai2bc0dnhpp" path="res://assets/img/landscape/GrasFein.png" id="5_5bog2"]
+[ext_resource type="PackedScene" uid="uid://dblo4d37vl10p" path="res://scenes/levels/assets/gras_fine.tscn" id="5_pbuwt"]
+[ext_resource type="PackedScene" uid="uid://b20cs02nuvfhl" path="res://scenes/levels/assets/gras.tscn" id="6_kdi0p"]
 [ext_resource type="PackedScene" uid="uid://bovwl1ic8wyrw" path="res://scenes/levels/enemy_manager/enemy_manager.tscn" id="8_pbuwt"]
 [ext_resource type="Texture2D" uid="uid://w8h42vfpu73" path="res://assets/img/landscape/Wasser.png" id="9_5bog2"]
 [ext_resource type="Script" uid="uid://dt6pw1siob5hb" path="res://scripts/utils/falldown_death.gd" id="10_yc1fu"]
@@ -47,68 +47,48 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1564699258]
 environment = SubResource("Environment_bvf2d")
 
-[node name="island" parent="." unique_id=841129504 instance=ExtResource("4_bvf2d")]
+[node name="Island" parent="." unique_id=841129504 instance=ExtResource("4_bvf2d")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, -29.059875)
 
-[node name="Plane" parent="island" index="0" unique_id=1850998607]
+[node name="Plane" parent="Island" index="0" unique_id=1644665905]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020074438, -0.014436505, -0.0769625)
 surface_material_override/0 = ExtResource("1_jedq5")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="island/Plane" index="0" unique_id=1248179188]
+[node name="StaticBody3D" type="StaticBody3D" parent="Island/Plane" index="0" unique_id=1248179188]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="island/Plane/StaticBody3D" unique_id=1314732388]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Island/Plane/StaticBody3D" unique_id=1314732388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0002960395, -0.00059278496, 4.029274e-05)
 shape = SubResource("ConcavePolygonShape3D_pbuwt")
 
-[node name="Palm" type="Sprite3D" parent="island" unique_id=803163285]
+[node name="Palm1" parent="Island" unique_id=1065527157 instance=ExtResource("3_kdi0p")]
 transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, -0.28617972, 0.07912489, 0)
-billboard = 2
-render_priority = 2
-texture = ExtResource("3_dvtaw")
 
-[node name="Palm2" type="Sprite3D" parent="island" unique_id=297201222]
-transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, -0.24993505, 0.07912489, 0.15079944)
-billboard = 2
-render_priority = 2
-texture = ExtResource("3_dvtaw")
-
-[node name="Palm3" type="Sprite3D" parent="island" unique_id=298157725]
+[node name="Palm2" parent="Island" unique_id=899143315 instance=ExtResource("3_kdi0p")]
 transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, -0.1822282, 0.07912489, 0.12044217)
-billboard = 2
-render_priority = 2
-texture = ExtResource("3_dvtaw")
 
-[node name="Gras1" type="Sprite3D" parent="island" unique_id=1765917048]
-transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0.12675922, 0.09238985, 0)
-billboard = 2
-render_priority = 2
-texture = ExtResource("4_1nwpw")
+[node name="Palm3" parent="Island" unique_id=361077966 instance=ExtResource("3_kdi0p")]
+transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, -0.25, 0.079, 0.151)
 
-[node name="Gras2" type="Sprite3D" parent="island" unique_id=1131655086]
-transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0.16252138, 0.08853241, -0.020034999)
-billboard = 2
-render_priority = 2
-texture = ExtResource("4_1nwpw")
+[node name="GrasFine" parent="Island" unique_id=236510160 instance=ExtResource("5_pbuwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05152381, 0.07676187, 0.016922385)
 
-[node name="GrasFein" type="Sprite3D" parent="island" unique_id=1640733951]
-transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0.15083796, 0.09270379, 0.040740877)
-billboard = 2
-render_priority = 2
-texture = ExtResource("5_5bog2")
+[node name="GrasFine2" parent="Island" unique_id=819899850 instance=ExtResource("5_pbuwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.047888756, 0.07676187, 0.009492636)
 
-[node name="GrasFein2" type="Sprite3D" parent="island" unique_id=1533097486]
-transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0.16609485, 0.09147407, 0.040740877)
-billboard = 2
-render_priority = 2
-texture = ExtResource("5_5bog2")
+[node name="Gras1" parent="Island" unique_id=863770689 instance=ExtResource("6_kdi0p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05322908, 0.07799443, 0)
 
-[node name="GrasFein3" type="Sprite3D" parent="island" unique_id=79427064]
-transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0.13779701, 0.08228827, 0.07845318)
-billboard = 2
-render_priority = 2
-texture = ExtResource("5_5bog2")
+[node name="Gras2" parent="Island" unique_id=439285097 instance=ExtResource("6_kdi0p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.037165403, 0.07760964, 0.015606791)
+
+[node name="Gras3" parent="Island" unique_id=35896434 instance=ExtResource("6_kdi0p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.065649316, 0.07742556, 0.018134683)
+
+[node name="Gras4" parent="Island" unique_id=1158826238 instance=ExtResource("6_kdi0p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05152381, 0.07676187, 0.044777066)
 
 [node name="Level1Mask" parent="." unique_id=1897387673 instance=ExtResource("1_3xb12")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9932504, 6.9019365, -41.59645)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9932504, 8.701857, -41.59645)
 
 [node name="Player" parent="." unique_id=640528251 instance=ExtResource("2_4l2q5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.198839, 0)
@@ -121,6 +101,15 @@ enemy_container = NodePath("../Enemies")
 
 [node name="MiniEnemy" parent="Enemies" unique_id=490016952 instance=ExtResource("2_o5tsl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.841554, 3.3739, 0.93660736)
+
+[node name="MiniEnemy2" parent="Enemies" unique_id=1511185118 instance=ExtResource("2_o5tsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.841554, 3.3739, 2.1900568)
+
+[node name="MiniEnemy3" parent="Enemies" unique_id=1289632857 instance=ExtResource("2_o5tsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.307938, 3.3739, 0.93660736)
+
+[node name="MiniEnemy4" parent="Enemies" unique_id=89376173 instance=ExtResource("2_o5tsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.974168, 3.3739, 0.93660736)
 
 [node name="Water" type="MeshInstance3D" parent="." unique_id=1903542804]
 transform = Transform3D(10000, 0, 0, 0, 100, 0, 0, 0, 10000, 0, -49.965256, 0)
@@ -136,4 +125,4 @@ shape = SubResource("HeightMapShape3D_5bog2")
 
 [connection signal="body_entered" from="DeathFloor" to="DeathFloor" method="_on_body_entered"]
 
-[editable path="island"]
+[editable path="Island"]
