@@ -24,3 +24,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=5603625]
 current = true
+
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

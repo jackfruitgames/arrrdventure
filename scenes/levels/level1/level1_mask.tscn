@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dwm3lyodk6vxi"]
+
+[ext_resource type="Script" uid="uid://3xqq8eyp2kvp" path="res://scenes/levels/level1/level1_mask.gd" id="1_4d2u0"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3avgs"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.3
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4d2u0"]
+height = 0.4
+radius = 0.3
+
+[node name="Level1Mask" type="Node3D" unique_id=1897387673]
+
+[node name="MaskItself" type="Area3D" parent="." unique_id=1358616931]
+script = ExtResource("1_4d2u0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MaskItself" unique_id=2112890183]
+mesh = SubResource("CylinderMesh_3avgs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MaskItself" unique_id=135237504]
+shape = SubResource("CylinderShape3D_4d2u0")
+
+[connection signal="body_entered" from="MaskItself" to="MaskItself" method="_on_player_entered"]

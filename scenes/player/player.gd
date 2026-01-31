@@ -27,6 +27,10 @@ func _ready() -> void:
 		add_child(hud_instance)
 
 
+func _on_tree_exited() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	# Handle mouse events
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:

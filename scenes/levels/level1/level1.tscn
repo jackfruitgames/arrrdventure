@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://ciy2jgeati5o2"]
 
+[ext_resource type="PackedScene" uid="uid://dwm3lyodk6vxi" path="res://scenes/levels/level1/level1_mask.tscn" id="1_3xb12"]
 [ext_resource type="Material" uid="uid://bxl3p7t1havur" path="res://assets/textures/ground1/Ground071_2K-JPG.tres" id="1_jedq5"]
 [ext_resource type="PackedScene" uid="uid://bl4j3luccea8d" path="res://scenes/player/player.tscn" id="2_4l2q5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4l2q5"]
 
-[sub_resource type="Sky" id="Sky_3xb12"]
+[sub_resource type="Sky" id="Sky_bvf2d"]
 sky_material = SubResource("ProceduralSkyMaterial_4l2q5")
 
 [sub_resource type="Environment" id="Environment_bvf2d"]
 background_mode = 2
-sky = SubResource("Sky_3xb12")
+sky = SubResource("Sky_bvf2d")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dvtaw"]
 material = ExtResource("1_jedq5")
@@ -26,8 +27,12 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1564699258]
 environment = SubResource("Environment_bvf2d")
 
+[node name="Level1Mask" parent="." unique_id=1897387673 instance=ExtResource("1_3xb12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9932504, 1.178916, 12.693696)
+
 [node name="Player" parent="." unique_id=640528251 instance=ExtResource("2_4l2q5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.98785377, 0)
+fireball_scene = null
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1493944436]
 
@@ -38,3 +43,5 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1182348623]
 shape = SubResource("WorldBoundaryShape3D_4l2q5")
+
+[node name="Enemies" type="Node" parent="." unique_id=1484646268]

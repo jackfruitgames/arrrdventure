@@ -5,6 +5,7 @@ extends Node
 # GAME
 signal start_game()
 signal start_level(level: E.Level)
+signal finish_level(level: E.Level)
 signal exit_game()
 
 # AUDIO
