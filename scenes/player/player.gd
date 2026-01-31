@@ -7,8 +7,6 @@ extends CharacterBody3D
 @export var dash_duration: float = 0.3
 @export var dash_cooldown: float = 1
 @export var fireball_cooldown: float = 0.5
-@export var player_hud: PackedScene
-@export var fireball_scene: PackedScene
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var dash_timer: float = 0.0
@@ -17,6 +15,8 @@ var fireball_cooldown_timer: float = 0.0
 var is_dashing: bool = false
 var dash_direction: Vector3 = Vector3.ZERO
 var hud_instance: CanvasLayer = null
+var player_hud: PackedScene = preload("res://scenes/player/player_hud/player_hud.tscn")
+var fireball_scene: PackedScene = preload("res://scenes/abilities/fireball/fireball.tscn")
 
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
@@ -109,6 +109,7 @@ func _physics_process(delta: float) -> void:
 
 
 func shoot_fireball() -> void:
+	print_debug("shooot fireball")
 	if fireball_scene == null:
 		return
 

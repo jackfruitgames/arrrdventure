@@ -32,7 +32,7 @@ environment = SubResource("Environment_bvf2d")
 [node name="island" parent="." unique_id=1654293085 instance=ExtResource("4_bvf2d")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, -29.059875)
 
-[node name="Insel" parent="island" index="0" unique_id=798120851]
+[node name="Insel" parent="island" index="0" unique_id=1984765844]
 surface_material_override/0 = ExtResource("1_jedq5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="island/Insel" index="0" unique_id=162158283]
@@ -45,7 +45,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9932504, 5.831828, -41.596
 
 [node name="Player" parent="." unique_id=640528251 instance=ExtResource("2_4l2q5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.98785377, 0)
-fireball_scene = null
 
 [node name="Enemies" type="Node" parent="." unique_id=1484646268]
 
