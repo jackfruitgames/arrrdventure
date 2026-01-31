@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b20cs02nuvfhl"]
+
+[ext_resource type="Texture2D" uid="uid://de27vbf44cys4" path="res://assets/img/landscape/Gras 2.0.png" id="1_roufv"]
+
+[node name="Gras" type="Node3D" unique_id=863770689]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=504732412]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+pixel_size = 0.0001
+billboard = 2
+alpha_cut = 2
+texture = ExtResource("1_roufv")
+region_enabled = true
+region_rect = Rect2(0, 222.57571, 1366, 1575.7146)
