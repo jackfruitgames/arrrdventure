@@ -28,36 +28,43 @@ shape = SubResource("CapsuleShape3D_1ipe3")
 [node name="Mask" type="Sprite3D" parent="Sprites" unique_id=1333506791]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 billboard = 2
+alpha_cut = 2
 texture = ExtResource("2_u137b")
 
 [node name="MouthSprite3D" type="Sprite3D" parent="Sprites" unique_id=71231888]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 billboard = 2
+alpha_cut = 2
 texture = ExtResource("3_apj76")
 
 [node name="FaceSprite3D" type="Sprite3D" parent="Sprites" unique_id=2117540857]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 billboard = 2
+alpha_cut = 2
 texture = ExtResource("4_cmvs8")
 
 [node name="BodySprite3D" type="Sprite3D" parent="Sprites" unique_id=30974305]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 billboard = 2
+alpha_cut = 2
 texture = ExtResource("5_m3ynw")
 
 [node name="ArmRSprite3D" type="Sprite3D" parent="Sprites" unique_id=787152004]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 billboard = 2
+alpha_cut = 2
 texture = ExtResource("6_1v5r7")
 
 [node name="ArmLSprite3D" type="Sprite3D" parent="Sprites" unique_id=1957801483]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 billboard = 2
+alpha_cut = 2
 texture = ExtResource("7_12o1h")
 
 [node name="TailSprite3D" type="Sprite3D" parent="Sprites" unique_id=709766576]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 billboard = 2
+alpha_cut = 2
 texture = ExtResource("8_ab0yy")
 
 [node name="MiniMovement" parent="." unique_id=471697525 node_paths=PackedStringArray("entity_to_move") instance=ExtResource("10_qkk8u")]

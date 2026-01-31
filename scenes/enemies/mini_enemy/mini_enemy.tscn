@@ -52,14 +52,12 @@ texture = ExtResource("2_5tjnm")
 
 [node name="ArmRSprite3D" type="Sprite3D" parent="Sprites" unique_id=787152004]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-flip_v = true
 billboard = 2
 alpha_cut = 2
 texture = ExtResource("6_1ipe3")
 
 [node name="ArmLSprite3D" type="Sprite3D" parent="Sprites" unique_id=1957801483]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-flip_v = true
 billboard = 2
 alpha_cut = 2
 texture = ExtResource("7_jbdpu")
