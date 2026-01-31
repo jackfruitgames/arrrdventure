@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dh8k3nwp5c2yl"]
+
+[ext_resource type="Script" uid="uid://cdm3ye2vav457" path="res://scenes/enemies/compnents/health_bar_component/health_bar_component.gd" id="1_health_bar"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0.15, 0.15, 0.15, 0.8)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fill"]
+bg_color = Color(0.8, 0.2, 0.2, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="HealthBarComponent" type="Node3D" unique_id=1811728185]
+script = ExtResource("1_health_bar")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=50796062]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(50, 8)
+render_target_update_mode = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport" unique_id=1775108682]
+offset_right = 50.0
+offset_bottom = 8.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fill")
+value = 100.0
+show_percentage = false
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1145602573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+billboard = 2
+alpha_cut = 2

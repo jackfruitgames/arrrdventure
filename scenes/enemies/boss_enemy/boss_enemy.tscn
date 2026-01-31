@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://neflunogwyrs" path="res://assets/img/enemies/boss/Left arm.png" id="7_12o1h"]
 [ext_resource type="Texture2D" uid="uid://dap5nt1umdlxg" path="res://assets/img/enemies/boss/Tail.png" id="8_ab0yy"]
 [ext_resource type="PackedScene" uid="uid://ctmjttj2a8viv" path="res://scenes/enemies/compnents/mini_movement/mini_movement.tscn" id="10_qkk8u"]
-[ext_resource type="PackedScene" uid="uid://csxfqb8q0tlvs" path="res://scenes/enemies/compnents/health_component/health_component.tscn" id="11_nbjwe"]
+[ext_resource type="PackedScene" uid="uid://dh8k3nwp5c2yl" path="res://scenes/enemies/compnents/health_bar_component/health_bar_component.tscn" id="12_hbar"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1ipe3"]
 radius = 0.66064453
@@ -17,7 +17,7 @@ height = 2.9030273
 
 [node name="BossEnemy" type="CharacterBody3D" unique_id=1511185118 node_paths=PackedStringArray("_health_component") groups=["enemy"]]
 script = ExtResource("1_tax6k")
-_health_component = NodePath("HealthComponent")
+_health_component = NodePath("HealthBarComponent")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=229090480 groups=["enemy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26319593, 0.11752939, -0.3457024)
@@ -71,4 +71,5 @@ texture = ExtResource("8_ab0yy")
 entity_to_move = NodePath("..")
 speed = 20
 
-[node name="HealthComponent" parent="." unique_id=113004828 instance=ExtResource("11_nbjwe")]
+[node name="HealthBarComponent" parent="." unique_id=423699628 instance=ExtResource("12_hbar")]
+y_offset = 1.8

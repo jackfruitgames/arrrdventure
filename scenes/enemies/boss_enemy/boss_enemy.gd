@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var _health_component: HealthComponent
+@export var _health_component: HealthBarComponent
 
 
 ## damage entity
