@@ -7,12 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://cshwqunmgcjp1" path="res://scenes/levels/level2/level2.tscn" id="4_80y8o"]
 [ext_resource type="Script" uid="uid://c18vvkpi7jb7f" path="res://scenes/game_manager/audio_manager.gd" id="4_qetoq"]
 [ext_resource type="AudioStream" uid="uid://dqrt786gd8cgw" path="res://assets/audio/switch_006.ogg" id="5_jnlof"]
+[ext_resource type="PackedScene" uid="uid://c8tclstg0oc72" path="res://scenes/levels/level3/level3.tscn" id="5_mon5u"]
+[ext_resource type="PackedScene" uid="uid://d2xd16p47lh8m" path="res://scenes/levels/level4/level4.tscn" id="6_ytj6e"]
+[ext_resource type="PackedScene" uid="uid://dpbb6qhdn7i0o" path="res://scenes/levels/level5/level5.tscn" id="7_wk7cx"]
 [ext_resource type="AudioStream" uid="uid://cb2x21vyvmr0" path="res://assets/audio/music/PiratesMasks_MM_4_mitPreRoll.logicx.mp3" id="8_5icen"]
 
 [node name="GameManager" type="Node" unique_id=771510695 node_paths=PackedStringArray("game_container")]
 script = ExtResource("1_0drbn")
 map_scene = ExtResource("2_jnlof")
-level_scenes = Array[PackedScene]([ExtResource("3_w6g1p"), ExtResource("4_80y8o")])
+level_scenes = Array[PackedScene]([ExtResource("3_w6g1p"), ExtResource("4_80y8o"), ExtResource("5_mon5u"), ExtResource("6_ytj6e"), ExtResource("7_wk7cx")])
 game_container = NodePath("GameContainer")
 
 [node name="MainMenu" parent="." unique_id=251449327 instance=ExtResource("1_lycnq")]

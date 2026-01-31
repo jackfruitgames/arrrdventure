@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dwm3lyodk6vxi"]
 
 [ext_resource type="Script" uid="uid://3xqq8eyp2kvp" path="res://scenes/levels/level1/level1_mask.gd" id="1_4d2u0"]
-[ext_resource type="Texture2D" uid="uid://csch31qgloxis" path="res://assets/img/masks/Wassermaske_pickup.png" id="2_cq4qp"]
+[ext_resource type="Texture2D" uid="uid://bgajepg5my1wg" path="res://assets/img/masks/WaterMask.png" id="2_cq4qp"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_4d2u0"]
 height = 1.1166016
@@ -37,7 +37,7 @@ height = 0.2
 script = ExtResource("1_4d2u0")
 
 [node name="Sprite3D" type="Sprite3D" parent="MaskItself" unique_id=1388695571]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 billboard = 2
 texture = ExtResource("2_cq4qp")
 

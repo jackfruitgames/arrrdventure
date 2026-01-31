@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csch31qgloxis"
-path.s3tc="res://.godot/imported/Wassermaske_pickup.png-68a744d01ab9edd0d00537698713440a.s3tc.ctex"
+uid="uid://cgk1xtd2pj1p"
+path.s3tc="res://.godot/imported/FireMask.png-716b0d62654c0576e774e9bfea2d5be0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/img/masks/Wassermaske_pickup.png"
-dest_files=["res://.godot/imported/Wassermaske_pickup.png-68a744d01ab9edd0d00537698713440a.s3tc.ctex"]
+source_file="res://assets/img/masks/FireMask.png"
+dest_files=["res://.godot/imported/FireMask.png-716b0d62654c0576e774e9bfea2d5be0.s3tc.ctex"]
 
 [params]
 

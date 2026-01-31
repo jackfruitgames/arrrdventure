@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://c647jebk15ghl"]
+
+[ext_resource type="Script" uid="uid://ddo4w7bolxem" path="res://scenes/levels/level4/level4_mask.gd" id="1_m11xg"]
+[ext_resource type="Texture2D" uid="uid://cgk1xtd2pj1p" path="res://assets/img/masks/FireMask.png" id="2_dlde5"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_u6d51"]
+height = 0.4
+radius = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xe7ld"]
+albedo_color = Color(0.67, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.67058825, 0, 0, 1)
+emission_energy_multiplier = 2.34
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_70vom"]
+lifetime_randomness = 0.81
+emission_shape = 3
+emission_box_extents = Vector3(5, 5, 5)
+direction = Vector3(-1, 0, 0)
+gravity = Vector3(0, -4, 0)
+scale_min = 0.0
+scale_max = 0.29999998
+anim_speed_min = 0.5
+anim_speed_max = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_bh348"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_his6r"]
+
+[sub_resource type="Sky" id="Sky_6ivkm"]
+sky_material = SubResource("ProceduralSkyMaterial_his6r")
+
+[sub_resource type="Environment" id="Environment_qefex"]
+background_mode = 2
+sky = SubResource("Sky_6ivkm")
+glow_enabled = true
+glow_intensity = 6.26
+
+[node name="Level4Mask" type="Node3D" unique_id=1513110693]
+
+[node name="MaskItself" type="Area3D" parent="." unique_id=1528381978]
+script = ExtResource("1_m11xg")
+
+[node name="Sprite3D" type="Sprite3D" parent="MaskItself" unique_id=2056175463]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+billboard = 1
+texture = ExtResource("2_dlde5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MaskItself" unique_id=153346159]
+shape = SubResource("CylinderShape3D_u6d51")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1476127852]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_xe7ld")
+amount = 30
+speed_scale = 0.3
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_70vom")
+draw_pass_1 = SubResource("SphereMesh_bh348")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1841700606]
+environment = SubResource("Environment_qefex")
+
+[connection signal="body_entered" from="MaskItself" to="MaskItself" method="_on_player_entered"]
