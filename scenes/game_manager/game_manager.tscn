@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cshwqunmgcjp1" path="res://scenes/levels/level2/level2.tscn" id="4_80y8o"]
 [ext_resource type="Script" uid="uid://c18vvkpi7jb7f" path="res://scenes/game_manager/audio_manager.gd" id="4_qetoq"]
 [ext_resource type="AudioStream" uid="uid://dqrt786gd8cgw" path="res://assets/audio/switch_006.ogg" id="5_jnlof"]
+[ext_resource type="AudioStream" uid="uid://cjfmbw1so3ffp" path="res://assets/audio/music/MainMenuLoop_1_PreRoll.wav" id="8_5icen"]
+[ext_resource type="AudioStream" uid="uid://c2r6pyi2lmb3w" path="res://assets/audio/music/MainMenuLoop_1.wav" id="9_g6d5r"]
 
 [node name="GameManager" type="Node" unique_id=771510695 node_paths=PackedStringArray("game_container")]
 script = ExtResource("1_0drbn")
@@ -20,7 +22,12 @@ game_container = NodePath("GameContainer")
 script = ExtResource("4_qetoq")
 ui_click = ExtResource("5_jnlof")
 
+[node name="MainMusicPreRollAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=924001144]
+stream = ExtResource("8_5icen")
+bus = &"Music"
+
 [node name="MainMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=1059267520]
+stream = ExtResource("9_g6d5r")
 bus = &"Music"
 
 [node name="IslandMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=788126883]
