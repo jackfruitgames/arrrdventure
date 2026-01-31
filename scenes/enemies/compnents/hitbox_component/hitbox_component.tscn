@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://c44m1n6rckvy1"]
-
-[ext_resource type="Script" uid="uid://cysitscus1vcs" path="res://scenes/enemies/compnents/hitbox_component/hitbox_component.gd" id="1_jvejv"]
-
-[node name="HitboxComponent" type="Area3D" unique_id=1196449670 groups=["enemy"]]
-editor_description = "the node warning is on purpose, we need to add a unique collision shape as a child for each enemy"
-script = ExtResource("1_jvejv")
