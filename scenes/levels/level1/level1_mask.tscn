@@ -33,12 +33,12 @@ height = 0.2
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cq4qp"]
 
-[sub_resource type="Sky" id="Sky_6ivkm"]
+[sub_resource type="Sky" id="Sky_cq4qp"]
 sky_material = SubResource("ProceduralSkyMaterial_cq4qp")
 
 [sub_resource type="Environment" id="Environment_ar55x"]
 background_mode = 2
-sky = SubResource("Sky_6ivkm")
+sky = SubResource("Sky_cq4qp")
 glow_enabled = true
 glow_intensity = 6.26
 
