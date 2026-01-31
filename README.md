@@ -1,16 +1,6 @@
-# 🕹️ Godot game jam template
+# Global Game Jam 2026 Game
 
-A Godot template to kick start your game jams or other small projects.
-Opinionated architecture that might not be perfect for your needs.
-
-- File structure that helps to keep the project tidy
-- Simple game manager scene to manage the main menu and the game/levels
-- Main menu with play-, credits- and settings-buttons
-- Persist high scores and settings in a file
-- Audio bus layout with separate bus for Music, SFX and UI sounds
-- UI theme with some helpful defaults and a custom font
-- Global signals / message bus
-- Enums class
+Our game for the Global Game Jam 2026 (GGJ) 🥳
 
 ## 🧙 Dev setup
 
