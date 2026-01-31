@@ -1,0 +1,9 @@
+~ start
+Pirate Joe: [[Arrr|Yarrr|Ahoi]], you look like a pirate.
+Pirate Joe: Arrr you a pirate?
+- Yes, of course!
+	Pirate Joe: You sure don't sound like one, but I guess that's enough...
+- Yarrr!
+	Pirate Joe: That's what I like to hear!
+Pirate Joe: I need you to take this ancient mask to 4 islands. Should be a breeze. Just kill all the evil monsters and take the magical power they have stolen from 
+=> END

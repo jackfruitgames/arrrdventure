@@ -30,6 +30,7 @@ GlobalSettings="*uid://v1oodgesckn2"
 GlobalState="*uid://d4gsmldutml6u"
 SaveFile="*uid://ctydeudog87ly"
 GlobalSignals="*uid://bg7ft8ms7re1v"
+DialogueManager="*uid://c3rodes2l3gxb"
 
 [display]
 
@@ -39,7 +40,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg")
+enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg")
 
 [file_customization]
 
@@ -102,6 +103,10 @@ arrow={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":49,"key_label":0,"unicode":49,"location":0,"echo":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://resources/dialogues/the_beginning.dialogue", "res://resources/dialogues/the_end.dialogue", "res://resources/dialogues/level_1_success.dialogue", "res://resources/dialogues/level_2_success.dialogue", "res://resources/dialogues/level_3_success.dialogue", "res://resources/dialogues/level_4_success.dialogue", "res://resources/dialogues/level_failed.dialogue")
 
 [rendering]
 
