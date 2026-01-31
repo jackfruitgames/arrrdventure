@@ -1,8 +1,12 @@
 extends Node3D
 
-@export var sprite_texture: Texture2D
+@export var _hitbox_component: HitboxComponent
 
 
 func _ready() -> void:
-	assert(sprite_texture != null, "Enemy sprite texture missing!")
-	$Sprite3D.texture = sprite_texture
+	_hitbox_component.dead.connect(_on_dead)
+
+
+func _on_dead() -> void:
+	print("enemy dead")
+	queue_free() # TODO: Epic animation

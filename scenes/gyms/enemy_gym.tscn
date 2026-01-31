@@ -42,5 +42,5 @@ environment = SubResource("Environment_kj8hc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8866472, 0)
 
 [node name="Enemy" parent="." unique_id=490016952 instance=ExtResource("2_1aw5a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5325594, 17.511261)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.898074, 1.5325594, -7.252945)
 sprite_texture = ExtResource("3_wybfb")

@@ -54,6 +54,7 @@ folder_colors={
 [global_group]
 
 player=""
+enemy="got a lot of enemies"
 
 [input]
 
