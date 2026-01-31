@@ -8,6 +8,9 @@ signal start_level(level: E.Level)
 signal finish_level(level: E.Level)
 signal exit_game()
 
+# ENEMY
+signal enemy_died()
+
 # AUDIO
 signal play_sound(sound: E.Sound)
 

@@ -14,5 +14,4 @@ func damage(dmg: int) -> void:
 
 
 func _on_dead() -> void:
-	print("enemy dead")
 	queue_free() # TODO: Epic animation
