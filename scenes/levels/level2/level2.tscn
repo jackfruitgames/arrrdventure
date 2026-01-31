@@ -49,12 +49,12 @@ environment = SubResource("Environment_iq8gt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.90593, -2.8426437, 0)
 
 [node name="Level2Mask" parent="." unique_id=859544565 instance=ExtResource("2_gblnm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.84217, -4.639349, 14.34519)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.84217, -1.201005, 14.34519)
 
-[node name="island2" parent="." unique_id=1162355544 instance=ExtResource("3_gblnm")]
+[node name="island2" parent="." unique_id=154433558 instance=ExtResource("3_gblnm")]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
 
-[node name="Plane_001" parent="island2" index="0" unique_id=1536631349]
+[node name="Plane_001" parent="island2" index="0" unique_id=2054441071]
 surface_material_override/0 = ExtResource("2_rj8cl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="island2/Plane_001" index="0" unique_id=447206439]
@@ -111,7 +111,7 @@ enemy_container = NodePath("../Enemies")
 [node name="Enemies" type="Node" parent="." unique_id=1497806374]
 
 [node name="MiniEnemy" parent="Enemies" unique_id=1511185118 instance=ExtResource("5_expgy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9586029, -4.51824, 10.839816)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9586029, -2.1709385, 10.839816)
 
 [node name="Water" type="MeshInstance3D" parent="." unique_id=502873716]
 transform = Transform3D(10000, 0, 0, 0, 100, 0, 0, 0, 10000, 0, -63.34723, 0)
