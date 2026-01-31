@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://2pagqy2q1vdr" path="res://assets/img/landscape/Palme.png" id="5_f17u5"]
 [ext_resource type="Texture2D" uid="uid://bgajepg5my1wg" path="res://assets/img/masks/WaterMask.png" id="6_vvrx0"]
 [ext_resource type="Texture2D" uid="uid://cgk1xtd2pj1p" path="res://assets/img/masks/FireMask.png" id="7_f17u5"]
+[ext_resource type="Texture2D" uid="uid://cro4u1w17oj8j" path="res://assets/img/masks/EarthMask.png" id="7_x2kg6"]
+[ext_resource type="Texture2D" uid="uid://bgwhruce46eki" path="res://assets/img/masks/AirMask.png" id="8_cumk7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sxf4j"]
 
@@ -112,7 +114,7 @@ texture = ExtResource("5_f17u5")
 
 [node name="Mask" type="Sprite3D" parent="Islands/Level2" unique_id=1549137721]
 transform = Transform3D(0.1, 0, 0, 0, 0.063937195, 0.07688976, 0, -0.07688976, 0.063937195, 0.12529469, 0.8174989, 0)
-texture = ExtResource("7_f17u5")
+texture = ExtResource("7_x2kg6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Islands/Level2" unique_id=1058009936]
 
@@ -143,7 +145,7 @@ texture = ExtResource("5_f17u5")
 
 [node name="Mask" type="Sprite3D" parent="Islands/Level3" unique_id=303980922]
 transform = Transform3D(0.1, 0, 0, 0, 0.063937195, 0.07688976, 0, -0.07688976, 0.063937195, 0.12529469, 0.8174989, 0)
-texture = ExtResource("6_vvrx0")
+texture = ExtResource("8_cumk7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Islands/Level3" unique_id=1537028881]
 
@@ -174,7 +176,7 @@ texture = ExtResource("5_f17u5")
 
 [node name="Mask" type="Sprite3D" parent="Islands/Level4" unique_id=1600356675]
 transform = Transform3D(0.1, 0, 0, 0, 0.063937195, 0.07688976, 0, -0.07688976, 0.063937195, 0.12529469, 0.8174989, 0)
-texture = ExtResource("6_vvrx0")
+texture = ExtResource("7_f17u5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Islands/Level4" unique_id=1971006609]
 
