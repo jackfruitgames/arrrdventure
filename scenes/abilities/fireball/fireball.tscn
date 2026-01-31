@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://22rlxph3daq5"]
 
 [ext_resource type="Script" uid="uid://dlgk0t11psru7" path="res://scenes/abilities/fireball/fireball.gd" id="1_xlw38"]
-[ext_resource type="Shader" uid="uid://7uvtgwlghgxk" path="res://scenes/abilities/fireball/fireball.gdshader" id="2_shader"]
+[ext_resource type="Shader" path="res://scenes/abilities/fireball/fireball.gdshader" id="2_shader"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_mm52q"]
 
@@ -171,3 +171,6 @@ light_color = Color(1, 0.5, 0.2, 1)
 light_energy = 2.0
 omni_range = 3.0
 omni_attenuation = 1.5
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -70,7 +70,8 @@ entity_to_move = NodePath("..")
 
 [node name="HealthComponent" parent="." unique_id=113004828 instance=ExtResource("11_1ipe3")]
 
-[node name="HitboxComponent" parent="." unique_id=1196449670 instance=ExtResource("12_jbdpu")]
+[node name="HitboxComponent" parent="." unique_id=1196449670 node_paths=PackedStringArray("HEALTH_COMPONENT") instance=ExtResource("12_jbdpu")]
+HEALTH_COMPONENT = NodePath("../HealthComponent")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitboxComponent" unique_id=229090480]
 shape = SubResource("CapsuleShape3D_1ipe3")
