@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://blwcfv3s2abag" path="res://scenes/levels/level2/level2_mask.tscn" id="2_gblnm"]
 [ext_resource type="Material" uid="uid://bxl3p7t1havur" path="res://assets/textures/ground1/Ground071_2K-JPG.tres" id="2_rj8cl"]
 [ext_resource type="PackedScene" uid="uid://432b310di2s4" path="res://assets/meshes/island2/island2.glb" id="3_gblnm"]
+[ext_resource type="PackedScene" uid="uid://bovwl1ic8wyrw" path="res://scenes/levels/enemy_manager/enemy_manager.tscn" id="5_8t4y1"]
 [ext_resource type="PackedScene" uid="uid://bd258ryicnedv" path="res://scenes/enemies/mini_enemy/mini_enemy.tscn" id="5_expgy"]
 [ext_resource type="Texture2D" uid="uid://w8h42vfpu73" path="res://assets/img/landscape/Wasser.png" id="6_8t4y1"]
 [ext_resource type="Script" uid="uid://dt6pw1siob5hb" path="res://scripts/utils/falldown_death.gd" id="7_0ybc4"]
@@ -49,13 +50,13 @@ shadow_enabled = true
 environment = SubResource("Environment_iq8gt")
 
 [node name="Player" parent="." unique_id=640528251 instance=ExtResource("1_g3u0w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.15759, 19.20771, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.90593, 4.108144, 0)
 
 [node name="Level2Mask" parent="." unique_id=859544565 instance=ExtResource("2_gblnm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.918655, 42.263775, 67.683556)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.84217, 13.243151, 14.34519)
 
 [node name="island2" parent="." unique_id=1162355544 instance=ExtResource("3_gblnm")]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
 
 [node name="Plane_001" parent="island2" index="0" unique_id=735907484]
 surface_material_override/0 = ExtResource("2_rj8cl")
@@ -64,6 +65,15 @@ surface_material_override/0 = ExtResource("2_rj8cl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="island2/Plane_001/StaticBody3D" unique_id=280325484]
 shape = SubResource("ConcavePolygonShape3D_expgy")
+
+[node name="EnemyManager" parent="." unique_id=2117646841 node_paths=PackedStringArray("mask", "enemy_container") instance=ExtResource("5_8t4y1")]
+mask = NodePath("../Level2Mask")
+enemy_container = NodePath("../Enemies")
+
+[node name="Enemies" type="Node" parent="." unique_id=1497806374]
+
+[node name="MiniEnemy" parent="Enemies" unique_id=1511185118 instance=ExtResource("5_expgy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9586029, 4.8519897, 10.839816)
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1217349242]
 
@@ -74,11 +84,6 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1997360157]
 shape = SubResource("WorldBoundaryShape3D_expgy")
-
-[node name="Enemies" type="Node" parent="." unique_id=1497806374]
-
-[node name="MiniEnemy" parent="Enemies" unique_id=1511185118 instance=ExtResource("5_expgy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.841554, 1.9530845, 10.839816)
 
 [node name="Water" type="MeshInstance3D" parent="." unique_id=502873716]
 transform = Transform3D(10000, 0, 0, 0, 100, 0, 0, 0, 10000, 0, -94.428665, 0)
