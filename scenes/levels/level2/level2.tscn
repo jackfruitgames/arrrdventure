@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cshwqunmgcjp1"]
 
 [ext_resource type="PackedScene" uid="uid://bl4j3luccea8d" path="res://scenes/player/player.tscn" id="1_g3u0w"]
+[ext_resource type="PackedScene" uid="uid://blwcfv3s2abag" path="res://scenes/levels/level2/level2_mask.tscn" id="2_gblnm"]
 [ext_resource type="Material" uid="uid://bxl3p7t1havur" path="res://assets/textures/ground1/Ground071_2K-JPG.tres" id="2_rj8cl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gblnm"]
@@ -11,6 +12,9 @@ sky_material = SubResource("ProceduralSkyMaterial_gblnm")
 [sub_resource type="Environment" id="Environment_iq8gt"]
 background_mode = 2
 sky = SubResource("Sky_3xb12")
+glow_enabled = true
+glow_intensity = 5.65
+glow_bloom = 0.07
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cphpc"]
 material = ExtResource("2_rj8cl")
@@ -28,6 +32,10 @@ environment = SubResource("Environment_iq8gt")
 
 [node name="Player" parent="." unique_id=640528251 instance=ExtResource("1_g3u0w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.98785377, 0)
+fireball_scene = null
+
+[node name="Level2Mask" parent="." unique_id=859544565 instance=ExtResource("2_gblnm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.491286, 0.9426826, 12.799002)
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1217349242]
 
