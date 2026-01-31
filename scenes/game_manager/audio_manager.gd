@@ -6,30 +6,32 @@ extends Node
 func _ready() -> void:
 	assert(ui_click != null, "ui_click audio missing")
 	GlobalSignals.play_sound.connect(_on_play_sound)
+	$MainMusicAudioStreamPlayer.finished.connect(_play_main_menu_music)
 	# initialize the volume of each audio bus
 	for bus_idx: int in E.AudioBus.values():
 		AudioServer.set_bus_volume_linear(bus_idx, GlobalSettings.audio_volumes_pct[bus_idx] / 100.0) # linear volume = 0 - 1
-	_on_main_menu_pre_roll_finished()
-	#$MainMusicPreRollAudioStreamPlayer.finished.connect(_on_main_menu_pre_roll_finished)
-	#$MainMusicAudioStreamPlayer.finished.connect(_on_main_menu_loop_finished)
+	_play_main_menu_music_loop_with_pre_roll()
 
 
-func _on_main_menu_pre_roll_finished() -> void:
+func _play_main_menu_music_loop_with_pre_roll() -> void:
+	# timers can only run when added to the scene tree
 	var timer := Timer.new()
-	timer.wait_time = 0.9
+	add_child(timer)
+	# the actual pre-roll is 1s long, the file is longer to smoothely fade with the loop
+	timer.wait_time = 0.8
 	timer.start()
+	# start the pre roll and wait
 	$MainMusicPreRollAudioStreamPlayer.play()
 	await timer.timeout
 	timer.stop()
-	$MainMusicAudioStreamPlayer.play(1.0)
-	timer.wait_time = 0.05
-	timer.start()
-	await timer.timeout
-	$MainMusicPreRollAudioStreamPlayer.stop()
-	timer.stop()
+	# start the loop while the pre-roll is still fading out
+	$MainMusicAudioStreamPlayer.play()
+	timer.queue_free()
 
 
-func _on_main_menu_loop_finished() -> void:
+## manual loop because godot can't loop wav files
+## but we need wav files to import them lossless for smooth loops
+func _play_main_menu_music() -> void:
 	$MainMusicAudioStreamPlayer.play()
 
 

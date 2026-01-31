@@ -10,7 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://c8tclstg0oc72" path="res://scenes/levels/level3/level3.tscn" id="5_mon5u"]
 [ext_resource type="PackedScene" uid="uid://d2xd16p47lh8m" path="res://scenes/levels/level4/level4.tscn" id="6_ytj6e"]
 [ext_resource type="PackedScene" uid="uid://dpbb6qhdn7i0o" path="res://scenes/levels/level5/level5.tscn" id="7_wk7cx"]
-[ext_resource type="AudioStream" uid="uid://cb2x21vyvmr0" path="res://assets/audio/music/PiratesMasks_MM_4_mitPreRoll.logicx.mp3" id="8_5icen"]
+[ext_resource type="AudioStream" uid="uid://co57lrx37i07q" path="res://assets/audio/music/MainMenuLoop_5_PreRoll.wav" id="8_5icen"]
+[ext_resource type="AudioStream" uid="uid://c4t4kglmc0txh" path="res://assets/audio/music/PiratesMasks_MM_5_ohnePreRoll.logicx.wav" id="9_5icen"]
 
 [node name="GameManager" type="Node" unique_id=771510695 node_paths=PackedStringArray("game_container")]
 script = ExtResource("1_0drbn")
@@ -29,9 +30,8 @@ stream = ExtResource("8_5icen")
 bus = &"Music"
 
 [node name="MainMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=1059267520]
-stream = ExtResource("8_5icen")
+stream = ExtResource("9_5icen")
 bus = &"Music"
-parameters/looping = true
 
 [node name="IslandMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=788126883]
 bus = &"Music"
