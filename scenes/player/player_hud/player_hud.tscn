@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://kujjrmbhg7ok"]
+
+[node name="PlayerHud" type="CanvasLayer" unique_id=1480694044]
+layer = -1
+
+[node name="ability1" type="Button" parent="." unique_id=1339473505]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 99.0
+grow_vertical = 0
+disabled = true
+text = "Hello World"
+
+[node name="ability2" type="Button" parent="." unique_id=1575213404]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 99.0
+grow_vertical = 0
+disabled = true
+text = "Hello World"
+
+[node name="ability4" type="Button" parent="." unique_id=340733263]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 99.0
+grow_vertical = 0
+disabled = true
+text = "Hello World"
+
+[node name="ability3" type="Button" parent="." unique_id=1996958746]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 99.0
+grow_vertical = 0
+disabled = true
+text = "Hello World"

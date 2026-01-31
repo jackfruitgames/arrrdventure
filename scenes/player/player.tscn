@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bl4j3luccea8d"]
 
 [ext_resource type="Script" uid="uid://bkhudb4q8lr0m" path="res://scenes/player/player.gd" id="1_8afob"]
+[ext_resource type="PackedScene" uid="uid://kujjrmbhg7ok" path="res://scenes/player/player_hud/player_hud.tscn" id="2_dovo2"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8afob"]
 
@@ -8,6 +9,7 @@
 
 [node name="Player" type="CharacterBody3D" unique_id=640528251]
 script = ExtResource("1_8afob")
+player_hud = ExtResource("2_dovo2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=943707178]
 mesh = SubResource("CapsuleMesh_8afob")

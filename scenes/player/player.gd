@@ -20,6 +20,8 @@ var dash_direction: Vector3 = Vector3.ZERO
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if player_hud != null:
+		add_child(player_hud.instantiate())
 
 
 func _unhandled_input(event: InputEvent) -> void:
