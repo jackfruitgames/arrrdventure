@@ -58,9 +58,7 @@ godot-game-jam-template
 
 ## ✨ Assets used
 
-- Background image: [Tomb Concept 01 by zonked](https://opengameart.org/content/tomb-concept-01) (CC0)
 - Font: [AnnotationMono v0.2 Bold by Qwerasd](https://github.com/qwerasd205/AnnotationMono) (OFL-1.1)
 - Addon: [GDScript-formatter addon by GDQuest](https://github.com/GDQuest/GDScript-formatter) (MIT)
 - Click sound: [Switch 006 from Kenney's Interface Sounds](https://kenney.nl/assets/interface-sounds) (CC0)
-
 - Ground Texture1: [AmbientCG Ground 071](https://ambientcg.com/view?id=Ground071)

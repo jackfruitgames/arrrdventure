@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://b00x8lukl183a"]
 
 [ext_resource type="Theme" uid="uid://ivbyi03tfmnl" path="res://resources/ui_theme.tres" id="1_0ebjn"]
-[ext_resource type="Texture2D" uid="uid://b04hi47cc1ycu" path="res://assets/img/scene01d.jpg" id="1_fsom3"]
 [ext_resource type="Script" uid="uid://c5421no62hati" path="res://scenes/ui/main_menu/main_menu_ui.gd" id="2_ob46e"]
 [ext_resource type="PackedScene" uid="uid://qvp7whamhqgi" path="res://scenes/ui/settings/settings_ui.tscn" id="4_2wics"]
 [ext_resource type="PackedScene" uid="uid://dpbd8pay2xnu5" path="res://scenes/ui/credits/credits_ui.tscn" id="4_cmwxi"]
+[ext_resource type="Texture2D" uid="uid://du7yf5l7o3pyt" path="res://assets/img/Background_main-menu.png" id="6_4tbkg"]
+[ext_resource type="Texture2D" uid="uid://b1myfx6wny3m8" path="res://assets/img/Cloud.png" id="6_k00nt"]
+[ext_resource type="Texture2D" uid="uid://cfulpkysg5hdu" path="res://assets/img/Main menu front.png" id="7_0q56l"]
 
 [node name="MainMenu" type="Control" unique_id=251449327]
 layout_mode = 3
@@ -25,7 +27,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_fsom3")
+texture = ExtResource("6_4tbkg")
+expand_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect" unique_id=1359398986]
 custom_minimum_size = Vector2(300, 0)
@@ -54,6 +57,29 @@ text = "Settings"
 [node name="CreditsButton" type="Button" parent="TextureRect/VBoxContainer" unique_id=426150297]
 layout_mode = 2
 text = "Credits"
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=2041972294]
+layout_mode = 0
+offset_top = -179.64862
+offset_right = 1920.0
+offset_bottom = 1259.3513
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+texture = ExtResource("6_k00nt")
+expand_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1824995241]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_0q56l")
+expand_mode = 5
 
 [connection signal="pressed" from="TextureRect/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
