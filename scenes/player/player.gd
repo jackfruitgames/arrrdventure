@@ -5,7 +5,7 @@ extends CharacterBody3D
 @export var jump_velocity: float = 4.5
 @export var dash_speed: float = 20.0
 @export var dash_duration: float = 0.3
-@export var dash_cooldown: float = 2.0
+@export var dash_cooldown: float = 1
 @export var player_hud: PackedScene
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -13,6 +13,7 @@ var dash_timer: float = 0.0
 var dash_cooldown_timer: float = 0.0
 var is_dashing: bool = false
 var dash_direction: Vector3 = Vector3.ZERO
+var hud_instance: CanvasLayer = null
 
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
@@ -21,7 +22,8 @@ var dash_direction: Vector3 = Vector3.ZERO
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if player_hud != null:
-		add_child(player_hud.instantiate())
+		hud_instance = player_hud.instantiate()
+		add_child(hud_instance)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -43,6 +45,10 @@ func _physics_process(delta: float) -> void:
 	# Update dash cooldown
 	if dash_cooldown_timer > 0:
 		dash_cooldown_timer -= delta
+
+	# Update HUD
+	if hud_instance:
+		hud_instance.update_dash_cooldown(dash_cooldown_timer, dash_cooldown)
 
 	# Update dash timer
 	if is_dashing:
