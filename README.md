@@ -62,3 +62,4 @@ godot-game-jam-template
 - Addon: [GDScript-formatter addon by GDQuest](https://github.com/GDQuest/GDScript-formatter) (MIT)
 - Click sound: [Switch 006 from Kenney's Interface Sounds](https://kenney.nl/assets/interface-sounds) (CC0)
 - Ground Texture1: [AmbientCG Ground 071](https://ambientcg.com/view?id=Ground071)
+- Ground Texture2: [AmbientGG Ground 095A](https://ambientcg.com/view?id=Ground095A)

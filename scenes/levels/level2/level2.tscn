@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bl4j3luccea8d" path="res://scenes/player/player.tscn" id="1_g3u0w"]
 [ext_resource type="PackedScene" uid="uid://blwcfv3s2abag" path="res://scenes/levels/level2/level2_mask.tscn" id="2_gblnm"]
-[ext_resource type="Material" uid="uid://bxl3p7t1havur" path="res://assets/textures/ground1/Ground071_2K-JPG.tres" id="2_rj8cl"]
 [ext_resource type="PackedScene" uid="uid://432b310di2s4" path="res://assets/meshes/island2/island2.glb" id="3_gblnm"]
+[ext_resource type="Material" uid="uid://4k2l66sq500q" path="res://assets/textures/ground2/Ground093B_1K-JPG.tres" id="4_0ybc4"]
 [ext_resource type="Texture2D" uid="uid://2pagqy2q1vdr" path="res://assets/img/landscape/Palme.png" id="5_0ybc4"]
 [ext_resource type="PackedScene" uid="uid://bovwl1ic8wyrw" path="res://scenes/levels/enemy_manager/enemy_manager.tscn" id="5_8t4y1"]
 [ext_resource type="PackedScene" uid="uid://bd258ryicnedv" path="res://scenes/enemies/mini_enemy/mini_enemy.tscn" id="5_expgy"]
@@ -39,7 +39,8 @@ uv1_scale = Vector3(200, 200, 200)
 [node name="Level2" type="Node3D" unique_id=726408166]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2075085317]
-transform = Transform3D(0.9787316, 0.17766102, -0.102572665, 2.7805946e-08, 0.49999994, 0.86602545, 0.20514527, -0.8476064, 0.4893657, 0, 4.695194, 0)
+transform = Transform3D(0.9787316, 0.17766102, -0.10257264, 2.7805946e-08, 0.49999994, 0.86602545, 0.20514527, -0.8476064, 0.4893657, 0, 142.41132, 0)
+light_energy = 0.698
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1149853114]
@@ -55,7 +56,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.84217, -1.201005, 14.34519
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
 
 [node name="Plane_001" parent="island2" index="0" unique_id=2054441071]
-surface_material_override/0 = ExtResource("2_rj8cl")
+surface_material_override/0 = ExtResource("4_0ybc4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="island2/Plane_001" index="0" unique_id=447206439]
 
