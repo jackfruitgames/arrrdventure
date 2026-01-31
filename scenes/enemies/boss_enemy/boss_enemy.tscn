@@ -20,50 +20,44 @@ script = ExtResource("1_tax6k")
 _health_component = NodePath("HealthBarComponent")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=229090480 groups=["enemy"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26319593, 0.11752939, -0.3457024)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22963297, 0, 0)
 shape = SubResource("CapsuleShape3D_1ipe3")
 
 [node name="Sprites" type="Node3D" parent="." unique_id=1782206744]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Mask" type="Sprite3D" parent="Sprites" unique_id=1333506791]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-billboard = 2
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0.01)
 alpha_cut = 2
 texture = ExtResource("2_u137b")
 
 [node name="MouthSprite3D" type="Sprite3D" parent="Sprites" unique_id=71231888]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-billboard = 2
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0.01)
 alpha_cut = 2
 texture = ExtResource("3_apj76")
 
 [node name="FaceSprite3D" type="Sprite3D" parent="Sprites" unique_id=2117540857]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-billboard = 2
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0.02)
 alpha_cut = 2
 texture = ExtResource("4_cmvs8")
 
 [node name="BodySprite3D" type="Sprite3D" parent="Sprites" unique_id=30974305]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_m3ynw")
 
 [node name="ArmRSprite3D" type="Sprite3D" parent="Sprites" unique_id=787152004]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-billboard = 2
 alpha_cut = 2
 texture = ExtResource("6_1v5r7")
 
 [node name="ArmLSprite3D" type="Sprite3D" parent="Sprites" unique_id=1957801483]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-billboard = 2
 alpha_cut = 2
 texture = ExtResource("7_12o1h")
 
 [node name="TailSprite3D" type="Sprite3D" parent="Sprites" unique_id=709766576]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-billboard = 2
 alpha_cut = 2
 texture = ExtResource("8_ab0yy")
 

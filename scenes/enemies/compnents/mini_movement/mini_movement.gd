@@ -16,7 +16,9 @@ func _physics_process(delta: float) -> void:
 	if not entity_to_move.is_on_floor():
 		entity_to_move.velocity.y -= gravity * delta
 
+	entity_to_move.look_at(player.position)
 	var distance := player.position.distance_to(entity_to_move.position)
+
 	if distance > 4:
 		var direction := (player.position - entity_to_move.position).normalized()
 		entity_to_move.velocity.x = direction.x * delta * speed
