@@ -37,7 +37,7 @@ func _on_start_level(level_idx: E.Level) -> void:
 
 func _on_finished_level(level_idx: E.Level) -> void:
 	print("Finished level...")
-	GlobalState.unlocked_level = level_idx
+	GlobalState.unlocked_level = level_idx + 1
 	_clear_game_container()
 
 	# load map again
