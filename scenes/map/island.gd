@@ -1,10 +1,18 @@
 extends Area3D
 
 @export var islandLevel: E.Level
+@export var mask: Node3D
+@export var tree: Node3D
 
 
 func _ready() -> void:
 	assert(islandLevel != null, "island has no level!")
+	if GlobalState.unlocked_level > islandLevel:
+		mask.show()
+		tree.hide()
+	else:
+		mask.hide()
+		tree.show()
 
 
 func _on_body_entered(body: Node3D) -> void:
