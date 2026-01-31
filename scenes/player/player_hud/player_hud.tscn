@@ -32,3 +32,44 @@ layout_mode = 2
 max_value = 1.0
 value = 1.0
 show_percentage = false
+
+[node name="AbilitiesContainer" type="MarginContainer" parent="." unique_id=3847291056]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -80.0
+offset_right = 100.0
+offset_bottom = -20.0
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AbilitiesContainer" unique_id=2938471650]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="FireballSlot" type="PanelContainer" parent="AbilitiesContainer/HBoxContainer" unique_id=1847293650]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AbilitiesContainer/HBoxContainer/FireballSlot" unique_id=9384716502]
+layout_mode = 2
+alignment = 1
+
+[node name="FireballIcon" type="ColorRect" parent="AbilitiesContainer/HBoxContainer/FireballSlot/VBoxContainer" unique_id=8472916350]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 0.4, 0.1, 1)
+
+[node name="KeyLabel" type="Label" parent="AbilitiesContainer/HBoxContainer/FireballSlot/VBoxContainer" unique_id=7382916405]
+layout_mode = 2
+text = "1"
+horizontal_alignment = 1
+
+[node name="FireballBar" type="ProgressBar" parent="AbilitiesContainer/HBoxContainer/FireballSlot/VBoxContainer" unique_id=4829371650]
+custom_minimum_size = Vector2(50, 8)
+layout_mode = 2
+size_flags_horizontal = 4
+max_value = 1.0
+value = 1.0
+show_percentage = false

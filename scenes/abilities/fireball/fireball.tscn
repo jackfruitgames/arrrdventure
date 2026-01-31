@@ -11,8 +11,11 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.6, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_alpha"]
 gradient = SubResource("Gradient_alpha")
+width = 32
+height = 128
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
 
 [sub_resource type="Gradient" id="Gradient_fire"]
 offsets = PackedFloat32Array(0, 0.4, 0.7, 1)
@@ -20,35 +23,62 @@ colors = PackedColorArray(1, 1, 0.6, 1, 1, 0.5, 0.1, 1, 0.8, 0.2, 0, 1, 0.4, 0.1
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_color"]
 gradient = SubResource("Gradient_fire")
+height = 256
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_noise_ramp"]
+offsets = PackedFloat32Array(0, 0.16576087, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_noise"]
 noise_type = 3
 frequency = 0.05
+fractal_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_noise"]
+width = 64
+height = 64
 noise = SubResource("FastNoiseLite_noise")
+color_ramp = SubResource("Gradient_noise_ramp")
 seamless = true
 
 [sub_resource type="Gradient" id="Gradient_vertex_power"]
+offsets = PackedFloat32Array(0.30706522, 0.6820652, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_vertex_power"]
 gradient = SubResource("Gradient_vertex_power")
+fill_from = Vector2(1, 1)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_vertex_ramp"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_vertex"]
+noise_type = 0
 frequency = 0.08
+fractal_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vertex"]
+width = 64
+height = 64
 noise = SubResource("FastNoiseLite_vertex")
+color_ramp = SubResource("Gradient_vertex_ramp")
 seamless = true
+
+[sub_resource type="Gradient" id="Gradient_random_ramp"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_random"]
 noise_type = 0
 frequency = 0.1
+fractal_type = 0
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_random"]
+width = 64
+height = 64
 noise = SubResource("FastNoiseLite_random")
+color_ramp = SubResource("Gradient_random_ramp")
 seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fireball"]

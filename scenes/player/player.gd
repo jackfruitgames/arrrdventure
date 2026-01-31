@@ -6,12 +6,14 @@ extends CharacterBody3D
 @export var dash_speed: float = 20.0
 @export var dash_duration: float = 0.3
 @export var dash_cooldown: float = 1
+@export var fireball_cooldown: float = 0.5
 @export var player_hud: PackedScene
 @export var fireball_scene: PackedScene
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var dash_timer: float = 0.0
 var dash_cooldown_timer: float = 0.0
+var fireball_cooldown_timer: float = 0.0
 var is_dashing: bool = false
 var dash_direction: Vector3 = Vector3.ZERO
 var hud_instance: CanvasLayer = null
@@ -54,9 +56,14 @@ func _physics_process(delta: float) -> void:
 	if dash_cooldown_timer > 0:
 		dash_cooldown_timer -= delta
 
+	# Update fireball cooldown
+	if fireball_cooldown_timer > 0:
+		fireball_cooldown_timer -= delta
+
 	# Update HUD
 	if hud_instance:
 		hud_instance.update_dash_cooldown(dash_cooldown_timer, dash_cooldown)
+		hud_instance.update_fireball_cooldown(fireball_cooldown_timer, fireball_cooldown)
 
 	# Update dash timer
 	if is_dashing:
@@ -77,7 +84,7 @@ func _physics_process(delta: float) -> void:
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
 	# Handle fireball
-	if Input.is_action_just_pressed("fireball"):
+	if Input.is_action_just_pressed("fireball") and fireball_cooldown_timer <= 0:
 		shoot_fireball()
 
 	# Handle dash
@@ -104,6 +111,8 @@ func _physics_process(delta: float) -> void:
 func shoot_fireball() -> void:
 	if fireball_scene == null:
 		return
+
+	fireball_cooldown_timer = fireball_cooldown
 
 	var fireball = fireball_scene.instantiate()
 	get_tree().root.add_child(fireball)
