@@ -29,28 +29,6 @@ func _ready() -> void:
 		add_child(hud_instance)
 
 
-func _on_tree_exited() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
-
-func _unhandled_input(event: InputEvent) -> void:
-	# Handle mouse events
-	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		# Rotate player horizontally (yaw)
-		rotate_y(-event.relative.x * mouse_sensitivity)
-		# Rotate head vertically (pitch), clamped to prevent over-rotation
-		head.rotate_x(-event.relative.y * mouse_sensitivity)
-		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
-
-	# free mouse
-	if event.is_action_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
-	# capture mouse
-	if event is InputEventMouseButton and event.pressed:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
-
 func _physics_process(delta: float) -> void:
 	# Update dash cooldown
 	if dash_cooldown_timer > 0:
@@ -65,11 +43,30 @@ func _physics_process(delta: float) -> void:
 		hud_instance.update_dash_cooldown(dash_cooldown_timer, dash_cooldown)
 		hud_instance.update_fireball_cooldown(fireball_cooldown_timer, fireball_cooldown)
 
-	# Update dash timer
+	# Get input direction
+	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+
+	# Handle dash
+	if Input.is_action_just_pressed("dash") and dash_cooldown_timer <= 0 and not is_dashing:
+		is_dashing = true
+		dash_timer = dash_duration
+		dash_cooldown_timer = dash_cooldown
+		# Dash in movement direction, or forward if not moving
+		dash_direction = direction if direction else -transform.basis.z
+		velocity.x = dash_direction.x * dash_speed
+		velocity.z = dash_direction.z * dash_speed
+
 	if is_dashing:
 		dash_timer -= delta
 		if dash_timer <= 0:
 			is_dashing = false
+	elif direction:
+		velocity.x = direction.x * move_speed
+		velocity.z = direction.z * move_speed
+	else:
+		velocity.x = move_toward(velocity.x, 0, move_speed)
+		velocity.z = move_toward(velocity.z, 0, move_speed)
 
 	# Apply gravity
 	if not is_on_floor():
@@ -79,37 +76,34 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = jump_velocity
 
-	# Get input direction
-	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-
-	# Handle fireball
-	if Input.is_action_just_pressed("fireball") and fireball_cooldown_timer <= 0:
+	# Handle fireball (unlocked at Level2+)
+	if Input.is_action_just_pressed("fireball"):
 		shoot_fireball()
-
-	# Handle dash
-	if Input.is_action_just_pressed("dash") and dash_cooldown_timer <= 0 and not is_dashing:
-		is_dashing = true
-		dash_timer = dash_duration
-		dash_cooldown_timer = dash_cooldown
-		# Dash in movement direction, or forward if not moving
-		dash_direction = direction if direction else -transform.basis.z
-
-	if is_dashing:
-		velocity.x = dash_direction.x * dash_speed
-		velocity.z = dash_direction.z * dash_speed
-	elif direction:
-		velocity.x = direction.x * move_speed
-		velocity.z = direction.z * move_speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, move_speed)
-		velocity.z = move_toward(velocity.z, 0, move_speed)
 
 	move_and_slide()
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	# Handle camera movements
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		# Rotate player horizontally (yaw)
+		rotate_y(-event.relative.x * mouse_sensitivity)
+		# Rotate head vertically (pitch), clamped to prevent over-rotation
+		head.rotate_x(-event.relative.y * mouse_sensitivity)
+		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
+
+	# Free mouse
+	if event.is_action_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+	# Capture mouse
+	if event is InputEventMouseButton and event.pressed:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
 func shoot_fireball() -> void:
-	print_debug("shooot fireball")
+	if not fireball_cooldown_timer <= 0 and not GlobalState.unlocked_level >= E.Level.Level1:
+		return
 	if fireball_scene == null:
 		return
 
@@ -122,3 +116,28 @@ func shoot_fireball() -> void:
 	fireball.global_position = camera.global_position + (-camera.global_basis.z * 1.0)
 	# Set direction to camera forward
 	fireball.direction = -camera.global_basis.z
+
+
+func use_ability_level2() -> void:
+	if GlobalState.unlocked_level < E.Level.Level2:
+		return
+	# TODO: Implement Level 2 ability
+	pass
+
+
+func use_ability_level3() -> void:
+	if GlobalState.unlocked_level < E.Level.Level3:
+		return
+	# TODO: Implement Level 3 ability
+	pass
+
+
+func use_ability_level4() -> void:
+	if GlobalState.unlocked_level < E.Level.Level4:
+		return
+	# TODO: Implement Level 4 ability
+	pass
+
+
+func _on_tree_exited() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
