@@ -1,4 +1,4 @@
 extends Node
 
 var player_name := "Namenloser Held"
-var high_scores: Dictionary[String, int] = { }
+var unlocked_level: E.Level = E.Level.Level1

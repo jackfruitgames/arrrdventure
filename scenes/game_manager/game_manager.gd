@@ -1,14 +1,30 @@
 extends Node
 
-@export var game_scene: PackedScene
+@export var map_scene: PackedScene
+@export var level_scenes: Array[PackedScene]
 @export var game_container: Node
 
 
 func _ready() -> void:
-	assert(game_scene != null, "No Game Scene configured")
+	assert(map_scene != null, "No Game Scene configured")
 	GlobalSignals.start_game.connect(_on_start_game)
+	GlobalSignals.start_level.connect(_on_start_level)
 
 
 func _on_start_game() -> void:
-	var game_instance := game_scene.instantiate()
-	game_container.add_child(game_instance)
+	var map_instance := map_scene.instantiate()
+	game_container.add_child(map_instance)
+
+
+func _on_start_level(level_idx: E.Level) -> void:
+	# don't do anything if the level is not configured
+	if len(level_scenes) < level_idx + 1:
+		printerr("Level %s not configured!" % (level_idx + 1))
+		return
+
+	# remove the map or any other nodes from the game container
+	for child in game_container.get_children():
+		child.queue_free()
+
+	var level_instance := level_scenes[level_idx].instantiate()
+	game_container.add_child(level_instance)

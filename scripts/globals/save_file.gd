@@ -14,7 +14,7 @@ func _init() -> void:
 
 	# GAME
 	GlobalState.player_name = _config_file.get_value(_GAME_SECTION, "player_name", GlobalState.player_name)
-	GlobalState.high_scores = _config_file.get_value(_GAME_SECTION, "high_scores", GlobalState.high_scores)
+	GlobalState.unlocked_level = _config_file.get_value(_GAME_SECTION, "unlocked_level", GlobalState.unlocked_level)
 
 	# SETTINGS
 	GlobalSettings.audio_volumes_pct = _config_file.get_value(_SETTINGS_SECTION, "audio_volumes_pct", GlobalSettings.audio_volumes_pct)
@@ -23,7 +23,7 @@ func _init() -> void:
 func save_game() -> void:
 	# GAME
 	_config_file.set_value(_GAME_SECTION, "player_name", GlobalState.player_name)
-	_config_file.set_value(_GAME_SECTION, "high_scores", GlobalState.high_scores)
+	_config_file.set_value(_GAME_SECTION, "unlocked_level", GlobalState.unlocked_level)
 
 	# SETTINGS
 	_config_file.set_value(_SETTINGS_SECTION, "audio_volumes_pct", GlobalSettings.audio_volumes_pct)
