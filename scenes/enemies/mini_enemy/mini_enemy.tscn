@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bd258ryicnedv"]
+
+[ext_resource type="Texture2D" uid="uid://5axxl0laclvh" path="res://assets/img/enemies/mini/mini_placeholder.png" id="1_6xk8f"]
+[ext_resource type="Script" uid="uid://dxnjyahf304v1" path="res://scenes/enemies/mini_enemy/mini_enemy.gd" id="1_8e3ao"]
+[ext_resource type="PackedScene" uid="uid://ctmjttj2a8viv" path="res://scenes/enemies/compnents/mini_movement/mini_movement.tscn" id="3_76072"]
+
+[node name="MiniEnemy" type="Node3D" unique_id=490016952]
+script = ExtResource("1_8e3ao")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=30974305]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+billboard = 1
+texture = ExtResource("1_6xk8f")
+
+[node name="MiniMovement" parent="." unique_id=471697525 node_paths=PackedStringArray("entity_to_move") instance=ExtResource("3_76072")]
+entity_to_move = NodePath("..")

@@ -21,3 +21,9 @@ enum Level {
 	Level4,
 	Level5,
 }
+
+enum Enemy {
+	Boss,
+	EndBoss,
+	Mini,
+}

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ctmjttj2a8viv"]
+
+[ext_resource type="Script" uid="uid://ie28y0ulxg5o" path="res://scenes/enemies/compnents/mini_movement/mini_movement.gd" id="1_luygp"]
+
+[node name="MiniMovement" type="Node3D" unique_id=471697525]
+script = ExtResource("1_luygp")
