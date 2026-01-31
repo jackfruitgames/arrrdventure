@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://22rlxph3daq5"]
+
+[ext_resource type="Script" uid="uid://dlgk0t11psru7" path="res://scenes/abilities/fireball/fireball.gd" id="1_xlw38"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_fireball"]
+radius = 0.2
+height = 0.4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fireball"]
+radius = 0.2
+
+[node name="Fireball" type="Area3D" unique_id=259110871]
+script = ExtResource("1_xlw38")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_fireball")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_fireball")

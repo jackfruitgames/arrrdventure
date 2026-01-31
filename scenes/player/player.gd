@@ -7,6 +7,7 @@ extends CharacterBody3D
 @export var dash_duration: float = 0.3
 @export var dash_cooldown: float = 1
 @export var player_hud: PackedScene
+@export var fireball_scene: PackedScene
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var dash_timer: float = 0.0
@@ -27,6 +28,7 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	# Handle mouse events
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		# Rotate player horizontally (yaw)
 		rotate_y(-event.relative.x * mouse_sensitivity)
@@ -34,9 +36,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		head.rotate_x(-event.relative.y * mouse_sensitivity)
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
 
+	# free mouse
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
+	# capture mouse
 	if event is InputEventMouseButton and event.pressed:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -68,6 +72,10 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
+	# Handle fireball
+	if Input.is_action_just_pressed("fireball"):
+		shoot_fireball()
+
 	# Handle dash
 	if Input.is_action_just_pressed("dash") and dash_cooldown_timer <= 0 and not is_dashing:
 		is_dashing = true
@@ -87,3 +95,16 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, move_speed)
 
 	move_and_slide()
+
+
+func shoot_fireball() -> void:
+	if fireball_scene == null:
+		return
+
+	var fireball = fireball_scene.instantiate()
+	get_tree().root.add_child(fireball)
+
+	# Spawn in front of camera
+	fireball.global_position = camera.global_position + (-camera.global_basis.z * 1.0)
+	# Set direction to camera forward
+	fireball.direction = -camera.global_basis.z
