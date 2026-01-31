@@ -14,7 +14,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="GGJ 2026"
+config/name="Arrrdventure"
 config/description="A game made for Global game Jam 2026"
 run/main_scene="uid://ddpuqfk2tt65v"
 config/features=PackedStringArray("4.6", "GL Compatibility")

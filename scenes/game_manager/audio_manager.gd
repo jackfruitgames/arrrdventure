@@ -9,13 +9,24 @@ func _ready() -> void:
 	# initialize the volume of each audio bus
 	for bus_idx: int in E.AudioBus.values():
 		AudioServer.set_bus_volume_linear(bus_idx, GlobalSettings.audio_volumes_pct[bus_idx] / 100.0) # linear volume = 0 - 1
-	$MainMusicPreRollAudioStreamPlayer.play()
-	$MainMusicPreRollAudioStreamPlayer.finished.connect(_on_main_menu_pre_roll_finished)
-	$MainMusicAudioStreamPlayer.finished.connect(_on_main_menu_loop_finished)
+	_on_main_menu_pre_roll_finished()
+	#$MainMusicPreRollAudioStreamPlayer.finished.connect(_on_main_menu_pre_roll_finished)
+	#$MainMusicAudioStreamPlayer.finished.connect(_on_main_menu_loop_finished)
 
 
 func _on_main_menu_pre_roll_finished() -> void:
-	$MainMusicAudioStreamPlayer.play()
+	var timer := Timer.new()
+	timer.wait_time = 0.9
+	timer.start()
+	$MainMusicPreRollAudioStreamPlayer.play()
+	await timer.timeout
+	timer.stop()
+	$MainMusicAudioStreamPlayer.play(1.0)
+	timer.wait_time = 0.05
+	timer.start()
+	await timer.timeout
+	$MainMusicPreRollAudioStreamPlayer.stop()
+	timer.stop()
 
 
 func _on_main_menu_loop_finished() -> void:
