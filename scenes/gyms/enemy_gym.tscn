@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bl4j3luccea8d" path="res://scenes/player/player.tscn" id="1_ncuyh"]
 [ext_resource type="PackedScene" uid="uid://bd258ryicnedv" path="res://scenes/enemies/mini_enemy/mini_enemy.tscn" id="2_1aw5a"]
+[ext_resource type="PackedScene" uid="uid://bnieum86iucm3" path="res://scenes/enemies/boss_enemy/boss_enemy.tscn" id="3_wybfb"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_mxgwe"]
 
@@ -42,3 +43,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8866472, 0)
 
 [node name="Enemy" parent="." unique_id=490016952 instance=ExtResource("2_1aw5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.898074, 1.5325594, -7.252945)
+
+[node name="BossEnemy" parent="." unique_id=1511185118 instance=ExtResource("3_wybfb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.071081, 2.296002, 4.9030666)
