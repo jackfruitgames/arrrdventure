@@ -8,8 +8,10 @@ extends CharacterBody3D
 @export var dash_cooldown: float = 1
 @export var fireball_cooldown: float = 0.5
 @export var arrow_cooldown: float = 0.8
+@export var max_health: int = 100
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
+var current_health: int
 var dash_timer: float = 0.0
 var dash_cooldown_timer: float = 0.0
 var fireball_cooldown_timer: float = 0.0
@@ -27,9 +29,11 @@ var arrow_scene: PackedScene = preload("res://scenes/abilities/arrow/arrow.tscn"
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	current_health = max_health
 	if player_hud != null:
 		hud_instance = player_hud.instantiate()
 		add_child(hud_instance)
+		hud_instance.update_health(current_health, max_health)
 
 
 func _physics_process(delta: float) -> void:
@@ -161,6 +165,19 @@ func use_ability_level4() -> void:
 	if GlobalState.unlocked_level < E.Level.Level4:
 		return
 	# TODO: Implement Level 4 ability
+	pass
+
+
+func damage(dmg: int) -> void:
+	current_health -= dmg
+	if hud_instance:
+		hud_instance.update_health(current_health, max_health)
+	if current_health <= 0:
+		_on_dead()
+
+
+func _on_dead() -> void:
+	# TODO: Handle player death
 	pass
 
 

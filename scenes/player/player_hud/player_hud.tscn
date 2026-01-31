@@ -1,13 +1,28 @@
 [gd_scene format=3 uid="uid://kujjrmbhg7ok"]
 
 [ext_resource type="Script" uid="uid://b23gfilfm2hd1" path="res://scenes/player/player_hud/player_hud.gd" id="1_hud"]
-[ext_resource type="Texture2D" path="res://assets/textures/mask/Mask.png" id="2_mask"]
+[ext_resource type="Texture2D" uid="uid://5ff8sdil26y6" path="res://assets/textures/mask/Mask.png" id="2_mask"]
+[ext_resource type="FontFile" uid="uid://b0ifjhs2wy6rv" path="res://assets/fonts/AnnotationMono/AnnotationMono_v0.2_Bold.otf" id="3_gqi3t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_health_bg"]
+bg_color = Color(0.15, 0.15, 0.15, 0.8)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_health_fill"]
+bg_color = Color(0.8, 0.2, 0.2, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="PlayerHud" type="CanvasLayer" unique_id=1480694044]
 layer = -1
 script = ExtResource("1_hud")
 
-[node name="ScreenMask" type="TextureRect" parent="."]
+[node name="ScreenMask" type="TextureRect" parent="." unique_id=337227237]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -17,6 +32,33 @@ mouse_filter = 2
 texture = ExtResource("2_mask")
 expand_mode = 1
 stretch_mode = 6
+
+[node name="HealthContainer" type="MarginContainer" parent="." unique_id=263794064]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -250.0
+offset_bottom = 75.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HealthContainer" unique_id=1758438156]
+layout_mode = 2
+
+[node name="HealthLabel" type="Label" parent="HealthContainer/VBoxContainer" unique_id=1117271757]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HEALTH"
+horizontal_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="HealthContainer/VBoxContainer" unique_id=1547462184]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gqi3t")
+theme_override_styles/background = SubResource("StyleBoxFlat_health_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_health_fill")
+max_value = 1.0
+value = 1.0
+show_percentage = false
 
 [node name="DashContainer" type="MarginContainer" parent="." unique_id=2135799404]
 anchors_preset = 7
