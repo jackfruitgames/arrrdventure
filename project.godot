@@ -59,6 +59,7 @@ import/blender/enabled=false
 
 player=""
 enemy="got a lot of enemies"
+attacks=""
 
 [input]
 

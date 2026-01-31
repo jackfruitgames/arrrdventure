@@ -104,53 +104,126 @@ shader_parameter/Tail_Displace_Power = 0.1
 [sub_resource type="SphereShape3D" id="SphereShape3D_fireball"]
 radius = 0.2
 
-[sub_resource type="Gradient" id="Gradient_fire_color"]
-offsets = PackedFloat32Array(0, 0.3, 0.7, 1)
-colors = PackedColorArray(1, 1, 0.8, 1, 1, 0.6, 0.1, 1, 0.8, 0.2, 0.05, 0.8, 0.3, 0.1, 0.05, 0)
+[sub_resource type="Gradient" id="Gradient_fire_trail"]
+offsets = PackedFloat32Array(0, 0.2, 0.5, 0.8, 1)
+colors = PackedColorArray(1, 1, 0.8, 1, 1, 0.6, 0.1, 1, 0.9, 0.3, 0.05, 0.8, 0.3, 0.15, 0.1, 0.5, 0.1, 0.1, 0.1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_fire"]
-gradient = SubResource("Gradient_fire_color")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fire_trail"]
+gradient = SubResource("Gradient_fire_trail")
 
-[sub_resource type="Curve" id="Curve_scale"]
-_limits = [0.0, 2.0, 0.0, 1.0]
-_data = [Vector2(0, 1.5), 0.0, 0.0, 0, 0, Vector2(0.4, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_fire_scale"]
+_data = [Vector2(0, 0.8), 0.0, 0.0, 0, 0, Vector2(0.3, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.3), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_scale"]
-curve = SubResource("Curve_scale")
+[sub_resource type="CurveTexture" id="CurveTexture_fire_scale"]
+curve = SubResource("Curve_fire_scale")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fire"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fire_trail"]
+lifetime_randomness = 0.3
 emission_shape = 1
-emission_sphere_radius = 0.08
-direction = Vector3(0, 1, 0)
-spread = 30.0
-initial_velocity_min = 1.0
-initial_velocity_max = 2.0
-gravity = Vector3(0, 2, 0)
-scale_min = 0.5
-scale_curve = SubResource("CurveTexture_scale")
-color = Color(1, 0.5, 0.1, 1)
-color_ramp = SubResource("GradientTexture1D_fire")
+emission_sphere_radius = 0.15
+direction = Vector3(0, 0, 1)
+spread = 15.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.5
+gravity = Vector3(0, 1.5, 0)
+scale_min = 0.3
+scale_max = 0.6
+scale_curve = SubResource("CurveTexture_fire_scale")
+color = Color(1, 0.6, 0.2, 1)
+color_ramp = SubResource("GradientTexture1D_fire_trail")
 turbulence_enabled = true
-turbulence_noise_scale = 2.0
-turbulence_noise_speed = Vector3(0.5, 1, 0.5)
+turbulence_noise_scale = 3.0
+turbulence_noise_speed = Vector3(0.3, 0.5, 0.3)
 turbulence_influence_max = 0.3
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_particle"]
+[sub_resource type="Gradient" id="Gradient_soft_circle"]
+offsets = PackedFloat32Array(0, 0.3, 0.7, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.8, 1, 1, 1, 0.3, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_soft_circle"]
+gradient = SubResource("Gradient_soft_circle")
+width = 64
+height = 64
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fire_particle"]
 transparency = 1
 blend_mode = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
+albedo_texture = SubResource("GradientTexture2D_soft_circle")
 billboard_mode = 3
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="QuadMesh" id="QuadMesh_particle"]
-material = SubResource("StandardMaterial3D_particle")
-size = Vector2(0.15, 0.15)
+[sub_resource type="QuadMesh" id="QuadMesh_fire_particle"]
+material = SubResource("StandardMaterial3D_fire_particle")
+size = Vector2(0.25, 0.25)
 
-[node name="Fireball" type="Area3D" unique_id=259110871]
+[sub_resource type="Gradient" id="Gradient_smoke_trail"]
+offsets = PackedFloat32Array(0, 0.3, 0.7, 1)
+colors = PackedColorArray(0.4, 0.35, 0.3, 0.6, 0.3, 0.28, 0.25, 0.4, 0.2, 0.2, 0.2, 0.2, 0.15, 0.15, 0.15, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_smoke_trail"]
+gradient = SubResource("Gradient_smoke_trail")
+
+[sub_resource type="Curve" id="Curve_smoke_scale"]
+_data = [Vector2(0, 0.2), 0.0, 0.0, 0, 0, Vector2(0.5, 0.8), 0.0, 0.0, 0, 0, Vector2(1, 1.2), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_smoke_scale"]
+curve = SubResource("Curve_smoke_scale")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_smoke_trail"]
+lifetime_randomness = 0.4
+emission_shape = 1
+emission_sphere_radius = 0.1
+direction = Vector3(0, 0, 1)
+spread = 20.0
+initial_velocity_min = 0.2
+initial_velocity_max = 0.8
+gravity = Vector3(0, 0.8, 0)
+scale_min = 0.2
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_smoke_scale")
+color = Color(0.3, 0.3, 0.3, 0.5)
+color_ramp = SubResource("GradientTexture1D_smoke_trail")
+turbulence_enabled = true
+turbulence_noise_scale = 2.0
+turbulence_noise_speed = Vector3(0.2, 0.3, 0.2)
+turbulence_influence_min = 0.2
+turbulence_influence_max = 0.5
+
+[sub_resource type="Gradient" id="Gradient_soft_smoke"]
+offsets = PackedFloat32Array(0, 0.4, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 0.8, 1, 1, 1, 0.5, 1, 1, 1, 0.15, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_soft_smoke"]
+gradient = SubResource("Gradient_soft_smoke")
+width = 64
+height = 64
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_smoke_particle"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("GradientTexture2D_soft_smoke")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_smoke_particle"]
+material = SubResource("StandardMaterial3D_smoke_particle")
+size = Vector2(0.3, 0.3)
+
+[node name="Fireball" type="Area3D" unique_id=259110871 groups=["attacks"]]
 script = ExtResource("1_xlw38")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=378227142]
@@ -160,11 +233,21 @@ surface_material_override/0 = SubResource("ShaderMaterial_fireball")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=94004782]
 shape = SubResource("SphereShape3D_fireball")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=980594237]
-amount = 50
-lifetime = 0.5
-process_material = SubResource("ParticleProcessMaterial_fire")
-draw_pass_1 = SubResource("QuadMesh_particle")
+[node name="FireParticles" type="GPUParticles3D" parent="." unique_id=980594237]
+amount = 30
+lifetime = 0.6
+preprocess = 0.1
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_fire_trail")
+draw_pass_1 = SubResource("QuadMesh_fire_particle")
+
+[node name="SmokeParticles" type="GPUParticles3D" parent="." unique_id=2107942675]
+amount = 20
+lifetime = 0.8
+preprocess = 0.1
+draw_order = 2
+process_material = SubResource("ParticleProcessMaterial_smoke_trail")
+draw_pass_1 = SubResource("QuadMesh_smoke_particle")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=589242813]
 light_color = Color(1, 0.5, 0.2, 1)
