@@ -1,3 +1,40 @@
 [gd_scene format=3 uid="uid://ciy2jgeati5o2"]
 
-[node name="Level1" type="Node3D" unique_id=1312764082]
+[ext_resource type="Material" uid="uid://bxl3p7t1havur" path="res://assets/textures/ground1/Ground071_2K-JPG.tres" id="1_jedq5"]
+[ext_resource type="PackedScene" uid="uid://bl4j3luccea8d" path="res://scenes/player/player.tscn" id="2_4l2q5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4l2q5"]
+
+[sub_resource type="Sky" id="Sky_3xb12"]
+sky_material = SubResource("ProceduralSkyMaterial_4l2q5")
+
+[sub_resource type="Environment" id="Environment_bvf2d"]
+background_mode = 2
+sky = SubResource("Sky_3xb12")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dvtaw"]
+material = ExtResource("1_jedq5")
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_4l2q5"]
+
+[node name="Level1" type="Node3D" unique_id=681773017]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2004673191]
+transform = Transform3D(0.9787316, 0.17766102, -0.102572665, 2.7805946e-08, 0.49999994, 0.86602545, 0.20514527, -0.8476064, 0.4893657, 0, 4.695194, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1564699258]
+environment = SubResource("Environment_bvf2d")
+
+[node name="Player" parent="." unique_id=640528251 instance=ExtResource("2_4l2q5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.98785377, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1493944436]
+
+[node name="plane" type="MeshInstance3D" parent="StaticBody3D" unique_id=58746315]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("PlaneMesh_dvtaw")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1182348623]
+shape = SubResource("WorldBoundaryShape3D_4l2q5")
