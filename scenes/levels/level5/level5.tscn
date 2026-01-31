@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bl4j3luccea8d" path="res://scenes/player/player.tscn" id="1_wn2ti"]
 [ext_resource type="Material" uid="uid://bmgyxxb5bd0ll" path="res://assets/textures/plank/Planks023B_1K-JPG.tres" id="1_y1jwd"]
 [ext_resource type="PackedScene" uid="uid://dh5vufr4b72px" path="res://scenes/levels/level5/level5_mask.tscn" id="2_7o5g8"]
+[ext_resource type="PackedScene" uid="uid://bnieum86iucm3" path="res://scenes/enemies/boss_enemy/boss_enemy.tscn" id="5_ooy8r"]
 [ext_resource type="PackedScene" uid="uid://bovwl1ic8wyrw" path="res://scenes/levels/enemy_manager/enemy_manager.tscn" id="6_vdg2u"]
 [ext_resource type="PackedScene" uid="uid://bd258ryicnedv" path="res://scenes/enemies/mini_enemy/mini_enemy.tscn" id="7_8060c"]
 [ext_resource type="Texture2D" uid="uid://w8h42vfpu73" path="res://assets/img/landscape/Wasser.png" id="8_qdufj"]
@@ -67,6 +68,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.424458, 1.9413033, 27.7819
 [node name="EnemyManager" parent="." unique_id=2117646841 node_paths=PackedStringArray("mask", "enemy_container") instance=ExtResource("6_vdg2u")]
 mask = NodePath("../Level5Mask")
 enemy_container = NodePath("../Enemies")
+boss_enemy_scene = ExtResource("5_ooy8r")
 
 [node name="Enemies" type="Node" parent="." unique_id=2124145464]
 

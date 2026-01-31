@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bd258ryicnedv" path="res://scenes/enemies/mini_enemy/mini_enemy.tscn" id="5_expgy"]
 [ext_resource type="Texture2D" uid="uid://w8h42vfpu73" path="res://assets/img/landscape/Wasser.png" id="6_8t4y1"]
 [ext_resource type="Script" uid="uid://dt6pw1siob5hb" path="res://scripts/utils/falldown_death.gd" id="7_0ybc4"]
+[ext_resource type="PackedScene" uid="uid://bnieum86iucm3" path="res://scenes/enemies/boss_enemy/boss_enemy.tscn" id="8_x0tvk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gblnm"]
 
@@ -53,7 +54,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.84217, -1.201005, 14.34519
 [node name="island2" parent="." unique_id=154433558 instance=ExtResource("3_gblnm")]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
 
-[node name="Plane_001" parent="island2" index="0" unique_id=2054441071]
+[node name="Plane_001" parent="island2" index="0" unique_id=24039296]
 surface_material_override/0 = ExtResource("4_0ybc4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="island2/Plane_001" index="0" unique_id=1773006451]
@@ -106,6 +107,7 @@ texture = ExtResource("5_0ybc4")
 [node name="EnemyManager" parent="." unique_id=2117646841 node_paths=PackedStringArray("mask", "enemy_container") instance=ExtResource("5_8t4y1")]
 mask = NodePath("../Level2Mask")
 enemy_container = NodePath("../Enemies")
+boss_enemy_scene = ExtResource("8_x0tvk")
 
 [node name="Enemies" type="Node" parent="." unique_id=1497806374]
 
