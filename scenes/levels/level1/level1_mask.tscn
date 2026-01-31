@@ -1,26 +1,70 @@
 [gd_scene format=3 uid="uid://dwm3lyodk6vxi"]
 
 [ext_resource type="Script" uid="uid://3xqq8eyp2kvp" path="res://scenes/levels/level1/level1_mask.gd" id="1_4d2u0"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_3avgs"]
-top_radius = 0.2
-bottom_radius = 0.2
-height = 0.3
+[ext_resource type="Texture2D" uid="uid://csch31qgloxis" path="res://assets/img/masks/Wassermaske_pickup.png" id="2_cq4qp"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_4d2u0"]
 height = 0.4
 radius = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4d2u0"]
+albedo_color = Color(1, 0.99215686, 0.34117648, 1)
+emission_enabled = true
+emission = Color(0.7372717, 0.4671266, 0, 1)
+emission_energy_multiplier = 4.1
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cq4qp"]
+lifetime_randomness = 0.81
+emission_shape = 3
+emission_box_extents = Vector3(5, 5, 5)
+direction = Vector3(-1, 0, 0)
+gravity = Vector3(0, -4, 0)
+scale_min = 0.0
+anim_speed_min = 0.5
+anim_speed_max = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_6ivkm"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cq4qp"]
+
+[sub_resource type="Sky" id="Sky_6ivkm"]
+sky_material = SubResource("ProceduralSkyMaterial_cq4qp")
+
+[sub_resource type="Environment" id="Environment_ar55x"]
+background_mode = 2
+sky = SubResource("Sky_6ivkm")
+glow_enabled = true
+glow_intensity = 6.26
 
 [node name="Level1Mask" type="Node3D" unique_id=1897387673]
 
 [node name="MaskItself" type="Area3D" parent="." unique_id=1358616931]
 script = ExtResource("1_4d2u0")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MaskItself" unique_id=2112890183]
-mesh = SubResource("CylinderMesh_3avgs")
-skeleton = NodePath("../..")
+[node name="Sprite3D" type="Sprite3D" parent="MaskItself" unique_id=1388695571]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+billboard = 1
+texture = ExtResource("2_cq4qp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MaskItself" unique_id=135237504]
 shape = SubResource("CylinderShape3D_4d2u0")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=355426643]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_4d2u0")
+amount = 30
+speed_scale = 0.3
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_cq4qp")
+draw_pass_1 = SubResource("SphereMesh_6ivkm")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1092409860]
+environment = SubResource("Environment_ar55x")
 
 [connection signal="body_entered" from="MaskItself" to="MaskItself" method="_on_player_entered"]
