@@ -8,6 +8,7 @@
 
 [node name="Player" type="CharacterBody3D" unique_id=640528251 groups=["player"]]
 script = ExtResource("1_8afob")
+max_health = 500
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=943707178]
 mesh = SubResource("CapsuleMesh_8afob")

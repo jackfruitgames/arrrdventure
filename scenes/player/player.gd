@@ -22,6 +22,9 @@ var hud_instance: CanvasLayer = null
 var selected_magic: E.AttackMode = E.AttackMode.Fire
 var player_hud: PackedScene = preload("res://scenes/player/player_hud/player_hud.tscn")
 var fireball_scene: PackedScene = preload("res://scenes/abilities/fireball/fireball.tscn")
+var water_scene: PackedScene = preload("res://scenes/abilities/water/water.tscn")
+var air_scene: PackedScene = preload("res://scenes/abilities/air/air.tscn")
+var earth_scene: PackedScene = preload("res://scenes/abilities/earth/earth.tscn")
 var base_attack_scene: PackedScene = preload("res://scenes/abilities/base_attack/base_attack.tscn")
 
 @onready var head: Node3D = $Head
@@ -155,13 +158,12 @@ func shoot_fireball() -> void:
 
 
 func shoot_water() -> void:
-	if fireball_scene == null:
+	if water_scene == null:
 		return
 
 	magic_cooldown_timer = magic_cooldown
 
-	# TODO: Replace with water scene when available
-	var water = fireball_scene.instantiate()
+	var water = water_scene.instantiate()
 	get_tree().root.add_child(water)
 
 	water.global_position = camera.global_position + (-camera.global_basis.z * 1.0)
@@ -171,13 +173,12 @@ func shoot_water() -> void:
 
 
 func shoot_air() -> void:
-	if fireball_scene == null:
+	if air_scene == null:
 		return
 
 	magic_cooldown_timer = magic_cooldown
 
-	# TODO: Replace with air scene when available
-	var air = fireball_scene.instantiate()
+	var air = air_scene.instantiate()
 	get_tree().root.add_child(air)
 
 	air.global_position = camera.global_position + (-camera.global_basis.z * 1.0)
@@ -187,13 +188,12 @@ func shoot_air() -> void:
 
 
 func shoot_earth() -> void:
-	if fireball_scene == null:
+	if earth_scene == null:
 		return
 
 	magic_cooldown_timer = magic_cooldown
 
-	# TODO: Replace with earth scene when available
-	var earth = fireball_scene.instantiate()
+	var earth = earth_scene.instantiate()
 	get_tree().root.add_child(earth)
 
 	earth.global_position = camera.global_position + (-camera.global_basis.z * 1.0)
