@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @export var animation_player: AnimationPlayer
+@export var trophy: TextureRect
 
 const THE_BEGINNING: DialogueResource = preload("uid://didr77jtke0gt")
 const LEVEL_FAILED: DialogueResource = preload("uid://cmse78kbuu6qf")
@@ -44,6 +45,7 @@ func _show_dialogue() -> void:
 			DialogueManager.show_dialogue_balloon(LEVEL_4_SUCCESS)
 		E.Level.End:
 			DialogueManager.show_dialogue_balloon(THE_END)
+			trophy.show()
 		_:
 			printerr("Dialogue not configured for this level!")
 

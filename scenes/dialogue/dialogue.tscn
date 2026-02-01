@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://qayttdenw0se" path="res://scenes/dialogue/dialogue.gd" id="1_cpw6a"]
 [ext_resource type="Texture2D" uid="uid://du7yf5l7o3pyt" path="res://assets/img/Background_main-menu.png" id="2_2qw3d"]
 [ext_resource type="Texture2D" uid="uid://bdfxe84vlbhx6" path="res://assets/img/Pirat.png" id="3_vh7tq"]
+[ext_resource type="Texture2D" uid="uid://dnt87v0agpsd6" path="res://assets/img/Pokal.png" id="4_vh7tq"]
 
 [sub_resource type="Animation" id="Animation_vh7tq"]
 length = 0.001
@@ -105,9 +106,10 @@ _data = {
 &"slide_out": SubResource("Animation_vokea")
 }
 
-[node name="Dialogue" type="CanvasLayer" unique_id=836787370 node_paths=PackedStringArray("animation_player")]
+[node name="Dialogue" type="CanvasLayer" unique_id=836787370 node_paths=PackedStringArray("animation_player", "trophy")]
 script = ExtResource("1_cpw6a")
 animation_player = NodePath("AnimationPlayer")
+trophy = NodePath("Trophy")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1022041441]
 anchors_preset = 15
@@ -142,3 +144,11 @@ stretch_mode = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1834625653]
 libraries/ = SubResource("AnimationLibrary_vh7tq")
+
+[node name="Trophy" type="TextureRect" parent="." unique_id=1155368531]
+offset_left = 298.555
+offset_right = 1664.5549
+offset_bottom = 2048.0
+rotation = -0.12566371
+scale = Vector2(0.34, 0.34)
+texture = ExtResource("4_vh7tq")
