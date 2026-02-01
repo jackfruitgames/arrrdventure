@@ -56,15 +56,15 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -5.9046593, -70.878235)
 [node name="Level2Mask" parent="." unique_id=859544565 instance=ExtResource("2_gblnm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.84217, -1.201005, 14.34519)
 
-[node name="island2" parent="." unique_id=154433558 instance=ExtResource("3_gblnm")]
+[node name="island2" parent="." unique_id=664724771 instance=ExtResource("3_gblnm")]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
 
-[node name="Plane_001" parent="island2" index="0" unique_id=638341609]
+[node name="Plane_001" parent="island2" index="0" unique_id=1481230479]
 surface_material_override/0 = ExtResource("4_0ybc4")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="island2/Plane_001" index="0" unique_id=461418901]
+[node name="StaticBody3D" type="StaticBody3D" parent="island2/Plane_001" index="0" unique_id=1730485826]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="island2/Plane_001/StaticBody3D" unique_id=1915890856]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="island2/Plane_001/StaticBody3D" unique_id=857039957]
 shape = ExtResource("5_buef0")
 
 [node name="Palm" type="Sprite3D" parent="island2" unique_id=2028962238]
