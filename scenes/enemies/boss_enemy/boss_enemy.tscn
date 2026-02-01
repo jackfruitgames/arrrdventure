@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dxnjyahf304v1" path="res://scenes/enemies/mini_enemy/mini_enemy.gd" id="1_tax6k"]
 [ext_resource type="Script" uid="uid://cec1vt8ck4avr" path="res://scenes/enemies/boss_enemy/mask_manager.gd" id="2_apj76"]
+[ext_resource type="PackedScene" uid="uid://22rlxph3daq5" path="res://scenes/abilities/fireball/fireball.tscn" id="2_1ipe3"]
 [ext_resource type="Texture2D" uid="uid://cbv0npx6edum4" path="res://assets/img/enemies/boss/Feuermaske.png" id="2_u137b"]
 [ext_resource type="Texture2D" uid="uid://bujqjoqnplq0l" path="res://assets/img/enemies/boss/Mund mit Zähnen.png" id="3_apj76"]
 [ext_resource type="Texture2D" uid="uid://by16kj5dugyvj" path="res://assets/img/enemies/boss/Schnauzbart.png" id="4_cmvs8"]
@@ -19,6 +20,7 @@ height = 2.9030273
 [node name="BossEnemy" type="CharacterBody3D" unique_id=1511185118 node_paths=PackedStringArray("_health_component") groups=["enemy"]]
 script = ExtResource("1_tax6k")
 _health_component = NodePath("HealthBarComponent")
+ability_scene = ExtResource("2_1ipe3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=229090480 groups=["enemy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22963297, 0, 0)

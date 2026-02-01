@@ -8,7 +8,7 @@ extends CharacterBody3D
 @export var dash_cooldown: float = 1
 @export var fireball_cooldown: float = 0.5
 @export var arrow_cooldown: float = 0.8
-@export var max_health: int = 100
+@export var max_health: int = 200
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var current_health: int
@@ -118,7 +118,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func shoot_fireball() -> void:
-	if fireball_cooldown_timer > 0 and GlobalState.unlocked_level < E.Level.Level2:
+	if fireball_cooldown_timer > 0 and GlobalState.unlocked_level <= E.Level.Level2:
 		return
 
 	if fireball_scene == null:
@@ -177,7 +177,7 @@ func damage(dmg: int) -> void:
 
 
 func _on_dead() -> void:
-	# TODO: Handle player death
+	GlobalSignals.level_failed.emit()
 	pass
 
 
