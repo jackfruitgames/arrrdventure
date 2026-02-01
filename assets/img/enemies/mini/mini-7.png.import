@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ntfhbbo7t53a"
-path="res://.godot/imported/mini-7.png-ae03acf2e3ec8e98f356c0e829101093.ctex"
+path.s3tc="res://.godot/imported/mini-7.png-ae03acf2e3ec8e98f356c0e829101093.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/img/enemies/mini/mini-7.png"
-dest_files=["res://.godot/imported/mini-7.png-ae03acf2e3ec8e98f356c0e829101093.ctex"]
+dest_files=["res://.godot/imported/mini-7.png-ae03acf2e3ec8e98f356c0e829101093.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

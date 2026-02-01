@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Pokal.png-4053130b90c0b5256ece820010fd80f8.ct
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
