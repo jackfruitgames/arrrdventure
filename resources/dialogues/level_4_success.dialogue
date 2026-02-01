@@ -1,3 +1,12 @@
 ~ start
-Pirate Joe: [[Arrrgh|Hmmm|Howdy]]
+Pirate Joe: Aye! You did it!
+Pirate Joe: After all these years...
+Pirate Joe: The masks of power are finally back in my possession!
+Pirate Joe: HAHAH... Ah... I mean... Can you please give me the masks?
+- Give Pirate Joe the masks
+	Pirate Joe: Thank you. Now DIE!!!
+- I think I will keep them for myself
+	Pirate Joe: Arrrgh! What?! Unthankful humans!
+	Pirate Joe: *steals the masks from you like a real pirate*
+	Pirate Joe: Arrr! You will pay for that!
 => END
