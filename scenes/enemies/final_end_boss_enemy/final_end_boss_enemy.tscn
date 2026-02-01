@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://caq3j4fsxdya7"]
 
 [ext_resource type="Script" uid="uid://dxnjyahf304v1" path="res://scenes/enemies/mini_enemy/mini_enemy.gd" id="1_8pnpd"]
-[ext_resource type="Texture2D" uid="uid://bdfxe84vlbhx6" path="res://assets/img/Pirat.png" id="1_j4byc"]
 [ext_resource type="PackedScene" uid="uid://dh8k3nwp5c2yl" path="res://scenes/enemies/compnents/health_bar_component/health_bar_component.tscn" id="2_0u3id"]
 [ext_resource type="PackedScene" uid="uid://22rlxph3daq5" path="res://scenes/abilities/fireball/fireball.tscn" id="2_gc1gl"]
+[ext_resource type="Texture2D" uid="uid://dffkgvch23arb" path="res://assets/img/enemies/final/AngryPirat.png" id="3_gc1gl"]
 [ext_resource type="PackedScene" uid="uid://ctmjttj2a8viv" path="res://scenes/enemies/compnents/mini_movement/mini_movement.tscn" id="3_nka0h"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0u3id"]
@@ -18,7 +18,7 @@ ability_scene = ExtResource("2_gc1gl")
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1288758899]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 billboard = 2
-texture = ExtResource("1_j4byc")
+texture = ExtResource("3_gc1gl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2136981764]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, -0.1159302, 0)
