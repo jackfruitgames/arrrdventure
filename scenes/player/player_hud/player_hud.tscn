@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://kujjrmbhg7ok"]
 
 [ext_resource type="Script" uid="uid://b23gfilfm2hd1" path="res://scenes/player/player_hud/player_hud.gd" id="1_hud"]
-[ext_resource type="Texture2D" uid="uid://5ff8sdil26y6" path="res://assets/textures/mask/Mask.png" id="2_mask"]
+[ext_resource type="Script" uid="uid://bombfl14k3er3" path="res://scenes/player/player_hud/hud_mask_manager.gd" id="2_7okcs"]
+[ext_resource type="Texture2D" uid="uid://d300dri5m0j21" path="res://assets/textures/mask/MaskeBase.png" id="2_dw5nb"]
+[ext_resource type="Texture2D" uid="uid://kq4cxlpta3l2" path="res://assets/textures/mask/Mask2.png" id="3_7okcs"]
 [ext_resource type="FontFile" uid="uid://b0ifjhs2wy6rv" path="res://assets/fonts/AnnotationMono/AnnotationMono_v0.2_Bold.otf" id="3_gqi3t"]
+[ext_resource type="Texture2D" uid="uid://b1xtovtibqptu" path="res://assets/textures/mask/Maske3.png" id="4_45qlt"]
+[ext_resource type="Texture2D" uid="uid://ypguvceux4s8" path="res://assets/textures/mask/Maske4.png" id="5_7bq00"]
+[ext_resource type="Texture2D" uid="uid://da1nd7enlv6" path="res://assets/textures/mask/MaskFull.png" id="6_p23x1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_health_bg"]
 bg_color = Color(0.15, 0.15, 0.15, 0.8)
@@ -22,15 +27,59 @@ corner_radius_bottom_left = 8
 layer = -1
 script = ExtResource("1_hud")
 
-[node name="ScreenMask" type="TextureRect" parent="." unique_id=337227237]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MaskContainer" type="VBoxContainer" parent="." unique_id=1393078473 node_paths=PackedStringArray("mask1", "mask2", "mask3", "mask4", "mask5")]
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("2_7okcs")
+mask1 = NodePath("ScreenMask1")
+mask2 = NodePath("ScreenMask2")
+mask3 = NodePath("ScreenMask3")
+mask4 = NodePath("ScreenMask4")
+mask5 = NodePath("ScreenMask5")
+
+[node name="ScreenMask1" type="TextureRect" parent="MaskContainer" unique_id=337227237]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
 mouse_filter = 2
-texture = ExtResource("2_mask")
-expand_mode = 1
+texture = ExtResource("2_dw5nb")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="ScreenMask2" type="TextureRect" parent="MaskContainer" unique_id=838657409]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+texture = ExtResource("3_7okcs")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="ScreenMask3" type="TextureRect" parent="MaskContainer" unique_id=33774365]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+texture = ExtResource("4_45qlt")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="ScreenMask4" type="TextureRect" parent="MaskContainer" unique_id=1908055881]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+texture = ExtResource("5_7bq00")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="ScreenMask5" type="TextureRect" parent="MaskContainer" unique_id=1231784888]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+texture = ExtResource("6_p23x1")
+expand_mode = 2
 stretch_mode = 6
 
 [node name="HealthContainer" type="MarginContainer" parent="." unique_id=263794064]
@@ -155,26 +204,26 @@ max_value = 1.0
 value = 1.0
 show_percentage = false
 
-[node name="WaterMagicSlot" type="PanelContainer" parent="AbilitiesContainer/HBoxContainer"]
+[node name="WaterMagicSlot" type="PanelContainer" parent="AbilitiesContainer/HBoxContainer" unique_id=1827795061]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="AbilitiesContainer/HBoxContainer/WaterMagicSlot"]
+[node name="VBoxContainer" type="VBoxContainer" parent="AbilitiesContainer/HBoxContainer/WaterMagicSlot" unique_id=499203920]
 layout_mode = 2
 alignment = 1
 
-[node name="MagicIcon" type="ColorRect" parent="AbilitiesContainer/HBoxContainer/WaterMagicSlot/VBoxContainer"]
+[node name="MagicIcon" type="ColorRect" parent="AbilitiesContainer/HBoxContainer/WaterMagicSlot/VBoxContainer" unique_id=939192963]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 color = Color(0.2, 0.5, 1, 1)
 
-[node name="KeyLabel" type="Label" parent="AbilitiesContainer/HBoxContainer/WaterMagicSlot/VBoxContainer"]
+[node name="KeyLabel" type="Label" parent="AbilitiesContainer/HBoxContainer/WaterMagicSlot/VBoxContainer" unique_id=261180461]
 layout_mode = 2
 text = "2"
 horizontal_alignment = 1
 
-[node name="MagicBar" type="ProgressBar" parent="AbilitiesContainer/HBoxContainer/WaterMagicSlot/VBoxContainer"]
+[node name="MagicBar" type="ProgressBar" parent="AbilitiesContainer/HBoxContainer/WaterMagicSlot/VBoxContainer" unique_id=1722585912]
 custom_minimum_size = Vector2(50, 8)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -182,26 +231,26 @@ max_value = 1.0
 value = 1.0
 show_percentage = false
 
-[node name="AirMagicSlot" type="PanelContainer" parent="AbilitiesContainer/HBoxContainer"]
+[node name="AirMagicSlot" type="PanelContainer" parent="AbilitiesContainer/HBoxContainer" unique_id=793725240]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="AbilitiesContainer/HBoxContainer/AirMagicSlot"]
+[node name="VBoxContainer" type="VBoxContainer" parent="AbilitiesContainer/HBoxContainer/AirMagicSlot" unique_id=724648798]
 layout_mode = 2
 alignment = 1
 
-[node name="MagicIcon" type="ColorRect" parent="AbilitiesContainer/HBoxContainer/AirMagicSlot/VBoxContainer"]
+[node name="MagicIcon" type="ColorRect" parent="AbilitiesContainer/HBoxContainer/AirMagicSlot/VBoxContainer" unique_id=46191458]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 color = Color(0.8, 0.9, 1, 1)
 
-[node name="KeyLabel" type="Label" parent="AbilitiesContainer/HBoxContainer/AirMagicSlot/VBoxContainer"]
+[node name="KeyLabel" type="Label" parent="AbilitiesContainer/HBoxContainer/AirMagicSlot/VBoxContainer" unique_id=2071776800]
 layout_mode = 2
 text = "3"
 horizontal_alignment = 1
 
-[node name="MagicBar" type="ProgressBar" parent="AbilitiesContainer/HBoxContainer/AirMagicSlot/VBoxContainer"]
+[node name="MagicBar" type="ProgressBar" parent="AbilitiesContainer/HBoxContainer/AirMagicSlot/VBoxContainer" unique_id=514611484]
 custom_minimum_size = Vector2(50, 8)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -209,26 +258,26 @@ max_value = 1.0
 value = 1.0
 show_percentage = false
 
-[node name="EarthMagicSlot" type="PanelContainer" parent="AbilitiesContainer/HBoxContainer"]
+[node name="EarthMagicSlot" type="PanelContainer" parent="AbilitiesContainer/HBoxContainer" unique_id=1252930932]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="AbilitiesContainer/HBoxContainer/EarthMagicSlot"]
+[node name="VBoxContainer" type="VBoxContainer" parent="AbilitiesContainer/HBoxContainer/EarthMagicSlot" unique_id=1657791799]
 layout_mode = 2
 alignment = 1
 
-[node name="MagicIcon" type="ColorRect" parent="AbilitiesContainer/HBoxContainer/EarthMagicSlot/VBoxContainer"]
+[node name="MagicIcon" type="ColorRect" parent="AbilitiesContainer/HBoxContainer/EarthMagicSlot/VBoxContainer" unique_id=769313999]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 color = Color(0.5, 0.35, 0.2, 1)
 
-[node name="KeyLabel" type="Label" parent="AbilitiesContainer/HBoxContainer/EarthMagicSlot/VBoxContainer"]
+[node name="KeyLabel" type="Label" parent="AbilitiesContainer/HBoxContainer/EarthMagicSlot/VBoxContainer" unique_id=1640613226]
 layout_mode = 2
 text = "4"
 horizontal_alignment = 1
 
-[node name="MagicBar" type="ProgressBar" parent="AbilitiesContainer/HBoxContainer/EarthMagicSlot/VBoxContainer"]
+[node name="MagicBar" type="ProgressBar" parent="AbilitiesContainer/HBoxContainer/EarthMagicSlot/VBoxContainer" unique_id=397126160]
 custom_minimum_size = Vector2(50, 8)
 layout_mode = 2
 size_flags_horizontal = 4
