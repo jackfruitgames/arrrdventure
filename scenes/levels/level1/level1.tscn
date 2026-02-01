@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://brnlpu85k0x3r" path="res://assets/meshes/island1/insel.glb" id="1_1nwpw"]
 [ext_resource type="PackedScene" uid="uid://dwm3lyodk6vxi" path="res://scenes/levels/level1/level1_mask.tscn" id="1_3xb12"]
-[ext_resource type="Material" uid="uid://bxl3p7t1havur" path="res://assets/textures/ground1/Ground071_2K-JPG.tres" id="1_jedq5"]
 [ext_resource type="PackedScene" uid="uid://bl4j3luccea8d" path="res://scenes/player/player.tscn" id="2_4l2q5"]
+[ext_resource type="Material" uid="uid://4k2l66sq500q" path="res://assets/textures/ground2/Ground093B_1K-JPG.tres" id="2_kdi0p"]
 [ext_resource type="Shape3D" uid="uid://cmsvj88xcn8k1" path="res://resources/collisionmaps/level1.res" id="3_pbuwt"]
 [ext_resource type="PackedScene" uid="uid://ce0lv4amceve" path="res://scenes/levels/assets/palm.tscn" id="4_5bog2"]
 [ext_resource type="PackedScene" uid="uid://balqjcwncx30k" path="res://scenes/levels/assets/background_ship.tscn" id="5_kdi0p"]
@@ -39,7 +39,8 @@ uv1_scale = Vector3(200, 200, 200)
 [node name="Level1" type="Node3D" unique_id=681773017]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2004673191]
-transform = Transform3D(0.9787316, 0.17766102, -0.10257264, 2.7805946e-08, 0.49999994, 0.86602545, 0.20514527, -0.8476064, 0.4893657, 0, 39.041092, 0)
+transform = Transform3D(0.9787316, 0.17766102, -0.10257264, 2.7805946e-08, 0.49999994, 0.86602545, 0.20514527, -0.8476064, 0.4893657, 0, 75.370735, 0)
+light_energy = 0.5
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1564699258]
@@ -50,7 +51,7 @@ transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, -29.059875)
 
 [node name="Plane" parent="insel" index="0" unique_id=967663167]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020074438, -0.05033539, -0.0769625)
-surface_material_override/0 = ExtResource("1_jedq5")
+surface_material_override/0 = ExtResource("2_kdi0p")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="insel/Plane" index="0" unique_id=875907659]
 
