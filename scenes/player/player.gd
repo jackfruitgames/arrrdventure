@@ -130,6 +130,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		head.rotate_x(-event.relative.y * mouse_sensitivity)
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
 
+	# Debug: Kill all enemies (P key)
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_P:
+			_debug_kill_all_enemies()
+
 	# Free mouse
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -239,6 +244,34 @@ func use_magic_attack() -> void:
 		E.AttackMode.Fire:
 			if GlobalState.unlocked_level >= E.Level.Level5:
 				shoot_fireball()
+
+
+func _debug_kill_all_enemies() -> void:
+	# Find all enemy containers in the scene
+	var enemies = get_tree().get_nodes_in_group("enemy")
+
+	# If no enemies in group, try finding CharacterBody3D with damage method
+	if enemies.is_empty():
+		for node in get_tree().root.get_children():
+			_recursively_find_and_kill_enemies(node)
+	else:
+		for enemy in enemies:
+			if enemy.has_method("damage"):
+				enemy.damage(99999)
+
+
+func _recursively_find_and_kill_enemies(node: Node) -> void:
+	# Skip player
+	if node == self:
+		return
+
+	# Check if this node has damage method and is not the player
+	if node.has_method("damage") and node is CharacterBody3D and node != self:
+		node.damage(99999)
+
+	# Check children
+	for child in node.get_children():
+		_recursively_find_and_kill_enemies(child)
 
 
 func use_ability_level3() -> void:

@@ -32,6 +32,13 @@ func damage(dmg: int) -> bool:
 	return _health <= 0
 
 
+## returns health as a percentage (0.0 to 1.0)
+func get_health_percent() -> float:
+	if MAX_HEALTH > 0:
+		return float(_health) / float(MAX_HEALTH)
+	return 0.0
+
+
 func _setup_viewport() -> void:
 	_viewport.size = Vector2i(int(bar_width), int(bar_height))
 	_viewport.transparent_bg = true

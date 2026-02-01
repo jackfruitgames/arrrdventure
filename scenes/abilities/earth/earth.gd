@@ -3,7 +3,7 @@ extends Area3D
 @export var speed: float = 10.0
 @export var lifetime: float = 2.0
 
-const DAMAGE := 50
+const DAMAGE := 100
 
 var direction: Vector3 = Vector3.FORWARD
 var timer: float = 0.0

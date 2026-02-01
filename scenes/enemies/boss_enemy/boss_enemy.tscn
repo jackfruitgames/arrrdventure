@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bnieum86iucm3"]
 
-[ext_resource type="Script" uid="uid://dxnjyahf304v1" path="res://scenes/enemies/mini_enemy/mini_enemy.gd" id="1_tax6k"]
+[ext_resource type="Script" uid="uid://cttmwg1m07f2k" path="res://scenes/enemies/boss_enemy/boss_enemy.gd" id="1_12o1h"]
 [ext_resource type="PackedScene" uid="uid://22rlxph3daq5" path="res://scenes/abilities/fireball/fireball.tscn" id="2_1ipe3"]
 [ext_resource type="Script" path="res://scenes/enemies/boss_enemy/mask_manager.gd" id="2_apj76"]
 [ext_resource type="Texture2D" uid="uid://dkhqhn1j20sjk" path="res://assets/img/enemies/boss/MaskFire.png" id="4_12o1h"]
@@ -21,7 +21,7 @@ radius = 0.66064453
 height = 2.9030273
 
 [node name="BossEnemy" type="CharacterBody3D" unique_id=1511185118 node_paths=PackedStringArray("_health_component") groups=["enemy"]]
-script = ExtResource("1_tax6k")
+script = ExtResource("1_12o1h")
 _health_component = NodePath("HealthBarComponent")
 ability_scene = ExtResource("2_1ipe3")
 
@@ -96,7 +96,7 @@ texture = ExtResource("8_ab0yy")
 
 [node name="MiniMovement" parent="." unique_id=471697525 node_paths=PackedStringArray("entity_to_move") instance=ExtResource("10_qkk8u")]
 entity_to_move = NodePath("..")
-speed = 20
 
 [node name="HealthBarComponent" parent="." unique_id=423699628 instance=ExtResource("12_hbar")]
+MAX_HEALTH = 1000
 y_offset = 1.8

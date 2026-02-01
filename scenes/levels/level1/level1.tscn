@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://4k2l66sq500q" path="res://assets/textures/ground2/Ground093B_1K-JPG.tres" id="2_kdi0p"]
 [ext_resource type="Shape3D" uid="uid://cmsvj88xcn8k1" path="res://resources/collisionmaps/level1.res" id="3_pbuwt"]
 [ext_resource type="PackedScene" uid="uid://ce0lv4amceve" path="res://scenes/levels/assets/palm.tscn" id="4_5bog2"]
-[ext_resource type="PackedScene" uid="uid://balqjcwncx30k" path="res://scenes/levels/assets/background_ship.tscn" id="5_kdi0p"]
+[ext_resource type="PackedScene" path="res://scenes/levels/assets/background_ship.tscn" id="5_kdi0p"]
 [ext_resource type="PackedScene" uid="uid://bnieum86iucm3" path="res://scenes/enemies/boss_enemy/boss_enemy.tscn" id="7_yc1fu"]
 [ext_resource type="Script" uid="uid://disg03vsbacmr" path="res://scenes/levels/level1/level1_enemy_manager.gd" id="8_kdi0p"]
 [ext_resource type="PackedScene" uid="uid://bovwl1ic8wyrw" path="res://scenes/levels/enemy_manager/enemy_manager.tscn" id="8_pbuwt"]
@@ -49,7 +49,7 @@ environment = SubResource("Environment_bvf2d")
 [node name="insel" parent="." unique_id=343371591 instance=ExtResource("1_1nwpw")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, -29.059875)
 
-[node name="Plane" parent="insel" index="0" unique_id=967663167]
+[node name="Plane" parent="insel" index="0" unique_id=664536373]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020074438, -0.05033539, -0.0769625)
 surface_material_override/0 = ExtResource("2_kdi0p")
 
