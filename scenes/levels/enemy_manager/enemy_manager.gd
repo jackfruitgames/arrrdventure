@@ -15,6 +15,7 @@ func _ready() -> void:
 	assert(boss_enemy_scene != null, "boss enemy scene is empty stupid")
 	mask.hide()
 	enemy_container.child_order_changed.connect(_on_enemy_died)
+	_on_enemy_died()
 
 
 func _on_enemy_died() -> void:
