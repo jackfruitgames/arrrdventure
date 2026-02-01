@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cgk1xtd2pj1p" path="res://assets/img/masks/FireMask.png" id="2_st3hy"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_1seq5"]
-height = 0.4
-radius = 0.3
+height = 1.6228516
+radius = 2.9291992
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ocuhc"]
 albedo_color = Color(0.67, 0, 0, 1)
@@ -54,6 +54,7 @@ billboard = 1
 texture = ExtResource("2_st3hy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MaskItself" unique_id=405534616]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6114258, 0)
 shape = SubResource("CylinderShape3D_1seq5")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1751606822]

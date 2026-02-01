@@ -60,9 +60,18 @@ shape = SubResource("ConcavePolygonShape3D_y1jwd")
 
 [node name="Player" parent="." unique_id=640528251 instance=ExtResource("1_wn2ti")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.94689, 0.96528053, 0)
+mouse_sensitivity = null
+move_speed = null
+jump_velocity = null
+dash_speed = null
+dash_duration = null
+dash_cooldown = null
+fireball_cooldown = null
+arrow_cooldown = null
+max_health = null
 
 [node name="Level5Mask" parent="." unique_id=1266454705 instance=ExtResource("2_7o5g8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.424458, 3.0145645, 27.781925)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.424458, 2.6101084, 27.781925)
 
 [node name="EnemyManager" parent="." unique_id=2117646841 node_paths=PackedStringArray("mask", "enemy_container") instance=ExtResource("6_vdg2u")]
 mask = NodePath("../Level5Mask")
