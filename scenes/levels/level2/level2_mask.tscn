@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cro4u1w17oj8j" path="res://assets/img/masks/EarthMask.png" id="2_87nw8"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_nfg5d"]
-height = 0.4
-radius = 0.3
+height = 2.0847657
+radius = 2.5083008
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31ak1"]
 albedo_color = Color(0.5090468, 0.23169088, 0, 1)
@@ -54,6 +54,7 @@ billboard = 1
 texture = ExtResource("2_87nw8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MaskItself" unique_id=1007793632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84238285, 0)
 shape = SubResource("CylinderShape3D_nfg5d")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=391935573]

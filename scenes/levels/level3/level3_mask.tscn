@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bgwhruce46eki" path="res://assets/img/masks/AirMask.png" id="2_sgs3f"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_nv8fp"]
-height = 0.4
-radius = 0.3
+height = 2.8238769
+radius = 2.5019531
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3au22"]
 albedo_color = Color(0.67, 0, 0, 1)
@@ -54,6 +54,7 @@ billboard = 1
 texture = ExtResource("2_sgs3f")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MaskItself" unique_id=1221471310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78581554, 0)
 shape = SubResource("CylinderShape3D_nv8fp")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1423551935]

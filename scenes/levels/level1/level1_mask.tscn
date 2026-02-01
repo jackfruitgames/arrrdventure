@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bgajepg5my1wg" path="res://assets/img/masks/WaterMask.png" id="2_cq4qp"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_4d2u0"]
-height = 1.1166016
-radius = 0.99316406
+height = 2.100293
+radius = 2.7856445
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4d2u0"]
 albedo_color = Color(1, 0.99215686, 0.34117648, 1)
@@ -42,7 +42,7 @@ billboard = 2
 texture = ExtResource("2_cq4qp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MaskItself" unique_id=135237504]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06669919, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42514646, 0)
 shape = SubResource("CylinderShape3D_4d2u0")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=355426643]

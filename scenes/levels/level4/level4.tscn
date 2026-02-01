@@ -55,7 +55,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.95359, 0, 23.551971)
 [node name="island2" parent="." unique_id=154433558 instance=ExtResource("3_6jcyl")]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
 
-[node name="Plane_001" parent="island2" index="0" unique_id=24039296]
+[node name="Plane_001" parent="island2" index="0" unique_id=2054441071]
 surface_material_override/0 = ExtResource("4_q4udx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="island2/Plane_001" index="0" unique_id=300476810]
@@ -113,7 +113,28 @@ boss_enemy_scene = ExtResource("8_6jcyl")
 [node name="Enemies" type="Node" parent="." unique_id=742678875]
 
 [node name="MiniEnemy" parent="Enemies" unique_id=1511185118 instance=ExtResource("7_wocd4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9586029, -2.1709385, 10.839816)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.195034, -3.2283478, 10.839816)
+
+[node name="MiniEnemy2" parent="Enemies" unique_id=20279072 instance=ExtResource("7_wocd4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.082069, -2.7375283, 10.839816)
+
+[node name="MiniEnemy3" parent="Enemies" unique_id=1157344391 instance=ExtResource("7_wocd4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9586029, -3.3673596, -7.709119)
+
+[node name="MiniEnemy4" parent="Enemies" unique_id=1041118186 instance=ExtResource("7_wocd4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5931225, -3.7978816, -13.63617)
+
+[node name="MiniEnemy5" parent="Enemies" unique_id=1553596358 instance=ExtResource("7_wocd4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.908484, -4.6345654, -11.96551)
+
+[node name="MiniEnemy6" parent="Enemies" unique_id=1862069534 instance=ExtResource("7_wocd4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.237724, -4.021277, -9.348374)
+
+[node name="MiniEnemy7" parent="Enemies" unique_id=123555802 instance=ExtResource("7_wocd4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.122845, -2.9791322, 10.839816)
+
+[node name="MiniEnemy8" parent="Enemies" unique_id=1983360367 instance=ExtResource("7_wocd4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.40489, -4.1658316, -4.9863825)
 
 [node name="Water" type="MeshInstance3D" parent="." unique_id=285124709]
 transform = Transform3D(10000, 0, 0, 0, 100, 0, 0, 0, 10000, 0, -63.34723, 0)

@@ -112,7 +112,19 @@ boss_enemy_scene = ExtResource("8_x0tvk")
 [node name="Enemies" type="Node" parent="." unique_id=1497806374]
 
 [node name="MiniEnemy" parent="Enemies" unique_id=1511185118 instance=ExtResource("5_expgy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9586029, -2.1709385, 10.839816)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7976875, -2.1709385, 10.839816)
+
+[node name="MiniEnemy2" parent="Enemies" unique_id=940666316 instance=ExtResource("5_expgy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4155369, -2.1709385, 10.839816)
+
+[node name="MiniEnemy3" parent="Enemies" unique_id=1861514063 instance=ExtResource("5_expgy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22558784, -2.1709385, 16.83559)
+
+[node name="MiniEnemy4" parent="Enemies" unique_id=2073733939 instance=ExtResource("5_expgy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1399546, -2.1709385, 14.295968)
+
+[node name="MiniEnemy5" parent="Enemies" unique_id=1088491196 instance=ExtResource("5_expgy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2050056, -2.1709385, 6.5361834)
 
 [node name="Water" type="MeshInstance3D" parent="." unique_id=502873716]
 transform = Transform3D(10000, 0, 0, 0, 100, 0, 0, 0, 10000, 0, -63.34723, 0)
