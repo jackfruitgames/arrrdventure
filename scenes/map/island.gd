@@ -4,6 +4,7 @@ extends Area3D
 @export var mask: Node3D
 @export var tree: Node3D
 @export var map: Node3D
+@export var xmark: Node3D
 
 
 func _ready() -> void:
@@ -15,6 +16,11 @@ func _ready() -> void:
 	else:
 		mask.hide()
 		tree.show()
+
+	if GlobalState.unlocked_level == islandLevel:
+		xmark.show()
+	else:
+		xmark.hide()
 
 
 func _on_body_entered(body: Node3D) -> void:
