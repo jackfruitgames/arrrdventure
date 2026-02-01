@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cshwqunmgcjp1"]
 
 [ext_resource type="PackedScene" uid="uid://bl4j3luccea8d" path="res://scenes/player/player.tscn" id="1_g3u0w"]
+[ext_resource type="PackedScene" uid="uid://balqjcwncx30k" path="res://scenes/levels/assets/background_ship.tscn" id="2_bwnqv"]
 [ext_resource type="PackedScene" uid="uid://blwcfv3s2abag" path="res://scenes/levels/level2/level2_mask.tscn" id="2_gblnm"]
 [ext_resource type="PackedScene" uid="uid://432b310di2s4" path="res://assets/meshes/island2/island2.glb" id="3_gblnm"]
 [ext_resource type="Material" uid="uid://4k2l66sq500q" path="res://assets/textures/ground2/Ground093B_1K-JPG.tres" id="4_0ybc4"]
@@ -48,13 +49,16 @@ environment = SubResource("Environment_iq8gt")
 [node name="Player" parent="." unique_id=640528251 instance=ExtResource("1_g3u0w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.90593, -2.8426437, 0)
 
+[node name="BackgroundShip" parent="." unique_id=586506774 instance=ExtResource("2_bwnqv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -5.9046593, -70.878235)
+
 [node name="Level2Mask" parent="." unique_id=859544565 instance=ExtResource("2_gblnm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.84217, -1.201005, 14.34519)
 
 [node name="island2" parent="." unique_id=154433558 instance=ExtResource("3_gblnm")]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
 
-[node name="Plane_001" parent="island2" index="0" unique_id=24039296]
+[node name="Plane_001" parent="island2" index="0" unique_id=2054441071]
 surface_material_override/0 = ExtResource("4_0ybc4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="island2/Plane_001" index="0" unique_id=1773006451]

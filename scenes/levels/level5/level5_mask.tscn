@@ -32,17 +32,6 @@ anim_speed_max = 1.0
 radius = 0.1
 height = 0.2
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ql8bn"]
-
-[sub_resource type="Sky" id="Sky_6ivkm"]
-sky_material = SubResource("ProceduralSkyMaterial_ql8bn")
-
-[sub_resource type="Environment" id="Environment_4ff0n"]
-background_mode = 2
-sky = SubResource("Sky_6ivkm")
-glow_enabled = true
-glow_intensity = 6.26
-
 [node name="Level5Mask" type="Node3D" unique_id=1266454705]
 
 [node name="MaskItself" type="Area3D" parent="." unique_id=259524312]
@@ -65,8 +54,5 @@ speed_scale = 0.3
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_t4l0w")
 draw_pass_1 = SubResource("SphereMesh_vj103")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=955061775]
-environment = SubResource("Environment_4ff0n")
 
 [connection signal="body_entered" from="MaskItself" to="MaskItself" method="_on_player_entered"]
