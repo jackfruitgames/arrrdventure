@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bgwhruce46eki" path="res://assets/img/masks/AirMask.png" id="8_cumk7"]
 [ext_resource type="PackedScene" uid="uid://w2wktaoeddee" path="res://scenes/dialogue/dialogue.tscn" id="12_x2kg6"]
 [ext_resource type="Theme" uid="uid://ivbyi03tfmnl" path="res://resources/ui_theme.tres" id="13_cumk7"]
-[ext_resource type="Script" uid="uid://dtx5a0nnlri4i" path="res://scenes/map/map_ui.gd" id="13_mgs8m"]
+[ext_resource type="Script" path="res://scenes/map/map_ui.gd" id="13_mgs8m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sxf4j"]
 
@@ -69,7 +69,7 @@ tree = NodePath("Tree")
 [node name="mapIsland" parent="Islands/Level1" unique_id=1527153345 instance=ExtResource("3_sqgf4")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.47340512, 0)
 
-[node name="Plane" parent="Islands/Level1/mapIsland" index="0" unique_id=1936569579]
+[node name="Plane" parent="Islands/Level1/mapIsland" index="0" unique_id=16172754]
 surface_material_override/0 = ExtResource("4_vvrx0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Islands/Level1" unique_id=1870048136]
@@ -103,7 +103,7 @@ tree = NodePath("Tree2")
 [node name="mapIsland" parent="Islands/Level2" unique_id=341420379 instance=ExtResource("3_sqgf4")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.65087986, 0)
 
-[node name="Plane" parent="Islands/Level2/mapIsland" index="0" unique_id=1936569579]
+[node name="Plane" parent="Islands/Level2/mapIsland" index="0" unique_id=16172754]
 surface_material_override/0 = ExtResource("4_vvrx0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Islands/Level2" unique_id=601031951]
@@ -115,7 +115,7 @@ transform = Transform3D(0.05, 0, 0, 0, 0.03535534, 0.03535534, 0, -0.03535534, 0
 texture = ExtResource("5_f17u5")
 
 [node name="Mask" type="Sprite3D" parent="Islands/Level2" unique_id=1549137721]
-transform = Transform3D(0.1, 0, 0, 0, 0.063937195, 0.07688976, 0, -0.07688976, 0.063937195, 0.12529469, 0.8174989, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.063937195, 0.07688976, 0, -0.07688976, 0.063937195, 0.3484187, 0.8174989, 0)
 texture = ExtResource("7_x2kg6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Islands/Level2" unique_id=1058009936]
@@ -134,7 +134,7 @@ tree = NodePath("Tree2")
 [node name="mapIsland" parent="Islands/Level3" unique_id=1479697099 instance=ExtResource("3_sqgf4")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.7199049, 0)
 
-[node name="Plane" parent="Islands/Level3/mapIsland" index="0" unique_id=1936569579]
+[node name="Plane" parent="Islands/Level3/mapIsland" index="0" unique_id=16172754]
 surface_material_override/0 = ExtResource("4_vvrx0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Islands/Level3" unique_id=711906498]
@@ -146,7 +146,7 @@ transform = Transform3D(0.05, 0, 0, 0, 0.03535534, 0.03535534, 0, -0.03535534, 0
 texture = ExtResource("5_f17u5")
 
 [node name="Mask" type="Sprite3D" parent="Islands/Level3" unique_id=303980922]
-transform = Transform3D(0.1, 0, 0, 0, 0.063937195, 0.07688976, 0, -0.07688976, 0.063937195, 0.12529469, 0.8174989, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.063937195, 0.07688976, 0, -0.07688976, 0.063937195, 0.42129922, 0.8174989, 0)
 texture = ExtResource("8_cumk7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Islands/Level3" unique_id=1537028881]
@@ -165,7 +165,7 @@ tree = NodePath("Tree2")
 [node name="mapIsland" parent="Islands/Level4" unique_id=1279935050 instance=ExtResource("3_sqgf4")]
 transform = Transform3D(0.13161178, 0, 0.1505933, 0, 0.2, 0, -0.1505933, 0, 0.13161178, 0, -0.5665636, 0)
 
-[node name="Plane" parent="Islands/Level4/mapIsland" index="0" unique_id=1936569579]
+[node name="Plane" parent="Islands/Level4/mapIsland" index="0" unique_id=16172754]
 surface_material_override/0 = ExtResource("4_vvrx0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Islands/Level4" unique_id=957327372]
