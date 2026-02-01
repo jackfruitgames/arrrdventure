@@ -48,4 +48,5 @@ func _on_dialogue_ended(_resource: DialogueResource) -> void:
 	animation_player.play("slide_out")
 	# wait for slide_out to finish
 	await animation_player.animation_finished
+	GlobalSignals.dialogue_ended.emit()
 	queue_free()

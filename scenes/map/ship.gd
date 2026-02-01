@@ -3,8 +3,23 @@ extends CharacterBody3D
 const SPEED = 10.0
 const JUMP_VELOCITY = 4.5
 
+# can't move ship before dialogue is finished
+# otherwise we have PROBLEMS!!!
+var movement_locked = true
+
+
+func _ready() -> void:
+	GlobalSignals.dialogue_ended.connect(_on_dialogue_ended)
+
+
+func _on_dialogue_ended() -> void:
+	movement_locked = false
+
 
 func _physics_process(delta: float) -> void:
+	if movement_locked:
+		return # can't move yet
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

@@ -16,4 +16,7 @@ signal boss_spawned(element: E.Element)
 # AUDIO
 signal play_sound(sound: E.Sound)
 
+# DIALOGUE
+signal dialogue_ended()
+
 @warning_ignore_restore("unused_signal")

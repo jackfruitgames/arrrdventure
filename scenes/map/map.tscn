@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bkhygb2wbfkl0"]
 
-[ext_resource type="Script" path="res://scenes/map/ship.gd" id="1_a2pkv"]
+[ext_resource type="Script" uid="uid://dd3ahs0v5o2h0" path="res://scenes/map/ship.gd" id="1_a2pkv"]
 [ext_resource type="Texture2D" uid="uid://w8h42vfpu73" path="res://assets/img/landscape/Wasser.png" id="1_fcby6"]
 [ext_resource type="Script" uid="uid://c2y4d4d52v8v3" path="res://scenes/map/island.gd" id="1_ph54e"]
 [ext_resource type="Texture2D" uid="uid://bw7h6dw7jagw3" path="res://assets/img/Ship.png" id="1_tqkkf"]
