@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ypguvceux4s8"
-path="res://.godot/imported/Maske4.png-c8e597f37613ccc64439d0f858e97216.ctex"
+path="res://.godot/imported/Mask4.png-a5bbbf067b4427513ff0f1b94863326a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/mask/Maske4.png"
-dest_files=["res://.godot/imported/Maske4.png-c8e597f37613ccc64439d0f858e97216.ctex"]
+source_file="res://assets/textures/mask/Mask4.png"
+dest_files=["res://.godot/imported/Mask4.png-a5bbbf067b4427513ff0f1b94863326a.ctex"]
 
 [params]
 
