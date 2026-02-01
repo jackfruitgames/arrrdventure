@@ -146,6 +146,7 @@ stretch_mode = 5
 libraries/ = SubResource("AnimationLibrary_vh7tq")
 
 [node name="Trophy" type="TextureRect" parent="." unique_id=1155368531]
+visible = false
 offset_left = 298.555
 offset_right = 1664.5549
 offset_bottom = 2048.0
