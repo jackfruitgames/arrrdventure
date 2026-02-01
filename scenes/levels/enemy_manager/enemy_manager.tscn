@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bovwl1ic8wyrw"]
 
 [ext_resource type="Script" uid="uid://brgnoxwvlfuk7" path="res://scenes/levels/enemy_manager/enemy_manager.gd" id="1_kq12w"]
+[ext_resource type="PackedScene" uid="uid://bd258ryicnedv" path="res://scenes/enemies/mini_enemy/mini_enemy.tscn" id="2_mini"]
 
 [node name="EnemyManager" type="Node" unique_id=2117646841]
 script = ExtResource("1_kq12w")
+mini_enemy_scene = ExtResource("2_mini")
+spawn_radius = 10.0

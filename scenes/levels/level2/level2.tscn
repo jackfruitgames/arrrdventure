@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://2pagqy2q1vdr" path="res://assets/img/landscape/Palme.png" id="5_0ybc4"]
 [ext_resource type="PackedScene" uid="uid://bovwl1ic8wyrw" path="res://scenes/levels/enemy_manager/enemy_manager.tscn" id="5_8t4y1"]
 [ext_resource type="Shape3D" uid="uid://cwka6u1ac0t8g" path="res://resources/collisionmaps/level2.res" id="5_buef0"]
-[ext_resource type="PackedScene" uid="uid://bd258ryicnedv" path="res://scenes/enemies/mini_enemy/mini_enemy.tscn" id="5_expgy"]
 [ext_resource type="Texture2D" uid="uid://w8h42vfpu73" path="res://assets/img/landscape/Wasser.png" id="6_8t4y1"]
 [ext_resource type="Script" uid="uid://dt6pw1siob5hb" path="res://scripts/utils/falldown_death.gd" id="7_0ybc4"]
+[ext_resource type="Script" uid="uid://c56eqgnprsfsu" path="res://scenes/levels/level2/level2_enemy_manager.gd" id="8_bwnqv"]
 [ext_resource type="PackedScene" uid="uid://bnieum86iucm3" path="res://scenes/enemies/boss_enemy/boss_enemy.tscn" id="8_x0tvk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gblnm"]
@@ -54,7 +54,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.84217, -1.201005, 14.34519
 [node name="island2" parent="." unique_id=154433558 instance=ExtResource("3_gblnm")]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
 
-[node name="Plane_001" parent="island2" index="0" unique_id=2054441071]
+[node name="Plane_001" parent="island2" index="0" unique_id=24039296]
 surface_material_override/0 = ExtResource("4_0ybc4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="island2/Plane_001" index="0" unique_id=1773006451]
@@ -105,26 +105,12 @@ render_priority = 2
 texture = ExtResource("5_0ybc4")
 
 [node name="EnemyManager" parent="." unique_id=2117646841 node_paths=PackedStringArray("mask", "enemy_container") instance=ExtResource("5_8t4y1")]
+script = ExtResource("8_bwnqv")
 mask = NodePath("../Level2Mask")
 enemy_container = NodePath("../Enemies")
 boss_enemy_scene = ExtResource("8_x0tvk")
 
 [node name="Enemies" type="Node" parent="." unique_id=1497806374]
-
-[node name="MiniEnemy" parent="Enemies" unique_id=1511185118 instance=ExtResource("5_expgy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7976875, -2.1709385, 10.839816)
-
-[node name="MiniEnemy2" parent="Enemies" unique_id=940666316 instance=ExtResource("5_expgy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4155369, -2.1709385, 10.839816)
-
-[node name="MiniEnemy3" parent="Enemies" unique_id=1861514063 instance=ExtResource("5_expgy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22558784, -2.1709385, 16.83559)
-
-[node name="MiniEnemy4" parent="Enemies" unique_id=2073733939 instance=ExtResource("5_expgy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1399546, -2.1709385, 14.295968)
-
-[node name="MiniEnemy5" parent="Enemies" unique_id=1088491196 instance=ExtResource("5_expgy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2050056, -2.1709385, 6.5361834)
 
 [node name="Water" type="MeshInstance3D" parent="." unique_id=502873716]
 transform = Transform3D(10000, 0, 0, 0, 100, 0, 0, 0, 10000, 0, -63.34723, 0)
