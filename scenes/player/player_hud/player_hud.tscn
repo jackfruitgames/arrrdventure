@@ -117,7 +117,7 @@ color = Color(0.6, 0.4, 0.2, 1)
 
 [node name="KeyLabel" type="Label" parent="AbilitiesContainer/HBoxContainer/BaseAttackSlot/VBoxContainer" unique_id=633297062]
 layout_mode = 2
-text = "1"
+text = "RMB"
 horizontal_alignment = 1
 
 [node name="BaseAttackBar" type="ProgressBar" parent="AbilitiesContainer/HBoxContainer/BaseAttackSlot/VBoxContainer" unique_id=679551894]
@@ -128,26 +128,107 @@ max_value = 1.0
 value = 1.0
 show_percentage = false
 
-[node name="FireballSlot" type="PanelContainer" parent="AbilitiesContainer/HBoxContainer" unique_id=1847293650]
+[node name="FireMagicSlot" type="PanelContainer" parent="AbilitiesContainer/HBoxContainer" unique_id=1847293650]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="AbilitiesContainer/HBoxContainer/FireballSlot" unique_id=794781910]
+[node name="VBoxContainer" type="VBoxContainer" parent="AbilitiesContainer/HBoxContainer/FireMagicSlot" unique_id=794781910]
 layout_mode = 2
 alignment = 1
 
-[node name="FireballIcon" type="ColorRect" parent="AbilitiesContainer/HBoxContainer/FireballSlot/VBoxContainer" unique_id=-117018242]
+[node name="MagicIcon" type="ColorRect" parent="AbilitiesContainer/HBoxContainer/FireMagicSlot/VBoxContainer" unique_id=-117018242]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 color = Color(1, 0.4, 0.1, 1)
 
-[node name="KeyLabel" type="Label" parent="AbilitiesContainer/HBoxContainer/FireballSlot/VBoxContainer" unique_id=-1207018187]
+[node name="KeyLabel" type="Label" parent="AbilitiesContainer/HBoxContainer/FireMagicSlot/VBoxContainer" unique_id=-1207018187]
+layout_mode = 2
+text = "1"
+horizontal_alignment = 1
+
+[node name="MagicBar" type="ProgressBar" parent="AbilitiesContainer/HBoxContainer/FireMagicSlot/VBoxContainer" unique_id=534404354]
+custom_minimum_size = Vector2(50, 8)
+layout_mode = 2
+size_flags_horizontal = 4
+max_value = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="WaterMagicSlot" type="PanelContainer" parent="AbilitiesContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AbilitiesContainer/HBoxContainer/WaterMagicSlot"]
+layout_mode = 2
+alignment = 1
+
+[node name="MagicIcon" type="ColorRect" parent="AbilitiesContainer/HBoxContainer/WaterMagicSlot/VBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(0.2, 0.5, 1, 1)
+
+[node name="KeyLabel" type="Label" parent="AbilitiesContainer/HBoxContainer/WaterMagicSlot/VBoxContainer"]
 layout_mode = 2
 text = "2"
 horizontal_alignment = 1
 
-[node name="FireballBar" type="ProgressBar" parent="AbilitiesContainer/HBoxContainer/FireballSlot/VBoxContainer" unique_id=534404354]
+[node name="MagicBar" type="ProgressBar" parent="AbilitiesContainer/HBoxContainer/WaterMagicSlot/VBoxContainer"]
+custom_minimum_size = Vector2(50, 8)
+layout_mode = 2
+size_flags_horizontal = 4
+max_value = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="AirMagicSlot" type="PanelContainer" parent="AbilitiesContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AbilitiesContainer/HBoxContainer/AirMagicSlot"]
+layout_mode = 2
+alignment = 1
+
+[node name="MagicIcon" type="ColorRect" parent="AbilitiesContainer/HBoxContainer/AirMagicSlot/VBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(0.8, 0.9, 1, 1)
+
+[node name="KeyLabel" type="Label" parent="AbilitiesContainer/HBoxContainer/AirMagicSlot/VBoxContainer"]
+layout_mode = 2
+text = "3"
+horizontal_alignment = 1
+
+[node name="MagicBar" type="ProgressBar" parent="AbilitiesContainer/HBoxContainer/AirMagicSlot/VBoxContainer"]
+custom_minimum_size = Vector2(50, 8)
+layout_mode = 2
+size_flags_horizontal = 4
+max_value = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="EarthMagicSlot" type="PanelContainer" parent="AbilitiesContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AbilitiesContainer/HBoxContainer/EarthMagicSlot"]
+layout_mode = 2
+alignment = 1
+
+[node name="MagicIcon" type="ColorRect" parent="AbilitiesContainer/HBoxContainer/EarthMagicSlot/VBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(0.5, 0.35, 0.2, 1)
+
+[node name="KeyLabel" type="Label" parent="AbilitiesContainer/HBoxContainer/EarthMagicSlot/VBoxContainer"]
+layout_mode = 2
+text = "4"
+horizontal_alignment = 1
+
+[node name="MagicBar" type="ProgressBar" parent="AbilitiesContainer/HBoxContainer/EarthMagicSlot/VBoxContainer"]
 custom_minimum_size = Vector2(50, 8)
 layout_mode = 2
 size_flags_horizontal = 4

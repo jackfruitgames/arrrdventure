@@ -92,12 +92,20 @@ func _physics_process(delta: float) -> void:
 	# Handle magic selection (keys 1-4)
 	if Input.is_action_just_pressed("select_magic_1"):
 		selected_magic = E.AttackMode.Fire
+		if hud_instance:
+			hud_instance.update_selected_magic(E.AttackMode.Fire)
 	elif Input.is_action_just_pressed("select_magic_2"):
 		selected_magic = E.AttackMode.Water
+		if hud_instance:
+			hud_instance.update_selected_magic(E.AttackMode.Water)
 	elif Input.is_action_just_pressed("select_magic_3"):
 		selected_magic = E.AttackMode.Air
+		if hud_instance:
+			hud_instance.update_selected_magic(E.AttackMode.Air)
 	elif Input.is_action_just_pressed("select_magic_4"):
 		selected_magic = E.AttackMode.Earth
+		if hud_instance:
+			hud_instance.update_selected_magic(E.AttackMode.Earth)
 
 	# Handle base attack (right mouse)
 	if Input.is_action_just_pressed("attack_base"):
