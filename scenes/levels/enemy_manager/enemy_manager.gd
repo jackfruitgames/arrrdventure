@@ -105,9 +105,22 @@ func _spawn_wave() -> void:
 	var wave = waves[current_wave_index]
 	var enemy_count = randi_range(wave.enemy_count_min, wave.enemy_count_max)
 
+	# Preload all ability scenes
+	var ability_scenes: Array[PackedScene] = [
+		preload("res://scenes/abilities/fireball/fireball.tscn"),
+		preload("res://scenes/abilities/water/water.tscn"),
+		preload("res://scenes/abilities/wind/wind.tscn"),
+		preload("res://scenes/abilities/earth/earth.tscn"),
+	]
+
 	# Spawn enemies in random positions around the mask
 	for i in range(enemy_count):
 		var enemy = wave.enemy_scene.instantiate()
+
+		# Randomly assign an ability to the enemy
+		var random_ability: PackedScene = ability_scenes.pick_random()
+		if "ability_scene" in enemy:
+			enemy.ability_scene = random_ability
 
 		# Random position around mask
 		var angle = randf() * TAU
