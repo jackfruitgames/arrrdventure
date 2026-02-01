@@ -211,14 +211,13 @@ func shoot_base_attack() -> void:
 	base_attack_cooldown_timer = base_attack_cooldown
 
 	var base_attack = base_attack_scene.instantiate()
-	get_tree().root.add_child(base_attack)
+	# Add to camera so it follows player view
+	camera.add_child(base_attack)
 
-	# Spawn in front of camera
-	base_attack.global_position = camera.global_position + (-camera.global_basis.z * 1.0)
-	# Set direction to camera forward
-	base_attack.direction = -camera.global_basis.z
-	# Rotate base to face direction of travel
-	base_attack.look_at(base_attack.global_position + base_attack.direction)
+	# Position sword in front of player at chest height
+	base_attack.position = Vector3(0.3, -0.2, -1.0)
+	# Rotate to face forward
+	base_attack.rotation = Vector3(0, 0, 0)
 
 
 func use_magic_attack() -> void:

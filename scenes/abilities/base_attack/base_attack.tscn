@@ -1,23 +1,24 @@
 [gd_scene format=3 uid="uid://cdpptipmb1xu8"]
 
 [ext_resource type="Script" uid="uid://ckqtpn6djm42r" path="res://scenes/abilities/base_attack/base_attack.gd" id="1_base_attack"]
-[ext_resource type="Texture2D" uid="uid://g1b0ur8sao1t" path="res://assets/textures/arrow/arrow.png" id="2_texture"]
+[ext_resource type="Texture2D" uid="uid://dumw5mw67h4yt" path="res://assets/img/Schwert.png" id="2_sword"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_base_attack"]
-radius = 0.05
-height = 0.5
+[sub_resource type="BoxShape3D" id="BoxShape3D_sword"]
+size = Vector3(3.7598267, 2.562561, 5.8836823)
 
 [node name="BaseAttack" type="Area3D" unique_id=1482774028 groups=["attacks"]]
 script = ExtResource("1_base_attack")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=174222821]
-transform = Transform3D(0.29070216, 0.9568136, -4.371139e-08, -1.2706996e-08, -4.182365e-08, -1, -0.9568136, 0.29070216, 1.9106855e-15, 0, 0, 0)
-axis = 1
-texture = ExtResource("2_texture")
+transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 0.8, 0.2, 0, 0.6)
+pixel_size = 0.001
+texture = ExtResource("2_sword")
+region_enabled = true
+region_rect = Rect2(384.97803, 208.03827, 599.4204, 1642.8567)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=597624950]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_base_attack")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5799134, 0.7812805, 0.8314835)
+shape = SubResource("BoxShape3D_sword")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

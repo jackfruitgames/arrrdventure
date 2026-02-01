@@ -32,10 +32,9 @@ func damage(dmg: int) -> void:
 
 
 func use_ability() -> void:
-	print_debug("Enemy uses ability")
 	var player: CharacterBody3D = get_tree().get_first_node_in_group("player")
 	if player == null:
-		print_debug("No player found, doing nothing")
+		printerr("No player found, doing nothing")
 		return
 
 	ability_cooldown_timer = randfn(ability_cooldown_min, ability_cooldown_max)

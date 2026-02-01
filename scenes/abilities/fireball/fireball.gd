@@ -19,7 +19,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	print("fireball body entered")
 	# Don't damage entities in the same type as the source
 	if body.is_in_group(source_group):
 		return
@@ -30,7 +29,6 @@ func _on_body_entered(body: Node3D) -> void:
 
 
 func _on_area_entered(area: Area3D) -> void:
-	print("fireball area entered")
 	# Don't damage entities in the same type as the source
 	if area.is_in_group(source_group):
 		return
