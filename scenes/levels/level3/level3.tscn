@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://432b310di2s4" path="res://assets/meshes/island2/island2.glb" id="3_t1p5v"]
 [ext_resource type="Material" uid="uid://4k2l66sq500q" path="res://assets/textures/ground2/Ground093B_1K-JPG.tres" id="4_nmi7g"]
 [ext_resource type="Texture2D" uid="uid://2pagqy2q1vdr" path="res://assets/img/landscape/Palme.png" id="5_cgrkj"]
-[ext_resource type="Shape3D" uid="uid://eu5hhr4g0yiw" path="res://resources/collisionmaps/level3.res" id="5_nfwes"]
 [ext_resource type="PackedScene" uid="uid://bovwl1ic8wyrw" path="res://scenes/levels/enemy_manager/enemy_manager.tscn" id="6_6wtin"]
+[ext_resource type="Shape3D" uid="uid://cwka6u1ac0t8g" path="res://resources/collisionmaps/level2.res" id="6_nmi7g"]
 [ext_resource type="Texture2D" uid="uid://w8h42vfpu73" path="res://assets/img/landscape/Wasser.png" id="8_2so8w"]
 [ext_resource type="Script" uid="uid://cf5if0blt27o0" path="res://scenes/levels/level3/level3_enemy_manager.gd" id="8_nmi7g"]
 [ext_resource type="PackedScene" uid="uid://bnieum86iucm3" path="res://scenes/enemies/boss_enemy/boss_enemy.tscn" id="8_t1p5v"]
@@ -59,13 +59,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.942566, -2.3533487, -15.78
 [node name="island2" parent="." unique_id=154433558 instance=ExtResource("3_t1p5v")]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
 
-[node name="Plane_001" parent="island2" index="0" unique_id=2054441071]
+[node name="Plane_001" parent="island2" index="0" unique_id=638341609]
 surface_material_override/0 = ExtResource("4_nmi7g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="island2/Plane_001" index="0" unique_id=1868086741]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="island2/Plane_001/StaticBody3D" unique_id=1741472533]
-shape = ExtResource("5_nfwes")
+shape = ExtResource("6_nmi7g")
 
 [node name="Palm" type="Sprite3D" parent="island2" unique_id=239226663]
 transform = Transform3D(0.004999999, 0, 0, 0, 0.004999999, 0, 0, 0, 0.004999999, -0.30843508, -0.10811349, -0.70203775)

@@ -62,9 +62,9 @@ transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
 [node name="Plane_001" parent="island2" index="0" unique_id=638341609]
 surface_material_override/0 = ExtResource("4_0ybc4")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="island2/Plane_001" index="0" unique_id=1773006451]
+[node name="StaticBody3D" type="StaticBody3D" parent="island2/Plane_001" index="0" unique_id=461418901]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="island2/Plane_001/StaticBody3D" unique_id=1268208707]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="island2/Plane_001/StaticBody3D" unique_id=1915890856]
 shape = ExtResource("5_buef0")
 
 [node name="Palm" type="Sprite3D" parent="island2" unique_id=2028962238]
