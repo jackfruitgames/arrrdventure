@@ -27,6 +27,16 @@ func _on_enemy_died() -> void:
 
 
 func _spawn_boss() -> void:
+	match GlobalState.unlocked_level:
+		E.Level.Level1:
+			GlobalSignals.boss_spawned.emit(E.Element.Water)
+		E.Level.Level2:
+			GlobalSignals.boss_spawned.emit(E.Element.Earth)
+		E.Level.Level3:
+			GlobalSignals.boss_spawned.emit(E.Element.Wind)
+		E.Level.Level4:
+			GlobalSignals.boss_spawned.emit(E.Element.Fire)
+
 	var boss_enemy: CharacterBody3D = boss_enemy_scene.instantiate()
 	boss_enemy.position = mask.position
 	enemy_container.add_child(boss_enemy)

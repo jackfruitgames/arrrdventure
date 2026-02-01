@@ -46,7 +46,7 @@ func _on_finished_level(level_idx: E.Level) -> void:
 	game_container.add_child(map_instance)
 
 
-func _on_level_failed(level_idx: E.Level) -> void:
+func _on_level_failed() -> void:
 	print("level failed")
 	# this is reset by the map
 	GlobalState.player_died = true

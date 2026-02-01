@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dpbb6qhdn7i0o" path="res://scenes/levels/level5/level5.tscn" id="7_wk7cx"]
 [ext_resource type="AudioStream" uid="uid://co57lrx37i07q" path="res://assets/audio/music/MainMenuLoop_5_PreRoll.wav" id="8_5icen"]
 [ext_resource type="AudioStream" uid="uid://cak5wesyd5hnh" path="res://assets/audio/music/PiratesMasks_MM_6_ohnePreRoll.logicx.wav" id="12_ytj6e"]
+[ext_resource type="AudioStream" uid="uid://cgbyxqd8hrvo5" path="res://assets/audio/music/PiratesMasks_Battle_BasicLoop_1.wav" id="13_wk7cx"]
+[ext_resource type="AudioStream" uid="uid://bxfyh83ougi3e" path="res://assets/audio/music/PiratesMasks_Battle_EarthBossLoop.wav" id="14_jphv7"]
 
 [node name="GameManager" type="Node" unique_id=771510695 node_paths=PackedStringArray("game_container")]
 script = ExtResource("1_0drbn")
@@ -33,7 +35,28 @@ bus = &"Music"
 stream = ExtResource("12_ytj6e")
 bus = &"Music"
 
-[node name="IslandMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=788126883]
+[node name="BattleMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=788126883]
+stream = ExtResource("13_wk7cx")
+bus = &"Music"
+
+[node name="BossEarthMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=1496427775]
+stream = ExtResource("14_jphv7")
+bus = &"Music"
+
+[node name="BossWindMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=1653427785]
+stream = ExtResource("14_jphv7")
+bus = &"Music"
+
+[node name="BossWaterMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=2042703926]
+stream = ExtResource("14_jphv7")
+bus = &"Music"
+
+[node name="BossFireMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=1131808023]
+stream = ExtResource("14_jphv7")
+bus = &"Music"
+
+[node name="EndBossMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=2105810303]
+stream = ExtResource("13_wk7cx")
 bus = &"Music"
 
 [node name="SfxAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=1077027622]

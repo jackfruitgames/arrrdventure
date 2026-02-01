@@ -13,13 +13,10 @@ func _ready() -> void:
 	assert(air_mask != null, "pls air_mask")
 	match GlobalState.unlocked_level:
 		E.Level.Level1:
-			print("l1")
 			water_mask.show()
 		E.Level.Level2:
-			print("l2")
 			earth_mask.show()
 		E.Level.Level3:
-			print("l3")
 			air_mask.show()
 		E.Level.Level4:
 			fire_mask.show()

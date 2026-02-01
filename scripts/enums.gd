@@ -23,6 +23,14 @@ enum Level {
 	End,
 }
 
+enum Element {
+	Water,
+	Fire,
+	Earth,
+	Wind,
+	All,
+}
+
 enum Enemy {
 	Boss,
 	EndBoss,
