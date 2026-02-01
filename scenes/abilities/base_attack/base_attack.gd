@@ -12,6 +12,7 @@ var slash_sprite: Sprite3D
 func _ready() -> void:
 	# Get the sprite
 	slash_sprite = get_node_or_null("Sprite3D")
+	GlobalSignals.play_sound.emit(E.Sound.Sword_Swosh)
 
 	if slash_sprite:
 		# Start invisible

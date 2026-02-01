@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://d2xd16p47lh8m" path="res://scenes/levels/level4/level4.tscn" id="6_ytj6e"]
 [ext_resource type="PackedScene" uid="uid://dpbb6qhdn7i0o" path="res://scenes/levels/level5/level5.tscn" id="7_wk7cx"]
 [ext_resource type="AudioStream" uid="uid://co57lrx37i07q" path="res://assets/audio/music/MainMenuLoop_5_PreRoll.wav" id="8_5icen"]
+[ext_resource type="AudioStream" uid="uid://daky6b7u3eluv" path="res://assets/audio/sfx/ESM_Bamboo_Sword_Swish_Explainer_Video__Mobile_App_Game_Swish_Swoosh_Movement.wav" id="11_n0mu8"]
+[ext_resource type="AudioStream" uid="uid://17bqw2fb4w0t" path="res://assets/audio/sfx/FireballPassByHeavy_SFXB.63.wav" id="12_s4yf2"]
 [ext_resource type="AudioStream" uid="uid://cak5wesyd5hnh" path="res://assets/audio/music/PiratesMasks_MM_6_ohnePreRoll.logicx.wav" id="12_ytj6e"]
 [ext_resource type="AudioStream" uid="uid://cgbyxqd8hrvo5" path="res://assets/audio/music/PiratesMasks_Battle_BasicLoop_1.wav" id="13_wk7cx"]
 [ext_resource type="AudioStream" uid="uid://bxfyh83ougi3e" path="res://assets/audio/music/PiratesMasks_Battle_EarthBossLoop.wav" id="14_jphv7"]
@@ -30,6 +32,8 @@ game_container = NodePath("GameContainer")
 [node name="Audio" type="Node" parent="." unique_id=1367153972]
 script = ExtResource("4_qetoq")
 ui_click = ExtResource("5_jnlof")
+sword_swosh = ExtResource("11_n0mu8")
+fireball = ExtResource("12_s4yf2")
 
 [node name="MainMusicPreRollAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=924001144]
 stream = ExtResource("8_5icen")

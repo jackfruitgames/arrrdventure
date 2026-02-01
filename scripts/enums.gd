@@ -12,6 +12,8 @@ enum AudioBus {
 
 enum Sound {
 	Ui_Click,
+	Sword_Swosh,
+	Fireball,
 }
 
 enum Level {

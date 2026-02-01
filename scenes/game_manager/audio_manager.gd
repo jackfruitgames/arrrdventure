@@ -1,6 +1,8 @@
 extends Node
 
 @export var ui_click: AudioStream
+@export var sword_swosh: AudioStream
+@export var fireball: AudioStream
 
 
 func _ready() -> void:
@@ -69,6 +71,12 @@ func _on_play_sound(sound: E.Sound) -> void:
 	match sound:
 		E.Sound.Ui_Click:
 			$UiAudioStreamPlayer.stream = ui_click
+			$UiAudioStreamPlayer.play()
+		E.Sound.Sword_Swosh:
+			$UiAudioStreamPlayer.stream = sword_swosh
+			$UiAudioStreamPlayer.play()
+		E.Sound.Fireball:
+			$UiAudioStreamPlayer.stream = fireball
 			$UiAudioStreamPlayer.play()
 		_:
 			printerr("Sound not configured: %s" % E.Sound.keys()[sound])

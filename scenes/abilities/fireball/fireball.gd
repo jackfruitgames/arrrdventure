@@ -10,6 +10,10 @@ var timer: float = 0.0
 var source_group: String = ""
 
 
+func _ready() -> void:
+	GlobalSignals.play_sound.emit(E.Sound.Fireball)
+
+
 func _physics_process(delta: float) -> void:
 	global_position += direction * speed * delta
 
