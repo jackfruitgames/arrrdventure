@@ -1,6 +1,20 @@
-# Global Game Jam 2026 Game
+# Arrrdventure 🏴‍☠️🏴‍☠️
 
-Our game for the Global Game Jam 2026 (GGJ) 🥳
+A mysterious pirate squid sends you on a quest to restore the powers of an ancient mask...
+
+This game was made in 48h for the Global Game Jam 2026: https://globalgamejam.org/games/2026/arrrdventure-7 🥳
+
+Play it here 🕹️:
+
+[![Play on itch.io](./_itch.io/itchio-badge-color.png)](https://eddex.itch.io/arrrdventure)
+
+
+## 👥 Team
+
+ - 2D Art: Nina
+ - Music: [Raffaele C. G. Bossard](https://www.raffaelebossard.com/)
+ - Programming: Brian, Jan, Benj, Marco
+
 
 ## 🧙 Dev setup
 
@@ -12,49 +26,6 @@ Our game for the Global Game Jam 2026 (GGJ) 🥳
 	- Go to `Editor > Editor Settings`, search for "formatter" and enable "Format on save"
 	- Additional info (e.g. for VS Code): https://www.gdquest.com/library/gdscript_formatter/
 
-## 📜 Project structure
-
-```
-godot-game-jam-template
-├── addons
-│   └── GDQuest_GDScript_formatter
-├── assets
-│   ├── audio
-│   ├── fonts
-│   │   └── AnnotationMono
-│   └── img
-├── resources
-├── scenes
-│   ├── game
-│   ├── game_manager
-│   └── ui
-│       ├── credits
-│       ├── main_menu
-│       └── settings
-└── scripts
-	└── globals
-```
-
-- **addons**: Do not modify anything manually in this folder. Addons are installed from the asset library.
-- **assets**: Images, audio files, sound effects, etc.
-- **resources**: Reusable Godot resources like themes etc.
-- **scenes**: Hierarchical file structure. An enemy scene would be placed in `scenes/game/enemy/enemy.tscn`.
-- **scripts**: Scripts that don't belong to a specific scene. Globals, enums, helpers, etc.
-
-### Global scripts & enums
-
-- `E` (scripts/enums.gd)
-  Place all enums that are used accross nodes/scenes in this class.
-  Access enums using the class name `E`, e.g. `E.EnemyType.Goblin`.
-- `GlobalSignals` (scripts/globals/global_signals.gd)
-  Global message bus. For notifying other nodes using signals. Fire and forget style.
-- `GlobalState` (scripts/globals/global_state.gd)
-  Global game state, e.g. score, stats etc. Stored in the save file.
-- `GlobalSettings` (scripts/globals/global_settings.gd)
-  Settings for the game, e.g. audio volume. Stored in the save file.
-- `SaveFile` (scripts/globals/save_file.gd)
-  Stores data in a file and loads it when the game starts.
-  The file is stored in [Godot's default user:// directory](https://docs.godotengine.org/en/stable/tutorials/io/data_paths.html#accessing-persistent-user-data-user).
 
 ## ✨ Assets used
 
