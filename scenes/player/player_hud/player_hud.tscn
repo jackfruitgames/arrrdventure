@@ -101,26 +101,26 @@ grow_vertical = 0
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="ArrowSlot" type="PanelContainer" parent="AbilitiesContainer/HBoxContainer" unique_id=2122378720]
+[node name="BaseAttackSlot" type="PanelContainer" parent="AbilitiesContainer/HBoxContainer" unique_id=2122378720]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="AbilitiesContainer/HBoxContainer/ArrowSlot" unique_id=332447230]
+[node name="VBoxContainer" type="VBoxContainer" parent="AbilitiesContainer/HBoxContainer/BaseAttackSlot" unique_id=332447230]
 layout_mode = 2
 alignment = 1
 
-[node name="ArrowIcon" type="ColorRect" parent="AbilitiesContainer/HBoxContainer/ArrowSlot/VBoxContainer" unique_id=1701536823]
+[node name="BaseAttackIcon" type="ColorRect" parent="AbilitiesContainer/HBoxContainer/BaseAttackSlot/VBoxContainer" unique_id=1701536823]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 color = Color(0.6, 0.4, 0.2, 1)
 
-[node name="KeyLabel" type="Label" parent="AbilitiesContainer/HBoxContainer/ArrowSlot/VBoxContainer" unique_id=633297062]
+[node name="KeyLabel" type="Label" parent="AbilitiesContainer/HBoxContainer/BaseAttackSlot/VBoxContainer" unique_id=633297062]
 layout_mode = 2
 text = "1"
 horizontal_alignment = 1
 
-[node name="ArrowBar" type="ProgressBar" parent="AbilitiesContainer/HBoxContainer/ArrowSlot/VBoxContainer" unique_id=679551894]
+[node name="BaseAttackBar" type="ProgressBar" parent="AbilitiesContainer/HBoxContainer/BaseAttackSlot/VBoxContainer" unique_id=679551894]
 custom_minimum_size = Vector2(50, 8)
 layout_mode = 2
 size_flags_horizontal = 4

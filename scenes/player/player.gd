@@ -7,7 +7,7 @@ extends CharacterBody3D
 @export var dash_duration: float = 0.3
 @export var dash_cooldown: float = 1
 @export var fireball_cooldown: float = 0.5
-@export var arrow_cooldown: float = 0.8
+@export var base_attack_cooldown: float = 0.8
 @export var max_health: int = 200
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -15,13 +15,14 @@ var current_health: int
 var dash_timer: float = 0.0
 var dash_cooldown_timer: float = 0.0
 var fireball_cooldown_timer: float = 0.0
-var arrow_cooldown_timer: float = 0.0
+var base_attack_cooldown_timer: float = 0.0
 var is_dashing: bool = false
 var dash_direction: Vector3 = Vector3.ZERO
 var hud_instance: CanvasLayer = null
 var player_hud: PackedScene = preload("res://scenes/player/player_hud/player_hud.tscn")
 var fireball_scene: PackedScene = preload("res://scenes/abilities/fireball/fireball.tscn")
-var arrow_scene: PackedScene = preload("res://scenes/abilities/arrow/arrow.tscn")
+var base_attack_scene: PackedScene = preload("res://scenes/abilities/base_attack/base_attack.tscn")
+var attack_mode: E.AttackMode
 
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
@@ -45,15 +46,15 @@ func _physics_process(delta: float) -> void:
 	if fireball_cooldown_timer > 0:
 		fireball_cooldown_timer -= delta
 
-	# Update arrow cooldown
-	if arrow_cooldown_timer > 0:
-		arrow_cooldown_timer -= delta
+	# Update base cooldown
+	if base_attack_cooldown_timer > 0:
+		base_attack_cooldown_timer -= delta
 
 	# Update HUD
 	if hud_instance:
 		hud_instance.update_dash_cooldown(dash_cooldown_timer, dash_cooldown)
 		hud_instance.update_fireball_cooldown(fireball_cooldown_timer, fireball_cooldown)
-		hud_instance.update_arrow_cooldown(arrow_cooldown_timer, arrow_cooldown)
+		hud_instance.update_base_attack_cooldown(base_attack_cooldown_timer, base_attack_cooldown)
 
 	# Get input direction
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -88,9 +89,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = jump_velocity
 
-	# Handle arrow (Level 1 ability)
-	if Input.is_action_just_pressed("arrow"):
-		shoot_arrow()
+	# Handle base (Level 1 ability)
+	if Input.is_action_just_pressed("attack_base"):
+		shoot_base_attack()
 
 	# Handle fireball (unlocked at Level2+)
 	if Input.is_action_just_pressed("fireball"):
@@ -135,23 +136,23 @@ func shoot_fireball() -> void:
 	fireball.direction = -camera.global_basis.z
 
 
-func shoot_arrow() -> void:
-	if not arrow_cooldown_timer <= 0:
+func shoot_base_attack() -> void:
+	if not base_attack_cooldown_timer <= 0:
 		return
-	if arrow_scene == null:
+	if base_attack_scene == null:
 		return
 
-	arrow_cooldown_timer = arrow_cooldown
+	base_attack_cooldown_timer = base_attack_cooldown
 
-	var arrow = arrow_scene.instantiate()
-	get_tree().root.add_child(arrow)
+	var base_attack = base_attack_scene.instantiate()
+	get_tree().root.add_child(base_attack)
 
 	# Spawn in front of camera
-	arrow.global_position = camera.global_position + (-camera.global_basis.z * 1.0)
+	base_attack.global_position = camera.global_position + (-camera.global_basis.z * 1.0)
 	# Set direction to camera forward
-	arrow.direction = -camera.global_basis.z
-	# Rotate arrow to face direction of travel
-	arrow.look_at(arrow.global_position + arrow.direction)
+	base_attack.direction = -camera.global_basis.z
+	# Rotate base to face direction of travel
+	base_attack.look_at(base_attack.global_position + base_attack.direction)
 
 
 func use_ability_level3() -> void:
@@ -177,7 +178,7 @@ func damage(dmg: int) -> void:
 
 
 func _on_dead() -> void:
-	GlobalSignals.level_failed.emit()
+	GlobalSignals.level_failed.emit(GlobalState.current_level)
 	pass
 
 
