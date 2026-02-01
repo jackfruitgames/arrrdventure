@@ -20,6 +20,7 @@ enum Level {
 	Level3,
 	Level4,
 	Level5,
+	End,
 }
 
 enum Enemy {

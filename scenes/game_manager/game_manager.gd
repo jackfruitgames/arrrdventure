@@ -10,6 +10,7 @@ func _ready() -> void:
 	GlobalSignals.start_game.connect(_on_start_game)
 	GlobalSignals.start_level.connect(_on_start_level)
 	GlobalSignals.finish_level.connect(_on_finished_level)
+	GlobalSignals.level_failed.connect(_on_level_failed)
 
 
 func _on_start_game() -> void:
@@ -38,6 +39,17 @@ func _on_start_level(level_idx: E.Level) -> void:
 func _on_finished_level(level_idx: E.Level) -> void:
 	print("Finished level...")
 	GlobalState.unlocked_level = level_idx + 1
+	_clear_game_container()
+
+	# load map again
+	var map_instance := map_scene.instantiate()
+	game_container.add_child(map_instance)
+
+
+func _on_level_failed(level_idx: E.Level) -> void:
+	print("level failed")
+	# this is reset by the map
+	GlobalState.player_died = true
 	_clear_game_container()
 
 	# load map again
