@@ -10,10 +10,35 @@ func _ready() -> void:
 	GlobalSignals.finish_level.connect(_on_finish_level)
 	GlobalSignals.boss_spawned.connect(_on_boss_spawned)
 	$MainMusicAudioStreamPlayer.finished.connect(_play_main_menu_music)
+	$BossWaterMusicAudioStreamPlayer.finished.connect(_on_water_finished)
+	$BossEarthMusicAudioStreamPlayer.finished.connect(_on_earth_finished)
+	$BossWindMusicAudioStreamPlayer.finished.connect(_on_wind_finished)
+	$BossFireMusicAudioStreamPlayer.finished.connect(_on_fire_finished)
+	$EndBossMusicAudioStreamPlayer.finished.connect(_on_end_boss_finished)
 	# initialize the volume of each audio bus
 	for bus_idx: int in E.AudioBus.values():
 		AudioServer.set_bus_volume_linear(bus_idx, GlobalSettings.audio_volumes_pct[bus_idx] / 100.0) # linear volume = 0 - 1
 	_play_main_menu_music_loop_with_pre_roll()
+
+
+func _on_water_finished() -> void:
+	$BossWaterMusicAudioStreamPlayer.play()
+
+
+func _on_earth_finished() -> void:
+	$BossEarthMusicAudioStreamPlayer.play()
+
+
+func _on_wind_finished() -> void:
+	$BossWindMusicAudioStreamPlayer.play()
+
+
+func _on_fire_finished() -> void:
+	$BossFireMusicAudioStreamPlayer.play()
+
+
+func _on_end_boss_finished() -> void:
+	$EndBossMusicAudioStreamPlayer.play()
 
 
 func _play_main_menu_music_loop_with_pre_roll() -> void:

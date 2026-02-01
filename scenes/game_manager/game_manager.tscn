@@ -14,6 +14,10 @@
 [ext_resource type="AudioStream" uid="uid://cak5wesyd5hnh" path="res://assets/audio/music/PiratesMasks_MM_6_ohnePreRoll.logicx.wav" id="12_ytj6e"]
 [ext_resource type="AudioStream" uid="uid://cgbyxqd8hrvo5" path="res://assets/audio/music/PiratesMasks_Battle_BasicLoop_1.wav" id="13_wk7cx"]
 [ext_resource type="AudioStream" uid="uid://bxfyh83ougi3e" path="res://assets/audio/music/PiratesMasks_Battle_EarthBossLoop.wav" id="14_jphv7"]
+[ext_resource type="AudioStream" uid="uid://dwrger2fl2vkn" path="res://assets/audio/music/PiratesMasks_Battle_AirBossLoop.wav" id="15_piong"]
+[ext_resource type="AudioStream" uid="uid://br83ddr47weoy" path="res://assets/audio/music/PiratesMasks_Battle_WaterBossLoop.wav" id="16_6odvu"]
+[ext_resource type="AudioStream" uid="uid://b6xbgl33xuewe" path="res://assets/audio/music/PiratesMasks_Battle_FireBossLoop.wav" id="17_vo7br"]
+[ext_resource type="AudioStream" uid="uid://b6twypa5u0143" path="res://assets/audio/music/PiratesMasks_Battle_EndBossLoop.wav" id="18_6odvu"]
 
 [node name="GameManager" type="Node" unique_id=771510695 node_paths=PackedStringArray("game_container")]
 script = ExtResource("1_0drbn")
@@ -44,19 +48,19 @@ stream = ExtResource("14_jphv7")
 bus = &"Music"
 
 [node name="BossWindMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=1653427785]
-stream = ExtResource("14_jphv7")
+stream = ExtResource("15_piong")
 bus = &"Music"
 
 [node name="BossWaterMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=2042703926]
-stream = ExtResource("14_jphv7")
+stream = ExtResource("16_6odvu")
 bus = &"Music"
 
 [node name="BossFireMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=1131808023]
-stream = ExtResource("14_jphv7")
+stream = ExtResource("17_vo7br")
 bus = &"Music"
 
 [node name="EndBossMusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=2105810303]
-stream = ExtResource("13_wk7cx")
+stream = ExtResource("18_6odvu")
 bus = &"Music"
 
 [node name="SfxAudioStreamPlayer" type="AudioStreamPlayer" parent="Audio" unique_id=1077027622]
