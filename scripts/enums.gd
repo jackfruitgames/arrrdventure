@@ -38,8 +38,8 @@ enum Enemy {
 }
 
 enum AttackMode {
-	Fire,
 	Water,
-	Air,
 	Earth,
+	Air,
+	Fire,
 }

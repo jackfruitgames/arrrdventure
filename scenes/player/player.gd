@@ -19,11 +19,11 @@ var base_attack_cooldown_timer: float = 0.0
 var is_dashing: bool = false
 var dash_direction: Vector3 = Vector3.ZERO
 var hud_instance: CanvasLayer = null
-var selected_magic: E.AttackMode = E.AttackMode.Fire
+var selected_magic: E.AttackMode = E.AttackMode.Water
 var player_hud: PackedScene = preload("res://scenes/player/player_hud/player_hud.tscn")
 var fireball_scene: PackedScene = preload("res://scenes/abilities/fireball/fireball.tscn")
 var water_scene: PackedScene = preload("res://scenes/abilities/water/water.tscn")
-var air_scene: PackedScene = preload("res://scenes/abilities/air/air.tscn")
+var air_scene: PackedScene = preload("res://scenes/abilities/wind/wind.tscn")
 var earth_scene: PackedScene = preload("res://scenes/abilities/earth/earth.tscn")
 var base_attack_scene: PackedScene = preload("res://scenes/abilities/base_attack/base_attack.tscn")
 
@@ -94,21 +94,21 @@ func _physics_process(delta: float) -> void:
 
 	# Handle magic selection (keys 1-4)
 	if Input.is_action_just_pressed("select_magic_1"):
-		selected_magic = E.AttackMode.Fire
-		if hud_instance:
-			hud_instance.update_selected_magic(E.AttackMode.Fire)
-	elif Input.is_action_just_pressed("select_magic_2"):
 		selected_magic = E.AttackMode.Water
 		if hud_instance:
 			hud_instance.update_selected_magic(E.AttackMode.Water)
+	elif Input.is_action_just_pressed("select_magic_2"):
+		selected_magic = E.AttackMode.Earth
+		if hud_instance:
+			hud_instance.update_selected_magic(E.AttackMode.Earth)
 	elif Input.is_action_just_pressed("select_magic_3"):
 		selected_magic = E.AttackMode.Air
 		if hud_instance:
 			hud_instance.update_selected_magic(E.AttackMode.Air)
 	elif Input.is_action_just_pressed("select_magic_4"):
-		selected_magic = E.AttackMode.Earth
+		selected_magic = E.AttackMode.Fire
 		if hud_instance:
-			hud_instance.update_selected_magic(E.AttackMode.Earth)
+			hud_instance.update_selected_magic(E.AttackMode.Fire)
 
 	# Handle base attack (right mouse)
 	if Input.is_action_just_pressed("attack_base"):
@@ -227,18 +227,18 @@ func use_magic_attack() -> void:
 
 	# Check if the selected magic is unlocked
 	match selected_magic:
-		E.AttackMode.Fire:
-			if GlobalState.unlocked_level >= E.Level.Level2:
-				shoot_fireball()
 		E.AttackMode.Water:
-			if GlobalState.unlocked_level >= E.Level.Level3:
+			if GlobalState.unlocked_level >= E.Level.Level2:
 				shoot_water()
+		E.AttackMode.Earth:
+			if GlobalState.unlocked_level >= E.Level.Level3:
+				shoot_earth()
 		E.AttackMode.Air:
 			if GlobalState.unlocked_level >= E.Level.Level4:
 				shoot_air()
-		E.AttackMode.Earth:
+		E.AttackMode.Fire:
 			if GlobalState.unlocked_level >= E.Level.Level5:
-				shoot_earth()
+				shoot_fireball()
 
 
 func use_ability_level3() -> void:

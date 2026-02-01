@@ -23,7 +23,7 @@ extends CanvasLayer
 @onready var earth_magic_bar: ProgressBar = $AbilitiesContainer/HBoxContainer/EarthMagicSlot/VBoxContainer/MagicBar
 @onready var earth_magic_panel: PanelContainer = $AbilitiesContainer/HBoxContainer/EarthMagicSlot
 
-var selected_magic: E.AttackMode = E.AttackMode.Fire
+var selected_magic: E.AttackMode = E.AttackMode.Water
 
 
 func _ready() -> void:
@@ -31,12 +31,12 @@ func _ready() -> void:
 
 	# Abilities
 	base_attack_slot.visible = true
-	fire_magic_slot.visible = GlobalState.unlocked_level >= E.Level.Level2
-	water_magic_slot.visible = GlobalState.unlocked_level >= E.Level.Level3
+	water_magic_slot.visible = GlobalState.unlocked_level >= E.Level.Level2
+	earth_magic_slot.visible = GlobalState.unlocked_level >= E.Level.Level3
 	air_magic_slot.visible = GlobalState.unlocked_level >= E.Level.Level4
-	earth_magic_slot.visible = GlobalState.unlocked_level >= E.Level.Level5
+	fire_magic_slot.visible = GlobalState.unlocked_level >= E.Level.Level5
 
-	update_selected_magic(E.AttackMode.Fire)
+	update_selected_magic(E.AttackMode.Water)
 
 
 func update_dash_cooldown(current: float, max_cooldown: float) -> void:

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cq3n8vh2mw7n"]
 
-[ext_resource type="Script" uid="uid://dlgk0t11psru7" path="res://scenes/abilities/air/air.gd" id="1_xlw38"]
+[ext_resource type="Script" uid="uid://dlgk0t11psru7" path="res://scenes/abilities/wind/wind.gd" id="1_xlw38"]
 [ext_resource type="Shader" uid="uid://7uvtgwlghgxk" path="res://scenes/abilities/fireball/fireball.gdshader" id="2_shader"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_mm52q"]
@@ -219,7 +219,7 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_smoke_particle")
 size = Vector2(0.3, 0.3)
 
-[node name="Air" type="Area3D" unique_id=259110871 groups=["attacks"]]
+[node name="Wind" type="Area3D" unique_id=259110871 groups=["attacks"]]
 script = ExtResource("1_xlw38")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=378227142]

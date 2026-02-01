@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dxnjyahf304v1" path="res://scenes/enemies/mini_enemy/mini_enemy.gd" id="1_tax6k"]
 [ext_resource type="PackedScene" uid="uid://22rlxph3daq5" path="res://scenes/abilities/fireball/fireball.tscn" id="2_1ipe3"]
-[ext_resource type="Script" uid="uid://cec1vt8ck4avr" path="res://scenes/enemies/boss_enemy/mask_manager.gd" id="2_apj76"]
+[ext_resource type="Script" path="res://scenes/enemies/boss_enemy/mask_manager.gd" id="2_apj76"]
 [ext_resource type="Texture2D" uid="uid://dkhqhn1j20sjk" path="res://assets/img/enemies/boss/MaskFire.png" id="4_12o1h"]
 [ext_resource type="Texture2D" uid="uid://bgao1ey7lfqgm" path="res://assets/img/enemies/boss/Schnauzbart.png" id="4_cmvs8"]
 [ext_resource type="Texture2D" uid="uid://cxvukqv0du0m6" path="res://assets/img/enemies/boss/MaskWater.png" id="5_ab0yy"]
