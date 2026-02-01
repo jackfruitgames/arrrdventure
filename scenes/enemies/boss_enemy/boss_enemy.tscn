@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bnieum86iucm3"]
 
 [ext_resource type="Script" uid="uid://dxnjyahf304v1" path="res://scenes/enemies/mini_enemy/mini_enemy.gd" id="1_tax6k"]
+[ext_resource type="Script" uid="uid://cec1vt8ck4avr" path="res://scenes/enemies/boss_enemy/mask_manager.gd" id="2_apj76"]
 [ext_resource type="Texture2D" uid="uid://cbv0npx6edum4" path="res://assets/img/enemies/boss/Feuermaske.png" id="2_u137b"]
 [ext_resource type="Texture2D" uid="uid://bujqjoqnplq0l" path="res://assets/img/enemies/boss/Mund mit Zähnen.png" id="3_apj76"]
 [ext_resource type="Texture2D" uid="uid://by16kj5dugyvj" path="res://assets/img/enemies/boss/Schnauzbart.png" id="4_cmvs8"]
@@ -26,8 +27,35 @@ shape = SubResource("CapsuleShape3D_1ipe3")
 [node name="Sprites" type="Node3D" parent="." unique_id=1782206744]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="Mask" type="Sprite3D" parent="Sprites" unique_id=1333506791]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0.01)
+[node name="Masks" type="Node3D" parent="Sprites" unique_id=893835326 node_paths=PackedStringArray("fire_mask", "water_mask", "earth_mask", "air_mask")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.666, 0, 0.02)
+script = ExtResource("2_apj76")
+fire_mask = NodePath("FireMask")
+water_mask = NodePath("WaterMask")
+earth_mask = NodePath("EarthMask")
+air_mask = NodePath("AirMask")
+
+[node name="FireMask" type="Sprite3D" parent="Sprites/Masks" unique_id=1333506791]
+transform = Transform3D(-0.2, 0, -1.7484556e-08, 0, 0.2, 0, 1.7484556e-08, 0, -0.2, 0, 0, 0)
+visible = false
+alpha_cut = 2
+texture = ExtResource("2_u137b")
+
+[node name="WaterMask" type="Sprite3D" parent="Sprites/Masks" unique_id=1548092015]
+transform = Transform3D(-0.2, 0, -1.7484556e-08, 0, 0.2, 0, 1.7484556e-08, 0, -0.2, -8.7422775e-10, 0, -0.01)
+visible = false
+alpha_cut = 2
+texture = ExtResource("2_u137b")
+
+[node name="AirMask" type="Sprite3D" parent="Sprites/Masks" unique_id=1220711709]
+transform = Transform3D(-0.2, 0, -1.7484556e-08, 0, 0.2, 0, 1.7484556e-08, 0, -0.2, -8.7422775e-10, 0, -0.01)
+visible = false
+alpha_cut = 2
+texture = ExtResource("2_u137b")
+
+[node name="EarthMask" type="Sprite3D" parent="Sprites/Masks" unique_id=2044234]
+transform = Transform3D(-0.2, 0, -1.7484556e-08, 0, 0.2, 0, 1.7484556e-08, 0, -0.2, -8.7422775e-10, 0, -0.01)
+visible = false
 alpha_cut = 2
 texture = ExtResource("2_u137b")
 
