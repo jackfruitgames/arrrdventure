@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://bkhygb2wbfkl0"]
 
-[ext_resource type="Script" uid="uid://dd3ahs0v5o2h0" path="res://scenes/map/ship.gd" id="1_a2pkv"]
+[ext_resource type="Script" path="res://scenes/map/ship.gd" id="1_a2pkv"]
 [ext_resource type="Texture2D" uid="uid://w8h42vfpu73" path="res://assets/img/landscape/Wasser.png" id="1_fcby6"]
 [ext_resource type="Script" uid="uid://c2y4d4d52v8v3" path="res://scenes/map/island.gd" id="1_ph54e"]
 [ext_resource type="Texture2D" uid="uid://bw7h6dw7jagw3" path="res://assets/img/Ship.png" id="1_tqkkf"]
-[ext_resource type="Script" uid="uid://du3vy7b2kx4ih" path="res://scenes/map/map.gd" id="2_tqkkf"]
 [ext_resource type="PackedScene" uid="uid://cg6xkbc6beeqs" path="res://assets/meshes/mapIsland/mapIsland.glb" id="3_sqgf4"]
 [ext_resource type="Material" uid="uid://4k2l66sq500q" path="res://assets/textures/ground2/Ground093B_1K-JPG.tres" id="4_vvrx0"]
 [ext_resource type="Texture2D" uid="uid://2pagqy2q1vdr" path="res://assets/img/landscape/Palme.png" id="5_f17u5"]
@@ -12,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://cgk1xtd2pj1p" path="res://assets/img/masks/FireMask.png" id="7_f17u5"]
 [ext_resource type="Texture2D" uid="uid://cro4u1w17oj8j" path="res://assets/img/masks/EarthMask.png" id="7_x2kg6"]
 [ext_resource type="Texture2D" uid="uid://bgwhruce46eki" path="res://assets/img/masks/AirMask.png" id="8_cumk7"]
+[ext_resource type="PackedScene" uid="uid://w2wktaoeddee" path="res://scenes/dialogue/dialogue.tscn" id="12_x2kg6"]
+[ext_resource type="Theme" uid="uid://ivbyi03tfmnl" path="res://resources/ui_theme.tres" id="13_cumk7"]
+[ext_resource type="Script" uid="uid://dtx5a0nnlri4i" path="res://scenes/map/map_ui.gd" id="13_mgs8m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sxf4j"]
 
@@ -67,7 +69,7 @@ tree = NodePath("Tree")
 [node name="mapIsland" parent="Islands/Level1" unique_id=1527153345 instance=ExtResource("3_sqgf4")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.47340512, 0)
 
-[node name="Plane" parent="Islands/Level1/mapIsland" index="0" unique_id=16172754]
+[node name="Plane" parent="Islands/Level1/mapIsland" index="0" unique_id=1936569579]
 surface_material_override/0 = ExtResource("4_vvrx0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Islands/Level1" unique_id=1870048136]
@@ -101,7 +103,7 @@ tree = NodePath("Tree2")
 [node name="mapIsland" parent="Islands/Level2" unique_id=341420379 instance=ExtResource("3_sqgf4")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.65087986, 0)
 
-[node name="Plane" parent="Islands/Level2/mapIsland" index="0" unique_id=16172754]
+[node name="Plane" parent="Islands/Level2/mapIsland" index="0" unique_id=1936569579]
 surface_material_override/0 = ExtResource("4_vvrx0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Islands/Level2" unique_id=601031951]
@@ -132,7 +134,7 @@ tree = NodePath("Tree2")
 [node name="mapIsland" parent="Islands/Level3" unique_id=1479697099 instance=ExtResource("3_sqgf4")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.7199049, 0)
 
-[node name="Plane" parent="Islands/Level3/mapIsland" index="0" unique_id=16172754]
+[node name="Plane" parent="Islands/Level3/mapIsland" index="0" unique_id=1936569579]
 surface_material_override/0 = ExtResource("4_vvrx0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Islands/Level3" unique_id=711906498]
@@ -163,7 +165,7 @@ tree = NodePath("Tree2")
 [node name="mapIsland" parent="Islands/Level4" unique_id=1279935050 instance=ExtResource("3_sqgf4")]
 transform = Transform3D(0.13161178, 0, 0.1505933, 0, 0.2, 0, -0.1505933, 0, 0.13161178, 0, -0.5665636, 0)
 
-[node name="Plane" parent="Islands/Level4/mapIsland" index="0" unique_id=16172754]
+[node name="Plane" parent="Islands/Level4/mapIsland" index="0" unique_id=1936569579]
 surface_material_override/0 = ExtResource("4_vvrx0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Islands/Level4" unique_id=957327372]
@@ -197,62 +199,28 @@ texture = ExtResource("1_tqkkf")
 transform = Transform3D(4.685, 0, 0, 0, 4.685, 0, 0, 0, 4.685, 0.04746771, 0, 1.435253)
 shape = SubResource("BoxShape3D_ph54e")
 
-[node name="DebugLevelSwitchButtons" type="Control" parent="." unique_id=792297086]
-layout_mode = 3
-anchors_preset = 0
+[node name="MapUI" type="CanvasLayer" parent="." unique_id=556526480 node_paths=PackedStringArray("map")]
+script = ExtResource("13_mgs8m")
+map = NodePath("..")
+
+[node name="MarginContainer" type="MarginContainer" parent="MapUI" unique_id=674129532]
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("2_tqkkf")
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="DebugLevelSwitchButtons" unique_id=135662682]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 30.0
-offset_top = 387.0
-offset_right = 92.0
-offset_bottom = 653.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 16
-
-[node name="Level1Button" type="Button" parent="DebugLevelSwitchButtons/VBoxContainer" unique_id=234148567]
+[node name="ExitButton" type="Button" parent="MapUI/MarginContainer" unique_id=996239866]
 layout_mode = 2
-text = "Level 1"
-
-[node name="Level2Button" type="Button" parent="DebugLevelSwitchButtons/VBoxContainer" unique_id=1617698465]
-layout_mode = 2
-text = "Level 2"
-
-[node name="Level3Button" type="Button" parent="DebugLevelSwitchButtons/VBoxContainer" unique_id=120304475]
-layout_mode = 2
-text = "Level 3"
-
-[node name="Level4Button" type="Button" parent="DebugLevelSwitchButtons/VBoxContainer" unique_id=71467018]
-layout_mode = 2
-text = "Level 4"
-
-[node name="Level5Button" type="Button" parent="DebugLevelSwitchButtons/VBoxContainer" unique_id=759387283]
-layout_mode = 2
-text = "Level 5"
-
-[node name="ExitButton" type="Button" parent="DebugLevelSwitchButtons/VBoxContainer" unique_id=873027323]
-layout_mode = 2
+theme = ExtResource("13_cumk7")
 text = "Exit"
+
+[node name="Dialogue" parent="." unique_id=836787370 instance=ExtResource("12_x2kg6")]
 
 [connection signal="body_entered" from="Islands/Level1" to="Islands/Level1" method="_on_body_entered"]
 [connection signal="body_entered" from="Islands/Level2" to="Islands/Level2" method="_on_body_entered"]
 [connection signal="body_entered" from="Islands/Level3" to="Islands/Level3" method="_on_body_entered"]
 [connection signal="body_entered" from="Islands/Level4" to="Islands/Level4" method="_on_body_entered"]
-[connection signal="pressed" from="DebugLevelSwitchButtons/VBoxContainer/Level1Button" to="DebugLevelSwitchButtons" method="_on_level_1_button_pressed"]
-[connection signal="pressed" from="DebugLevelSwitchButtons/VBoxContainer/Level2Button" to="DebugLevelSwitchButtons" method="_on_level_2_button_pressed"]
-[connection signal="pressed" from="DebugLevelSwitchButtons/VBoxContainer/Level3Button" to="DebugLevelSwitchButtons" method="_on_level_3_button_pressed"]
-[connection signal="pressed" from="DebugLevelSwitchButtons/VBoxContainer/Level4Button" to="DebugLevelSwitchButtons" method="_on_level_4_button_pressed"]
-[connection signal="pressed" from="DebugLevelSwitchButtons/VBoxContainer/Level5Button" to="DebugLevelSwitchButtons" method="_on_level_5_button_pressed"]
-[connection signal="pressed" from="DebugLevelSwitchButtons/VBoxContainer/ExitButton" to="DebugLevelSwitchButtons" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MapUI/MarginContainer/ExitButton" to="MapUI" method="_on_exit_button_pressed"]
 
 [editable path="Islands/Level1/mapIsland"]
 [editable path="Islands/Level2/mapIsland"]
