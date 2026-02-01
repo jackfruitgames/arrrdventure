@@ -36,3 +36,10 @@ enum Enemy {
 	EndBoss,
 	Mini,
 }
+
+enum AttackMode {
+	Fire,
+	Water,
+	Air,
+	Earth,
+}

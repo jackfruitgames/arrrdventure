@@ -24,7 +24,7 @@ func update_dash_cooldown(current: float, max_cooldown: float) -> void:
 		dash_bar.value = 1.0
 
 
-func update_fireball_cooldown(current: float, max_cooldown: float) -> void:
+func update_magic_cooldown(current: float, max_cooldown: float) -> void:
 	if max_cooldown > 0:
 		fireball_bar.value = 1.0 - (current / max_cooldown)
 	else:
