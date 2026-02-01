@@ -3,6 +3,8 @@ extends CharacterBody3D
 const SPEED = 10.0
 const JUMP_VELOCITY = 4.5
 
+@export var animationPlayer: AnimationPlayer
+
 # can't move ship before dialogue is finished
 # otherwise we have PROBLEMS!!!
 var movement_locked = true
@@ -10,6 +12,7 @@ var movement_locked = true
 
 func _ready() -> void:
 	GlobalSignals.dialogue_ended.connect(_on_dialogue_ended)
+	animationPlayer.play("ship_schaukle")
 
 
 func _on_dialogue_ended() -> void:
