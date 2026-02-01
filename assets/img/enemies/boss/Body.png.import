@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7qrnu3oq07ma"
-path.s3tc="res://.godot/imported/end_boss_placeholder.png-a617862d4cebbfdd414d01d5cf225410.s3tc.ctex"
+uid="uid://dxc68yejwf0hs"
+path.s3tc="res://.godot/imported/Body.png-ca028bc18d366cf6841f8b5d0ae380dc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/img/enemies/end_boss/end_boss_placeholder.png"
-dest_files=["res://.godot/imported/end_boss_placeholder.png-a617862d4cebbfdd414d01d5cf225410.s3tc.ctex"]
+source_file="res://assets/img/enemies/boss/Body.png"
+dest_files=["res://.godot/imported/Body.png-ca028bc18d366cf6841f8b5d0ae380dc.s3tc.ctex"]
 
 [params]
 

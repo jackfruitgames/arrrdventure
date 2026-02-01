@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buemdsadir5ou"
-path.s3tc="res://.godot/imported/Right Arm.png-f69e911ede6b51c5ab43b3389a4cfff4.s3tc.ctex"
+uid="uid://b0vr7pkmfwo74"
+path.s3tc="res://.godot/imported/ArmLeft.png-c9c295e63518da40df68dc27a776cf06.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/img/enemies/boss/Right Arm.png"
-dest_files=["res://.godot/imported/Right Arm.png-f69e911ede6b51c5ab43b3389a4cfff4.s3tc.ctex"]
+source_file="res://assets/img/enemies/boss/ArmLeft.png"
+dest_files=["res://.godot/imported/ArmLeft.png-c9c295e63518da40df68dc27a776cf06.s3tc.ctex"]
 
 [params]
 

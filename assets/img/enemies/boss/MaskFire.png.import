@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bujqjoqnplq0l"
-path.s3tc="res://.godot/imported/Mund mit Zähnen.png-13df175b7b389af90fa4d69bdb703573.s3tc.ctex"
+uid="uid://dkhqhn1j20sjk"
+path.s3tc="res://.godot/imported/MaskFire.png-f645df225be4e53a2c90989a93ffa22b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/img/enemies/boss/Mund mit Zähnen.png"
-dest_files=["res://.godot/imported/Mund mit Zähnen.png-13df175b7b389af90fa4d69bdb703573.s3tc.ctex"]
+source_file="res://assets/img/enemies/boss/MaskFire.png"
+dest_files=["res://.godot/imported/MaskFire.png-f645df225be4e53a2c90989a93ffa22b.s3tc.ctex"]
 
 [params]
 

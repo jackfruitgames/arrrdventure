@@ -1,17 +1,20 @@
 [gd_scene format=3 uid="uid://bnieum86iucm3"]
 
 [ext_resource type="Script" uid="uid://dxnjyahf304v1" path="res://scenes/enemies/mini_enemy/mini_enemy.gd" id="1_tax6k"]
-[ext_resource type="Script" uid="uid://cec1vt8ck4avr" path="res://scenes/enemies/boss_enemy/mask_manager.gd" id="2_apj76"]
 [ext_resource type="PackedScene" uid="uid://22rlxph3daq5" path="res://scenes/abilities/fireball/fireball.tscn" id="2_1ipe3"]
-[ext_resource type="Texture2D" uid="uid://cbv0npx6edum4" path="res://assets/img/enemies/boss/Feuermaske.png" id="2_u137b"]
-[ext_resource type="Texture2D" uid="uid://bujqjoqnplq0l" path="res://assets/img/enemies/boss/Mund mit Zähnen.png" id="3_apj76"]
-[ext_resource type="Texture2D" uid="uid://by16kj5dugyvj" path="res://assets/img/enemies/boss/Schnauzbart.png" id="4_cmvs8"]
-[ext_resource type="Texture2D" uid="uid://dn66e0jfjvofd" path="res://assets/img/enemies/boss/Körper.png" id="5_m3ynw"]
-[ext_resource type="Texture2D" uid="uid://buemdsadir5ou" path="res://assets/img/enemies/boss/Right Arm.png" id="6_1v5r7"]
-[ext_resource type="Texture2D" uid="uid://neflunogwyrs" path="res://assets/img/enemies/boss/Left arm.png" id="7_12o1h"]
-[ext_resource type="Texture2D" uid="uid://dap5nt1umdlxg" path="res://assets/img/enemies/boss/Tail.png" id="8_ab0yy"]
+[ext_resource type="Script" uid="uid://cec1vt8ck4avr" path="res://scenes/enemies/boss_enemy/mask_manager.gd" id="2_apj76"]
+[ext_resource type="Texture2D" uid="uid://dkhqhn1j20sjk" path="res://assets/img/enemies/boss/MaskFire.png" id="4_12o1h"]
+[ext_resource type="Texture2D" uid="uid://bgao1ey7lfqgm" path="res://assets/img/enemies/boss/Schnauzbart.png" id="4_cmvs8"]
+[ext_resource type="Texture2D" uid="uid://cxvukqv0du0m6" path="res://assets/img/enemies/boss/MaskWater.png" id="5_ab0yy"]
+[ext_resource type="Texture2D" uid="uid://dq8b01jlotgnm" path="res://assets/img/enemies/boss/MaskAir.png" id="6_tng8y"]
+[ext_resource type="Texture2D" uid="uid://bw3rr4m47bwca" path="res://assets/img/enemies/boss/MaskEarth.png" id="7_2snoc"]
+[ext_resource type="Texture2D" uid="uid://b6jndwld4cgso" path="res://assets/img/enemies/boss/Tail.png" id="8_ab0yy"]
+[ext_resource type="Texture2D" uid="uid://c3svjase52w2t" path="res://assets/img/enemies/boss/MouthWithTeeth.png" id="8_dbon3"]
+[ext_resource type="Texture2D" uid="uid://dxc68yejwf0hs" path="res://assets/img/enemies/boss/Body.png" id="10_jfndn"]
 [ext_resource type="PackedScene" uid="uid://ctmjttj2a8viv" path="res://scenes/enemies/compnents/mini_movement/mini_movement.tscn" id="10_qkk8u"]
+[ext_resource type="Texture2D" uid="uid://dwt4uhk3yftns" path="res://assets/img/enemies/boss/ArmRight.png" id="11_nvj2a"]
 [ext_resource type="PackedScene" uid="uid://dh8k3nwp5c2yl" path="res://scenes/enemies/compnents/health_bar_component/health_bar_component.tscn" id="12_hbar"]
+[ext_resource type="Texture2D" uid="uid://b0vr7pkmfwo74" path="res://assets/img/enemies/boss/ArmLeft.png" id="12_yvtpj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1ipe3"]
 radius = 0.66064453
@@ -41,30 +44,30 @@ air_mask = NodePath("AirMask")
 transform = Transform3D(-0.2, 0, -1.7484556e-08, 0, 0.2, 0, 1.7484556e-08, 0, -0.2, 0, 0, 0)
 visible = false
 alpha_cut = 2
-texture = ExtResource("2_u137b")
+texture = ExtResource("4_12o1h")
 
 [node name="WaterMask" type="Sprite3D" parent="Sprites/Masks" unique_id=1548092015]
 transform = Transform3D(-0.2, 0, -1.7484556e-08, 0, 0.2, 0, 1.7484556e-08, 0, -0.2, -8.7422775e-10, 0, -0.01)
 visible = false
 alpha_cut = 2
-texture = ExtResource("2_u137b")
+texture = ExtResource("5_ab0yy")
 
 [node name="AirMask" type="Sprite3D" parent="Sprites/Masks" unique_id=1220711709]
 transform = Transform3D(-0.2, 0, -1.7484556e-08, 0, 0.2, 0, 1.7484556e-08, 0, -0.2, -8.7422775e-10, 0, -0.01)
 visible = false
 alpha_cut = 2
-texture = ExtResource("2_u137b")
+texture = ExtResource("6_tng8y")
 
 [node name="EarthMask" type="Sprite3D" parent="Sprites/Masks" unique_id=2044234]
 transform = Transform3D(-0.2, 0, -1.7484556e-08, 0, 0.2, 0, 1.7484556e-08, 0, -0.2, -8.7422775e-10, 0, -0.01)
 visible = false
 alpha_cut = 2
-texture = ExtResource("2_u137b")
+texture = ExtResource("7_2snoc")
 
 [node name="MouthSprite3D" type="Sprite3D" parent="Sprites" unique_id=71231888]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0.01)
 alpha_cut = 2
-texture = ExtResource("3_apj76")
+texture = ExtResource("8_dbon3")
 
 [node name="FaceSprite3D" type="Sprite3D" parent="Sprites" unique_id=2117540857]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0.02)
@@ -74,17 +77,17 @@ texture = ExtResource("4_cmvs8")
 [node name="BodySprite3D" type="Sprite3D" parent="Sprites" unique_id=30974305]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 alpha_cut = 2
-texture = ExtResource("5_m3ynw")
+texture = ExtResource("10_jfndn")
 
 [node name="ArmRSprite3D" type="Sprite3D" parent="Sprites" unique_id=787152004]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 alpha_cut = 2
-texture = ExtResource("6_1v5r7")
+texture = ExtResource("11_nvj2a")
 
 [node name="ArmLSprite3D" type="Sprite3D" parent="Sprites" unique_id=1957801483]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 alpha_cut = 2
-texture = ExtResource("7_12o1h")
+texture = ExtResource("12_yvtpj")
 
 [node name="TailSprite3D" type="Sprite3D" parent="Sprites" unique_id=709766576]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

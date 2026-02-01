@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn66e0jfjvofd"
-path.s3tc="res://.godot/imported/Körper.png-a3731491eae4ea12c7fbdcbb6a37c82c.s3tc.ctex"
+uid="uid://ck2h7ba5735k5"
+path.s3tc="res://.godot/imported/Mouth.png-228ac35514221cb17d87d72ef856d7b2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/img/enemies/boss/Körper.png"
-dest_files=["res://.godot/imported/Körper.png-a3731491eae4ea12c7fbdcbb6a37c82c.s3tc.ctex"]
+source_file="res://assets/img/enemies/boss/Mouth.png"
+dest_files=["res://.godot/imported/Mouth.png-228ac35514221cb17d87d72ef856d7b2.s3tc.ctex"]
 
 [params]
 

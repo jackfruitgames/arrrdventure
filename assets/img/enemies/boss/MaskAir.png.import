@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbv0npx6edum4"
-path.s3tc="res://.godot/imported/Feuermaske.png-e9747f512265759c3b668d5ea2b17c4d.s3tc.ctex"
+uid="uid://dq8b01jlotgnm"
+path.s3tc="res://.godot/imported/MaskAir.png-57bc5032fae2c025188c619877a954fa.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/img/enemies/boss/Feuermaske.png"
-dest_files=["res://.godot/imported/Feuermaske.png-e9747f512265759c3b668d5ea2b17c4d.s3tc.ctex"]
+source_file="res://assets/img/enemies/boss/MaskAir.png"
+dest_files=["res://.godot/imported/MaskAir.png-57bc5032fae2c025188c619877a954fa.s3tc.ctex"]
 
 [params]
 
