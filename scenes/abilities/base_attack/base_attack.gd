@@ -2,7 +2,7 @@ extends Area3D
 
 @export var swing_duration: float = 0.2
 
-const DAMAGE := 50
+const DAMAGE := 250
 
 var timer: float = 0.0
 var hit_enemies: Array[Node3D] = []
