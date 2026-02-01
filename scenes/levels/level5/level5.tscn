@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dpbb6qhdn7i0o"]
 
+[ext_resource type="Material" uid="uid://4k2l66sq500q" path="res://assets/textures/ground2/Ground093B_1K-JPG.tres" id="1_ooy8r"]
 [ext_resource type="PackedScene" uid="uid://bl4j3luccea8d" path="res://scenes/player/player.tscn" id="1_wn2ti"]
-[ext_resource type="Material" uid="uid://bmgyxxb5bd0ll" path="res://assets/textures/plank/Planks023B_1K-JPG.tres" id="1_y1jwd"]
 [ext_resource type="PackedScene" uid="uid://dh5vufr4b72px" path="res://scenes/levels/level5/level5_mask.tscn" id="2_7o5g8"]
 [ext_resource type="Script" uid="uid://dbj1cambec26" path="res://scenes/levels/level5/level5_enemy_manager.gd" id="5_ooy8r"]
 [ext_resource type="PackedScene" uid="uid://caq3j4fsxdya7" path="res://scenes/enemies/final_end_boss_enemy/final_end_boss_enemy.tscn" id="5_y1jwd"]
@@ -52,7 +52,7 @@ environment = SubResource("Environment_wh2sh")
 [node name="Plank" type="MeshInstance3D" parent="." unique_id=1440821793]
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
 mesh = SubResource("PlaneMesh_ooy8r")
-surface_material_override/0 = ExtResource("1_y1jwd")
+surface_material_override/0 = ExtResource("1_ooy8r")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Plank" unique_id=2116018190]
 

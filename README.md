@@ -33,7 +33,5 @@ Play it here 🕹️:
 - Addon: [GDScript-formatter addon by GDQuest](https://github.com/GDQuest/GDScript-formatter) (MIT)
 - Addon: [Dialogue Manager addon by Nathan Hoad](https://dialogue.nathanhoad.net/) (MIT)
 - Click sound: [Switch 006 from Kenney's Interface Sounds](https://kenney.nl/assets/interface-sounds) (CC0)
-- Ground Texture1: [AmbientCG Ground 071](https://ambientcg.com/view?id=Ground071) (CC0)
 - Ground Texture2: [AmbientGG Ground 095A](https://ambientcg.com/view?id=Ground095A) (CC0)
-- Plank Texture: [AmbientCG Planks 023B](https://ambientcg.com/view?id=Planks023B) (CC0)
 - SFX: [splice](https://splice.com/)
