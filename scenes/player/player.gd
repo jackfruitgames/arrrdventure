@@ -265,7 +265,7 @@ func damage(dmg: int) -> void:
 
 
 func _on_dead() -> void:
-	GlobalSignals.level_failed.emit(GlobalState.current_level)
+	GlobalSignals.level_failed.emit()
 	pass
 
 
