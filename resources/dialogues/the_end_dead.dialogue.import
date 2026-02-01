@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cpukmq1h3jdsh"
+path="res://.godot/imported/the_end_dead.dialogue-fc49db04011126587e087a12e56f40bf.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/the_end_dead.dialogue"
+dest_files=["res://.godot/imported/the_end_dead.dialogue-fc49db04011126587e087a12e56f40bf.tres"]
+
+[params]
+
+defaults=true

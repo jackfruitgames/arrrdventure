@@ -9,6 +9,7 @@ const LEVEL_2_SUCCESS: DialogueResource = preload("uid://dddu0sj8rf3wp")
 const LEVEL_3_SUCCESS: DialogueResource = preload("uid://df6puaosuhxpm")
 const LEVEL_4_SUCCESS: DialogueResource = preload("uid://d1o7r2iwkhlna")
 const THE_END: DialogueResource = preload("uid://cmyori7tg0fkg")
+const THE_END_DEAD: DialogueResource = preload("uid://cpukmq1h3jdsh")
 
 
 func _ready() -> void:
@@ -22,8 +23,12 @@ func _ready() -> void:
 
 func _show_dialogue() -> void:
 	if GlobalState.player_died:
+		if GlobalState.unlocked_level == E.Level.Level5:
+			GlobalState.unlocked_level = E.Level.End
+			DialogueManager.show_dialogue_balloon(THE_END_DEAD)
+		else:
+			DialogueManager.show_dialogue_balloon(LEVEL_FAILED)
 		GlobalState.player_died = false
-		DialogueManager.show_dialogue_balloon(LEVEL_FAILED)
 		return
 
 	match GlobalState.unlocked_level:
