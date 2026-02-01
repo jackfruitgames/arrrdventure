@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://cnmmyacy33d4t" path="res://assets/textures/plank/Planks023B_1K-JPG_Color.jpg" id="Color"]
 [ext_resource type="Texture2D" uid="uid://crkat7hotyp1a" path="res://assets/textures/plank/Planks023B_1K-JPG_Displacement.jpg" id="Displacement"]
 [ext_resource type="Texture2D" uid="uid://47a3m0r03hbe" path="res://assets/textures/plank/Planks023B_1K-JPG_Metalness.jpg" id="Metalness"]
-[ext_resource type="Texture2D" uid="uid://co3whf83wibd0" path="res://assets/textures/plank/Planks023B_1K-JPG_NormalGL.jpg" id="NormalGL"]
 [ext_resource type="Texture2D" uid="uid://hk4s0nl827s1" path="res://assets/textures/plank/Planks023B_1K-JPG_Roughness.jpg" id="Roughness"]
 
 [resource]
@@ -14,8 +13,6 @@ metallic_texture = ExtResource("Metalness")
 metallic_texture_channel = 4
 roughness_texture = ExtResource("Roughness")
 roughness_texture_channel = 4
-normal_enabled = true
-normal_texture = ExtResource("NormalGL")
 ao_enabled = true
 ao_texture = ExtResource("AmbientOcclusion")
 ao_texture_channel = 4
