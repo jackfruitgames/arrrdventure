@@ -8,6 +8,7 @@ func _ready() -> void:
 	GlobalSignals.play_sound.connect(_on_play_sound)
 	GlobalSignals.start_level.connect(_on_start_level)
 	GlobalSignals.finish_level.connect(_on_finish_level)
+	GlobalSignals.level_failed.connect(_on_level_failed)
 	GlobalSignals.boss_spawned.connect(_on_boss_spawned)
 	$MainMusicAudioStreamPlayer.finished.connect(_play_main_menu_music)
 	$BossWaterMusicAudioStreamPlayer.finished.connect(_on_water_finished)
@@ -80,7 +81,11 @@ func _on_start_level(level: E.Level) -> void:
 	$BattleMusicAudioStreamPlayer.play()
 
 
-func _on_finish_level(level: E.Level) -> void:
+func _on_finish_level(_level: E.Level) -> void:
+	_on_level_failed()
+
+
+func _on_level_failed() -> void:
 	await _fade_out_music()
 	# it's time to stop
 	$BossWaterMusicAudioStreamPlayer.stop()
